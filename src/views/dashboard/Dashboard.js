@@ -23,9 +23,19 @@ const Dashboard = () => {
   return (
     <>
       <WidgetsDropdown />
-      <CCard>
+      <div class="container">
+
+
+
+        <div class="row">
+          <div class="col-sm-6">
+
+         
+      <CCard >
         <CCardBody>
+          
           <CRow>
+          
             <CCol sm="5">
               <h4 id="traffic" className="card-title mb-0">Number Of Users</h4>
               <div className="small text-muted">May 2021</div>
@@ -106,6 +116,11 @@ const Dashboard = () => {
           </CRow>
         </CCardFooter>
       </CCard>
+      </div>
+        
+       
+          <div class="col-sm-6">
+        
       <CCard>
         <CCardBody>
           <CRow>
@@ -189,6 +204,9 @@ const Dashboard = () => {
           </CRow>
         </CCardFooter>
       </CCard>
+      </div>
+     <div class="w-100"></div>
+     <div class="col-sm-6">
       <CCard>
         <CCardBody>
           <CRow>
@@ -272,6 +290,8 @@ const Dashboard = () => {
           </CRow>
         </CCardFooter>
       </CCard>
+      </div>
+      <div class="col-sm-6">
       <CCard>
         <CCardBody>
           <CRow>
@@ -355,6 +375,9 @@ const Dashboard = () => {
           </CRow>
         </CCardFooter>
       </CCard>
+      </div>
+     </div>
+      </div>
 
       <WidgetsBrand withCharts/>
 
@@ -573,43 +596,43 @@ const Dashboard = () => {
                 <thead className="thead-light">
                   <tr>
                     <th className="text-center"><CIcon name="cil-people" /></th>
-                    <th>User</th>
-                    <th className="text-center">Country</th>
-                    <th>Usage</th>
-                    <th className="text-center">Payment Method</th>
-                    <th>Activity</th>
+                    <th> New Customers Registered</th>
+                    <th className="text-center"></th>
+                    <th></th>
+                    <th className="text-center"></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td className="text-center">
                       <div className="c-avatar">
-                        <img src={'avatars/1.jpg'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
-                        <span className="c-avatar-status bg-success"></span>
+                        <span>1</span>
+                        <span className=""></span>
                       </div>
                     </td>
                     <td>
-                      <div>Yiorgos Avraamu</div>
+                      <div>Manjunath R</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>New</span> | Registered: may 01, 2021
                       </div>
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cif-us" title="us" id="us" />
+                      <CIcon height={25} name="" title="us" id="" />
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>50%</strong>
+                          <strong></strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted"></small>
                         </div>
                       </div>
-                      <CProgress className="progress-xs" color="success" value="50" />
+                      
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cib-cc-mastercard" />
+                      <CIcon height={25} name="" />
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
@@ -619,33 +642,33 @@ const Dashboard = () => {
                   <tr>
                     <td className="text-center">
                       <div className="c-avatar">
-                        <img src={'avatars/2.jpg'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
-                        <span className="c-avatar-status bg-danger"></span>
+                        <span>2</span>
+                        <span className=""></span>
                       </div>
                     </td>
                     <td>
-                      <div>Avram Tarasios</div>
+                      <div>Raja</div>
                       <div className="small text-muted">
 
-                        <span>Recurring</span> | Registered: Jan 1, 2015
+                        <span>New</span> | Registered: May 2, 2021
                       </div>
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cif-br" title="br" id="br" />
+                      <CIcon height={25} name="" title="br" id="br" />
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>10%</strong>
+                          <strong></strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted"></small>
                         </div>
                       </div>
-                      <CProgress className="progress-xs" color="info" value="10" />
+                      
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cib-cc-visa" />
+                      <CIcon height={25} name="" />
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
@@ -655,32 +678,32 @@ const Dashboard = () => {
                   <tr>
                     <td className="text-center">
                       <div className="c-avatar">
-                        <img src={'avatars/3.jpg'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
-                        <span className="c-avatar-status bg-warning"></span>
+                   <span>3</span>
+                        <span className=""></span>
                       </div>
                     </td>
                     <td>
-                      <div>Quintin Ed</div>
+                      <div>Kushal</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>New</span> | Registered: May 1, 2021
                       </div>
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cif-in" title="in" id="in" />
+                      <CIcon height={25} name="" title="in" id="in" />
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>74%</strong>
+                          <strong></strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted"></small>
                         </div>
                       </div>
-                      <CProgress className="progress-xs" color="warning" value="74" />
+                      
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cib-stripe" />
+                      <CIcon height={25} name="" />
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
@@ -690,110 +713,338 @@ const Dashboard = () => {
                   <tr>
                     <td className="text-center">
                       <div className="c-avatar">
-                        <img src={'avatars/4.jpg'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
-                        <span className="c-avatar-status bg-secondary"></span>
+                        <span>4</span>
+                        <span className=""></span>
                       </div>
                     </td>
                     <td>
-                      <div>Enéas Kwadwo</div>
+                      <div>Priyanka</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>New</span> | Registered: May 2, 2021
                       </div>
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cif-fr" title="fr" id="fr" />
+                      <CIcon height={25} name="" title="fr" id="fr" />
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>98%</strong>
+                          <strong></strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted"></small>
                         </div>
                       </div>
-                      <CProgress className="progress-xs" color="danger" value="98" />
+                      
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cib-paypal" />
+                      <CIcon height={25} name="" />
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
-                      <strong>Last month</strong>
+                      <strong>1 hours ago</strong>
                     </td>
                   </tr>
                   <tr>
                     <td className="text-center">
                       <div className="c-avatar">
-                        <img src={'avatars/5.jpg'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
-                        <span className="c-avatar-status bg-success"></span>
+                       <span>5</span>
+                        <span className=""></span>
                       </div>
                     </td>
                     <td>
-                      <div>Agapetus Tadeáš</div>
+                      <div>Adithya</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>New</span> | Registered: April 28, 2021
                       </div>
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cif-es" title="es" id="es" />
+                      <CIcon height={25} name="" title="es" id="es" />
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>22%</strong>
+                          <strong></strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted"></small>
                         </div>
                       </div>
-                      <CProgress className="progress-xs" color="info" value="22" />
+                      
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cib-google-pay"/>
+                      <CIcon height={25} name=""/>
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
-                      <strong>Last week</strong>
+                      <strong>2 days ago</strong>
                     </td>
                   </tr>
                   <tr>
                     <td className="text-center">
                       <div className="c-avatar">
-                        <img src={'avatars/6.jpg'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
-                        <span className="c-avatar-status bg-danger"></span>
+                       <span>6</span>
+                        <span className=""></span>
                       </div>
                     </td>
                     <td>
-                      <div>Friderik Dávid</div>
+                      <div>Monisha</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>New</span> | Registered: Apirl 14, 2021
                       </div>
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cif-pl" title="pl" id="pl" />
+                      <CIcon height={25} name="" title="pl" id="pl" />
                     </td>
                     <td>
                       <div className="clearfix">
                         <div className="float-left">
-                          <strong>43%</strong>
+                          <strong></strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted"></small>
                         </div>
                       </div>
-                      <CProgress className="progress-xs" color="success" value="43" />
+                 
                     </td>
                     <td className="text-center">
-                      <CIcon height={25} name="cib-cc-amex" />
+                      <CIcon height={25} name="" />
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
                       <strong>Yesterday</strong>
                     </td>
+                   
                   </tr>
                 </tbody>
               </table>
+              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
+                <thead className="thead-light">
+                  <tr>
+                    <th className="text-center"><CIcon name="cil-people" /></th>
+                    <th> New Trainers Registered</th>
+                    <th className="text-center"></th>
+                    <th></th>
+                    <th className="text-center"></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="text-center">
+                      <div className="c-avatar">
+                        <span>1</span>
+                        <span className=""></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Ranga</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: Apirl 2, 2021
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" title="us" id="" />
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong></strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted"></small>
+                        </div>
+                      </div>
+                      
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" />
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>30 sec ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="c-avatar">
+                        <span>2</span>
+                        <span className=""></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Loki</div>
+                      <div className="small text-muted">
+
+                        <span>New</span> | Registered: Apirl 22, 2021
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" title="br" id="br" />
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong></strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted"></small>
+                        </div>
+                      </div>
+                      
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" />
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>45 minutes ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="c-avatar">
+                   <span>3</span>
+                        <span className=""></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Ravi</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: Apirl 1, 2021
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" title="in" id="in" />
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong></strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted"></small>
+                        </div>
+                      </div>
+                      
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" />
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>1 hour ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="c-avatar">
+                        <span>4</span>
+                        <span className=""></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Edwin</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: Apirl 29 , 2021
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" title="fr" id="fr" />
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong></strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted"></small>
+                        </div>
+                      </div>
+                      
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" />
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>5 hours ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="c-avatar">
+                       <span>5</span>
+                        <span className=""></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Manoj</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: April 30, 2021
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" title="es" id="es" />
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong></strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted"></small>
+                        </div>
+                      </div>
+                      
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name=""/>
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>23 Hours ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="c-avatar">
+                       <span>6</span>
+                        <span className=""></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Aryan</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: May 1, 2021
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" title="pl" id="pl" />
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong></strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted"></small>
+                        </div>
+                      </div>
+                 
+                    </td>
+                    <td className="text-center">
+                      <CIcon height={25} name="" />
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>Yesterday</strong>
+                    </td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+
 
             </CCardBody>
           </CCard>
