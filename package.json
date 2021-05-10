@@ -20,7 +20,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:coreui/coreui-free-react-admin-template.git"
+    "url": "Mitness Fitness App "
   },
   "dependencies": {
     "@coreui/chartjs": "^2.0.0",
