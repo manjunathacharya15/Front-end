@@ -490,10 +490,10 @@ const Dashboard = () => {
                   <div className="legend text-center">
                     <small>
                       <sup className="px-1"><CBadge shape="pill" color="info">&nbsp;</CBadge></sup>
-                      New clients
+                      Top Customers
                       &nbsp;
                       <sup className="px-1"><CBadge shape="pill" color="danger">&nbsp;</CBadge></sup>
-                      Recurring clients
+                      Top Trainers
                     </small>
                   </div>
                 </CCol>
