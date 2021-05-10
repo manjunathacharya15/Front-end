@@ -12,7 +12,6 @@ import {
 } from '@coreui/react'
 
 import usersData from './CatagoryData'
-import catagoryData from './CatagoryData'
 
 const getBadge = status => {
   switch (status) {
@@ -31,7 +30,7 @@ const Users = () => {
   const [page, setPage] = useState(currentPage)
 
   const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/users?page=${newPage}`)
+    currentPage !== newPage && history.push(`/catagory?page=${newPage}`)
   }
 
   useEffect(() => {
@@ -48,7 +47,7 @@ const Users = () => {
           </CCardHeader>
           <CCardBody>
           <CDataTable
-            items={catagoryData}
+            items={usersData}
             fields={[
               { key: 'SR.no.', _classes: 'font-weight-bold' },
               'Catagory Name', 'Subcatagory', 'Videos', 'Package','Actions'
@@ -58,7 +57,7 @@ const Users = () => {
             itemsPerPage={5}
             activePage={page}
             clickableRows
-            onRowClick={(item) => history.push(`/users/${item.id}`)}
+            onRowClick={(item) => history.push(`/catagory/${item.id}`)}
             scopedSlots = {{
               'status':
                 (item)=>(

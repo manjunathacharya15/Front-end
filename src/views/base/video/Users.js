@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { Link,useHistory, useLocation } from 'react-router-dom'
 import {
   CBadge,
   CCard,
@@ -31,7 +31,7 @@ const Users = () => {
   const [page, setPage] = useState(currentPage)
 
   const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/users?page=${newPage}`)
+    currentPage !== newPage && history.push(`/video?page=${newPage}`)
   }
 
   useEffect(() => {
@@ -43,7 +43,11 @@ const Users = () => {
       <CCol xl={10}>
         <CCard>
           <CCardHeader>
-            Videos
+          <div style={{display:"flex"}}>
+    <div style={{width:"80%"}}>Videos</div>
+    <div style={{width:"10%"}}> <Link to="/videos" className="nav-link"><button type="submit" value="AddNewUser" >AddNewVideo+</button></Link></div>
+    <div style={{width:"10%"}}> <Link to="/videoss" className="nav-link"><button type="submit" value="AddNewUser" >AddNewVideos+</button></Link></div>
+</div>      
             <small className="text-muted"> </small>
           </CCardHeader>
           <CCardBody>
@@ -58,7 +62,7 @@ const Users = () => {
             itemsPerPage={8}
             activePage={page}
             clickableRows
-            onRowClick={(item) => history.push(`/users/${item.id}`)}
+            onRowClick={(item) => history.push(`/video/${item.id}`)}
             scopedSlots = {{
               'status':
                 (item)=>(

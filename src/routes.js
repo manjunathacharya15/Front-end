@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 const Toaster = React.lazy(() => import('./views/notifications/toaster/Toaster'));
 const Tables = React.lazy(() => import('./views/base/tables/Tables'));
 
@@ -47,12 +49,27 @@ const Videos=React.lazy(() => import('./views/base/video/Users'));
 const Video=React.lazy(() => import('./views/base/video/user'));
 const Dashboardss=React.lazy(() => import('./views/base/Dashboards/Users'));
 const Dashboards=React.lazy(() => import('./views/base/Dashboards/User'));
-const Subcatagorys=React.lazy(() => import('./views/base/Subcatagory/Users'));
-const Subcatagory=React.lazy(() => import('./views/base/Subcatagory/User'));
+const Subcatagorys=React.lazy(() => import('./views/base/Lowerbody/Users'));
+const Subcatagory=React.lazy(() => import('./views/base/Lowerbody/User'));
 const Packagess=React.lazy(() => import('./views/base/Packages/Users'));
 const Packages=React.lazy(() => import('./views/base/Packages/User'));
 const Upperbodys=React.lazy(() => import('./views/base/upperbody/Users'));
 const Upperbody=React.lazy(() => import('./views/base/Packages/User'));
+const VideoListings=React.lazy(() => import('./views/base/Videolisting/Users'));
+const VideoListing=React.lazy(() => import('./views/base/Videolisting/User'));
+const Filterings=React.lazy(() => import('./views/base/Filtering/Users'));
+const Filtering=React.lazy(() => import('./views/base//Filtering/User'));
+
+const Login=React.lazy(() => import('./componets/login.componet'));
+const Loginn=React.lazy(() => import('./componets/trainerlogin.componet'));
+const VideoLisgs=React.lazy(() => import('./views/base/VideoListingg/Users'));
+const VideoLisg=React.lazy(() => import('./views/base/VideoListingg/User'));
+const Uppercomponet=React.lazy(() => import('./componets/upperbody.componet'));
+const Lowercomponet=React.lazy(() => import('./componets/lowerbody.componet'));
+const Videocomponet=React.lazy(() => import('./componets/video.componet'));
+const Videoscomponet=React.lazy(() => import('./componets/videos.componet'));
+const Packagescomponet=React.lazy(() => import('./componets/package.componet'));
+const Addvideocomponet=React.lazy(() => import('./componets/addvideo.componet'));
 
 
 
@@ -104,7 +121,7 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/Instructor', exact: true,  name: 'Users', component: Userrs },
   { path: '/Instructor/:id', exact: true, name: 'User Details', component: Userr },
-  { path: '/catagory', exact: true,  name: 'Users', component: Catagory },
+  { path: '/catagory', exact: true,  name: 'Category', component: Catagory },
   { path: '/catagory/:id', exact: true, name: 'User Details', component: Catagoryy },
   { path: '/userrs', exact: true,  name: 'Users', component: Trainers },
   { path: '/userrs/:id', exact: true, name: 'User Details', component: Trainer },
@@ -112,12 +129,32 @@ const routes = [
   { path: '/video/:id', exact: true, name: 'User Details', component: Video },
   { path: '/Dashboards', exact: true,  name: 'Users', component: Dashboardss },
   { path: '/Dashboards/:id', exact: true, name: 'User Details', component: Dashboards },
-  { path: '/Subcatagory', exact: true,  name: 'Users', component: Subcatagorys },
-  { path: '/Subcatagory/:id', exact: true, name: 'User Details', component: Subcatagory },
+  { path: '/Lowerbody', exact: true,  name: 'Lowerbody', component: Subcatagorys },
+  { path: '/Lowerbody/:id', exact: true, name: 'User Details', component: Subcatagory },
   { path: '/Packages', exact: true,  name: 'Users', component: Packagess },
   { path: '/Packages/:id', exact: true, name: 'User Details', component: Packages },
-  { path: '/upperbody', exact: true,  name: 'Users', component: Upperbodys },
-  { path: '/upperbody/:id', exact: true, name: 'User Details', component: Upperbody },
+  { path: '/upperbody', exact: true,  name: 'Upperbody', component: Upperbodys },
+  { path: '/upperbody/:id', exact: true, name: 'UpperBody', component: Upperbody },
+  { path: '/Videolisting', exact: true,  name: 'Users', component: VideoListings },
+  { path: '/Videolisting/:id', exact: true, name: 'VideoListing', component: VideoListing },
+  { path: '/Filtering', exact: true,  name: 'Filtering', component: Filterings },
+  { path: '/Filtering/:id', exact: true, name: 'Filtering', component: Filtering },
+  { path: '/welcome', exact: true,  name: 'NewUser', component: Login},
+  { path: '/trainer', exact: true,  name: 'NewTrainer', component: Loginn},
+  { path: '/VideoListingg', exact: true,  name: 'VideoListing', component: VideoLisgs },
+  { path: '/VideoListingg/:id', exact: true, name: 'VideoListing', component: VideoLisg },
+  { path: '/come', exact: true,  name: 'NewLowerbody', component: Lowercomponet},
+  { path: '/videos', exact: true,  name: 'NewVideo', component: Videocomponet},
+  { path: '/videoss', exact: true,  name: 'NewVideos', component: Videoscomponet},
+  { path: '/package', exact: true,  name: 'NewPackages', component: Packagescomponet},
+  { path: '/addvideo', exact: true,  name: 'NewVideo', component: Addvideocomponet},
+  { path: '/wel', exact: true,  name: 'NewUpperbody', component: Uppercomponet},
+  
+
+
+  
+
+
 
 
   

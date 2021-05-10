@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
   CBadge,
   CCard,
@@ -14,6 +15,7 @@ import {
 } from  '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
+import { Link } from 'react-router-dom'
 
 
 const Cards = () => {
@@ -30,6 +32,7 @@ const Cards = () => {
               <DocsLink name="CCard"/>
             </CCardHeader>
             <CCardBody>
+             
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
               laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
               ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.

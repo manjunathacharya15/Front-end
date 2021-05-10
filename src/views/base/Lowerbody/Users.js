@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Link, useHistory, useLocation } from 'react-router-dom'
+import { Link,useHistory, useLocation } from 'react-router-dom'
 import {
   CBadge,
   CCard,
@@ -11,8 +11,7 @@ import {
   CPagination
 } from '@coreui/react'
 
-import usersData from './UpperbodyData'
-
+import usersData from './SubcatagoryData'
 
 const getBadge = status => {
   switch (status) {
@@ -31,7 +30,7 @@ const Users = () => {
   const [page, setPage] = useState(currentPage)
 
   const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/upperbody?page=${newPage}`)
+    currentPage !== newPage && history.push(`/Subcatagory?page=${newPage}`)
   }
 
   useEffect(() => {
@@ -44,9 +43,12 @@ const Users = () => {
         <CCard>
           <CCardHeader>
           <div style={{display:"flex"}}>
-    <div style={{width:"90%"}}>Upperbody</div>
-    <div style={{width:"10%"}}> <Link to="/wel" className="nav-link"><button type="submit" value="AddNewUser" >AddNew+</button></Link></div>
-</div>               
+    <div style={{width:"90%"}}>Lowerbody</div>
+    
+    <div style={{width:"10%"}}> <Link to="/come" className="nav-link"><button type="submit" value="AddNewUser" >AddNew+</button></Link></div>
+    
+</div> 
+
             <small className="text-muted"> </small>
           </CCardHeader>
           <CCardBody>
@@ -58,10 +60,10 @@ const Users = () => {
             ]}
             hover
             striped
-            itemsPerPage={8}
+            itemsPerPage={5}
             activePage={page}
             clickableRows
-            onRowClick={(item) => history.push(`/upperbody/${item.id}`)}
+            onRowClick={(item) => history.push(`/Subcatagory/${item.id}`)}
             scopedSlots = {{
               'status':
                 (item)=>(

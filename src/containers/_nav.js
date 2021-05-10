@@ -14,19 +14,14 @@ const _nav =  [
   },
   
   
- {
-  _tag: 'CSidebarNavDropdown',
-  name: 'DASHBOARD',
-  route: '/',
-  icon: 'cil-puzzle',
-  _children: [
+ 
     {
       _tag: 'CSidebarNavItem',
-      name: 'Dashboard',
-      to: '/Dashboards',
+      name: 'DASHBOARD',
+      to: '/',
+      icon: 'cil-puzzle',
     },
-  ]
- },
+  
     {
       _tag: 'CSidebarNavDropdown',
   name: 'USER',
@@ -73,7 +68,7 @@ const _nav =  [
       {
         _tag:'CSidebarNavItem',
         name:'Lowerbody',
-        to:'/Subcatagory'
+        to:'/Lowerbody'
 
       }
     ]
@@ -92,6 +87,45 @@ const _nav =  [
     ]
  
     },
+    {
+      _tag: 'CSidebarNavDropdown',
+  name: 'Program Management',
+    to: '',
+    icon: 'cil-group',
+    _children:[
+      {
+        _tag: 'CSidebarNavDropdown',
+        name: 'Program Listing',
+        to: '',
+        _children:[
+          {
+            _tag:'CSidebarNavItem',
+            name:'Programs',
+            to:'/Videolisting',
+          },
+          {
+            _tag: 'CSidebarNavItem',
+            name: 'Program Searching & Filtering',
+            to: '/Filtering',
+           
+          },  {
+            _tag: 'CSidebarNavItem',
+            name: 'Subscribe without payment',
+            to: '/addvideo',
+          },
+          {
+            _tag: 'CSidebarNavItem',
+            name: 'VideoListing',
+            to: '/VideoListingg',
+          },
+         
+        ]
+      },
+     
+
+    ]
+},
+
     
     
  

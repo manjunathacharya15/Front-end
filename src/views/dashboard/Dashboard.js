@@ -394,14 +394,14 @@ const Dashboard = () => {
                   <CRow>
                     <CCol sm="6">
                       <CCallout color="info">
-                        <small className="text-muted">New Clients</small>
+                        <small className="text-muted">Top Customers</small>
                         <br />
                         <strong className="h4">9,123</strong>
                       </CCallout>
                     </CCol>
                     <CCol sm="6">
                       <CCallout color="danger">
-                        <small className="text-muted">Recurring Clients</small>
+                        <small className="text-muted">Top Trainers</small>
                         <br />
                         <strong className="h4">22,643</strong>
                       </CCallout>
@@ -510,7 +510,7 @@ const Dashboard = () => {
                     </CCol>
                     <CCol sm="6">
                       <CCallout color="success">
-                        <small className="text-muted">Organic</small>
+                        <small className="text-muted">Marketing</small>
                         <br />
                         <strong className="h4">49,123</strong>
                       </CCallout>

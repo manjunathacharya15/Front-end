@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Link, useHistory, useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import {
   CBadge,
   CCard,
@@ -11,15 +11,14 @@ import {
   CPagination
 } from '@coreui/react'
 
-import usersData from './UpperbodyData'
-
+import usersData from './VideoData'
 
 const getBadge = status => {
   switch (status) {
     case 'Active': return 'success'
     case 'Inactive': return 'secondary'
     case 'Pending': return 'warning'
-    case 'Banned': return 'danger'
+    case 'Banned': return 'danger'  
     default: return 'primary'
   }
 }
@@ -31,7 +30,7 @@ const Users = () => {
   const [page, setPage] = useState(currentPage)
 
   const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/upperbody?page=${newPage}`)
+    currentPage !== newPage && history.push(`/Videolisting?page=${newPage}`)
   }
 
   useEffect(() => {
@@ -44,24 +43,26 @@ const Users = () => {
         <CCard>
           <CCardHeader>
           <div style={{display:"flex"}}>
-    <div style={{width:"90%"}}>Upperbody</div>
-    <div style={{width:"10%"}}> <Link to="/wel" className="nav-link"><button type="submit" value="AddNewUser" >AddNew+</button></Link></div>
+    <div style={{width:"80%"}}>Program Listing</div>
+    <div style={{width:"10%"},{}}><button >AddNewProgram</button></div>
+
+    <div style={{width:"10%"},{}}><button >RemoveProgram</button></div>
 </div>               
             <small className="text-muted"> </small>
           </CCardHeader>
           <CCardBody>
-          <CDataTable
+          <CDataTable 
             items={usersData}
             fields={[
-              { key: 'Sr.no', _classes: 'font-weight-bold' },
-              'Sub Catagory', 'Main Catagory', 'Videos','Package', 'Actions'
+              { key: 'Program_Name', _classes: 'font-weight-bold' },
+              'Featured_Image', 'Program_Description', 'Program_duration','Total_Exercises', 'Program_Price'
             ]}
             hover
             striped
-            itemsPerPage={8}
+            itemsPerPage={10}
             activePage={page}
             clickableRows
-            onRowClick={(item) => history.push(`/upperbody/${item.id}`)}
+            onRowClick={(item) => history.push(`/Videolisting/${item.Program_name}`)}
             scopedSlots = {{
               'status':
                 (item)=>(

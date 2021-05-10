@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { Link,useHistory, useLocation } from 'react-router-dom'
 import {
   CBadge,
   CCard,
@@ -30,7 +30,7 @@ const Users = () => {
   const [page, setPage] = useState(currentPage)
 
   const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/users?page=${newPage}`)
+    currentPage !== newPage && history.push(`/Packages?page=${newPage}`)
   }
 
   useEffect(() => {
@@ -42,7 +42,10 @@ const Users = () => {
       <CCol xl={10}>
         <CCard>
           <CCardHeader>
-            Packages
+          <div style={{display:"flex"}}>
+    <div style={{width:"85%"}}>Packages</div>
+    <div style={{width:"15%"}}> <Link to="/package" className="nav-link"><button type="submit" value="AddNewUser" >AddNewPackages+</button></Link></div>
+</div>               
             <small className="text-muted"> </small>
           </CCardHeader>
           <CCardBody>
@@ -57,7 +60,7 @@ const Users = () => {
             itemsPerPage={5}
             activePage={page}
             clickableRows
-            onRowClick={(item) => history.push(`/users/${item.id}`)}
+            onRowClick={(item) => history.push(`/Packages/${item.id}`)}
             scopedSlots = {{
               'status':
                 (item)=>(

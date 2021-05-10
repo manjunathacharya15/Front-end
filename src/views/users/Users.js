@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { Link,useHistory, useLocation } from 'react-router-dom'
 import {
   CBadge,
   CCard,
@@ -18,7 +18,7 @@ const getBadge = status => {
     case 'Active': return 'success'
     case 'Inactive': return 'secondary'
     case 'Pending': return 'warning'
-    case 'Banned': return 'danger'
+    case 'Banned': return 'danger'  
     default: return 'primary'
   }
 }
@@ -44,7 +44,7 @@ const Users = () => {
           <CCardHeader>
           <div style={{display:"flex"}}>
     <div style={{width:"90%"}}>Users</div>
-    <div style={{width:"10%"}}><button>AddNewUser+</button></div>
+    <div style={{width:"10%"}}> <Link to="/welcome" className="nav-link"><button type="submit" value="AddNewUser" >AddNewUser+</button></Link></div>
 </div>               
             <small className="text-muted"> </small>
           </CCardHeader>

@@ -11,14 +11,14 @@ import {
   CPagination
 } from '@coreui/react'
 
-import usersData from './SubcatagoryData'
+import usersData from './VideoListingData'
 
 const getBadge = status => {
   switch (status) {
     case 'Active': return 'success'
     case 'Inactive': return 'secondary'
     case 'Pending': return 'warning'
-    case 'Banned': return 'danger'
+    case 'Banned': return 'danger'  
     default: return 'primary'
   }
 }
@@ -30,7 +30,7 @@ const Users = () => {
   const [page, setPage] = useState(currentPage)
 
   const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/users?page=${newPage}`)
+    currentPage !== newPage && history.push(`/VideoListingg?page=${newPage}`)
   }
 
   useEffect(() => {
@@ -42,22 +42,27 @@ const Users = () => {
       <CCol xl={10}>
         <CCard>
           <CCardHeader>
-            Lowerbody
+          <div style={{display:"flex"}}>
+    <div style={{width:"90%"}}>Video Listing </div>
+    <div style={{width:"10%"},{}}><a href="https://www.google.com/">CTA BUY</a></div>
+
+    <div style={{width:"10%"},{}}></div>
+</div>               
             <small className="text-muted"> </small>
           </CCardHeader>
           <CCardBody>
-          <CDataTable
+          <CDataTable 
             items={usersData}
             fields={[
-              { key: 'Sr.no', _classes: 'font-weight-bold' },
-              'Sub Catagory', 'Main Catagory', 'Videos','Package', 'Actions'
+              { key: 'Exercise_Name', _classes: 'font-weight-bold' },
+              'Featured_Image', 'Exercise_Duration'
             ]}
             hover
             striped
-            itemsPerPage={5}
+            itemsPerPage={10}
             activePage={page}
             clickableRows
-            onRowClick={(item) => history.push(`/users/${item.id}`)}
+            onRowClick={(item) => history.push(`/VideoListingg/${item.Program_name}`)}
             scopedSlots = {{
               'status':
                 (item)=>(
