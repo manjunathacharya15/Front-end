@@ -17,10 +17,11 @@ const TheHeaderDropdown = () => {
       direction="down"
     >
       <CDropdownToggle className="c-header-nav-link" caret={false}>
+      <CIcon name="cil-user"/>
         <div className="c-avatar">
           <CImg
-            src={'avatars/th.jpg'}
-            className="c-avatar-img"
+            
+            className="cil-user"
             alt="admin@bootstrapmaster.com"
           />
         </div>
