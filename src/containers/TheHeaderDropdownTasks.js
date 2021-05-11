@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {
   CBadge,
   CDropdown,
@@ -7,12 +8,13 @@ import {
   CDropdownToggle,
   CProgress
 } from '@coreui/react'
+
 import CIcon from '@coreui/icons-react'
 
 const TheHeaderDropdownTasks = () => {
   const itemsCount = 5
   return (
-   <div></div>
+  <Link Link to="/welcome" className="nav-link" ><span><CIcon name="cil-Library-Add"/></span>  </Link>
   )
 }
 

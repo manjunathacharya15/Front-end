@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { Link,useHistory, useLocation } from 'react-router-dom'
 import {
   CBadge,
   CCard,
@@ -44,9 +44,9 @@ const Users = () => {
           <CCardHeader>
           <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Program Listing</div>
-    <div style={{width:"10%"},{}}><button >AddNewProgram</button></div>
+    <div style={{width:"10%"},{}}><Link to="/program" className="nav-link"><button >AddNewProgram</button></Link></div>
 
-    <div style={{width:"10%"},{}}><button >RemoveProgram</button></div>
+    <div style={{width:"10%"},{}}> <Link to="/program" className="nav-link"><button >RemoveProgram</button></Link></div>
 </div>               
             <small className="text-muted"> </small>
           </CCardHeader>

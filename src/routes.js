@@ -70,6 +70,7 @@ const Videocomponet=React.lazy(() => import('./componets/video.componet'));
 const Videoscomponet=React.lazy(() => import('./componets/videos.componet'));
 const Packagescomponet=React.lazy(() => import('./componets/package.componet'));
 const Addvideocomponet=React.lazy(() => import('./componets/addvideo.componet'));
+const Addnewprogram=React.lazy(() => import('./componets/addnewprogram.componet'));
 
 
 
@@ -143,12 +144,14 @@ const routes = [
   { path: '/trainer', exact: true,  name: 'NewTrainer', component: Loginn},
   { path: '/VideoListingg', exact: true,  name: 'VideoListing', component: VideoLisgs },
   { path: '/VideoListingg/:id', exact: true, name: 'VideoListing', component: VideoLisg },
+  { path: '/wel', exact: true,  name: 'NewUpperbody', component: Uppercomponet},
   { path: '/come', exact: true,  name: 'NewLowerbody', component: Lowercomponet},
   { path: '/videos', exact: true,  name: 'NewVideo', component: Videocomponet},
   { path: '/videoss', exact: true,  name: 'NewVideos', component: Videoscomponet},
   { path: '/package', exact: true,  name: 'NewPackages', component: Packagescomponet},
   { path: '/addvideo', exact: true,  name: 'NewVideo', component: Addvideocomponet},
-  { path: '/wel', exact: true,  name: 'NewUpperbody', component: Uppercomponet},
+  
+  { path: '/program', exact: true,  name: 'Newprogram', component:Addnewprogram},
   
 
 

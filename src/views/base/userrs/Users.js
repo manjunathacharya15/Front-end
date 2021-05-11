@@ -43,8 +43,8 @@ const Users = () => {
         <CCard>
           <CCardHeader>
           <div style={{display:"flex"}}>
-    <div style={{width:"90%"}}>Trainers</div>
-    <div style={{width:"10%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
+    <div style={{width:"84%"}}>Trainers</div>
+    <div style={{width:"16%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
 </div>            
             <small className="text-muted"> </small>
           </CCardHeader>

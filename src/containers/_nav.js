@@ -105,7 +105,7 @@ const _nav =  [
           },
           {
             _tag: 'CSidebarNavItem',
-            name: 'Program Searching & Filtering',
+            name: 'ProgramSearch & Filtering',
             to: '/Filtering',
            
           },  {
