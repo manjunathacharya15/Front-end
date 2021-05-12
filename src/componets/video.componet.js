@@ -10,8 +10,9 @@ export default class Videocomponet extends Component{
   
   <div class="input-group mb-3">
                         <label for="email" class="col-lg-2">VIDEO NAME:</label>
-  <input type="text" id="email" placeholder=" VIDEONAME" name="email"></input>
+  <input type="text" id="files" placeholder=" VIDEONAME" name="files"></input>
   </div>
+  
   <div class="input-group mb-3">
                         <label for="email" class="col-lg-2"> CATEGORY:</label>
   <input type="text" id="email" placeholder="CATEGORY " name="email"></input>
@@ -29,6 +30,13 @@ export default class Videocomponet extends Component{
                         <label for="email" class="col-lg-2">ACTIONS:</label>
   <input type="text" id="email" placeholder=" ACTIONS" name="email"></input>
   </div>
+
+
+  <div class="input-group mb-3">
+                       
+                        <input type="file" name="images" id="imgid" className="imgcls"  multiple/>
+  </div>
+
                         
      
                         

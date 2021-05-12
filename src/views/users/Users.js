@@ -38,8 +38,15 @@ const Users = () => {
   }, [currentPage, page])
 
   return (
+    <div class="container">
+
+
+
+        <div class="row">
+          <div class="col-sm-6">
+
     <CRow style={{width:"1500px"}}>
-      <CCol xl={10}>
+      <CCol sm={10}>
         <CCard>
           <CCardHeader>
           <div style={{display:"flex"}}>
@@ -85,6 +92,9 @@ const Users = () => {
         </CCard>
       </CCol>
     </CRow>
+    </div>
+    </div>
+    </div>
   )
 }
 

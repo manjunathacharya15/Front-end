@@ -10,8 +10,14 @@ const User = ({match}) => {
     [['slno', (<span><CIcon className="text-muted" name="cui-icon-ban" /> Not found</span>)]]
 
   return (
+    <div class="container">
+
+
+
+        <div class="row">
+          <div class="col-sm-6">
     <CRow>
-      <CCol lg={8}>
+      <CCol sm={8}>
         <CCard>
           <CCardHeader>
             User slno: {match.params.slno}
@@ -35,6 +41,9 @@ const User = ({match}) => {
         </CCard>
       </CCol>
     </CRow>
+    </div>
+    </div>
+    </div>
   )
 }
 
