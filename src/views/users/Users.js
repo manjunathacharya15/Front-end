@@ -43,12 +43,11 @@ const Users = () => {
 
 
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-md">
 
-    <CRow style={{width:"1500px"}}>
-      <CCol sm={10}>
+   
         <CCard>
-          <CCardHeader class="col-md">
+          <CCardHeader>
           <div style={{display:"flex"}}>
     
 
@@ -57,7 +56,7 @@ const Users = () => {
 </div>               
             <small className="text-muted"> </small>
           </CCardHeader >
-          <CCardBody  class="col-md" >
+          <CCardBody  >
           <CDataTable 
             items={usersData}
             fields={[
@@ -90,8 +89,7 @@ const Users = () => {
           />
           </CCardBody>
         </CCard>
-      </CCol>
-    </CRow>
+      
     </div>
     </div>
     </div>

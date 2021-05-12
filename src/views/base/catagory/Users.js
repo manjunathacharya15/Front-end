@@ -38,8 +38,13 @@ const Users = () => {
   }, [currentPage, page])
 
   return (
-    <CRow style={{width:"1500px"}}>
-      <CCol xl={10}>
+    <div class="container">
+
+
+
+    <div class="row">
+      <div class="col-md">
+   
         <CCard>
           <CCardHeader>
             Category
@@ -78,8 +83,10 @@ const Users = () => {
           />
           </CCardBody>
         </CCard>
-      </CCol>
-    </CRow>
+     
+    </div>
+    </div>
+    </div>
   )
 }
 
