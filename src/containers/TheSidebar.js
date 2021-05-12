@@ -24,12 +24,11 @@ const TheSidebar = () => {
   return (
     <CSidebar
       show={show}
-      onShowChange={(val) => dispatch({type: 'set', sidebarShow: val })}
+      onShowChange={(responsive) => dispatch({type: 'set', sidebarShow: responsive })}
     >
-      
       <CSidebarNav>
 
-        <CCreateElement//
+        <CCreateElement
           items={navigation}
           components={{
             CSidebarNavDivider,
