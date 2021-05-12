@@ -48,7 +48,7 @@ const Users = () => {
     <CRow style={{width:"1500px"}}>
       <CCol sm={10}>
         <CCard>
-          <CCardHeader>
+          <CCardHeader class="col-md">
           <div style={{display:"flex"}}>
     
 
@@ -56,8 +56,8 @@ const Users = () => {
     <div style={{width:"15%"}}> <Link to="/welcome" className="nav-link"><button type="submit" value="AddNewUser" >AddNewUser+</button></Link></div>
 </div>               
             <small className="text-muted"> </small>
-          </CCardHeader>
-          <CCardBody>
+          </CCardHeader >
+          <CCardBody  class="col-md" >
           <CDataTable 
             items={usersData}
             fields={[
