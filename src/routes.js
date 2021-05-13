@@ -71,6 +71,17 @@ const Videoscomponet=React.lazy(() => import('./componets/videos.componet'));
 const Packagescomponet=React.lazy(() => import('./componets/package.componet'));
 const Addvideocomponet=React.lazy(() => import('./componets/addvideo.componet'));
 const Addnewprogram=React.lazy(() => import('./componets/addnewprogram.componet'));
+const ProgramInstructors=React.lazy(() => import('./views/base/ProgramInstructor/Users'));
+const ProgramInstructor=React.lazy(() => import('./views/base/ProgramInstructor/User'));
+const ExerciseNames=React.lazy(() => import('./views/base/ExerciseName/Users'));
+const ExerciseName=React.lazy(() => import('./views/base/ExerciseName/User'));
+const Faqs=React.lazy(() => import('./views/base/FAQ/Users'));
+const Faq=React.lazy(() => import('./views/base/FAQ/User'));
+const Contactuss=React.lazy(() => import('./views/base/ContactUs/Users'));
+const Contactus=React.lazy(() => import('./views/base/ContactUs/User'));
+const Recommendedprograms=React.lazy(() => import('./views/base/RecommendedPrograms/Users'));
+const Recommendedprogram=React.lazy(() => import('./views/base/RecommendedPrograms/User'));
+
 
 
 
@@ -152,6 +163,16 @@ const routes = [
   { path: '/addvideo', exact: true,  name: 'NewVideo', component: Addvideocomponet},
   
   { path: '/program', exact: true,  name: 'Newprogram', component:Addnewprogram},
+  { path: '/ProgramInstructor', exact: true,  name: 'ProgramInstructor', component: ProgramInstructors },
+  { path: '/ProgramInstructor/:id', exact: true, name: 'VideoListing', component: ProgramInstructor },
+  { path: '/ExerciseName', exact: true,  name: 'ProgramInstructor', component: ExerciseNames },
+  { path: '/ExerciseName/:id', exact: true, name: 'VideoListing', component: ExerciseName },
+  { path: '/FAQ', exact: true,  name: 'ProgramInstructor', component: Faqs },
+  { path: '/FAQ:id', exact: true, name: 'VideoListing', component: Faq },
+  { path: '/ContactUs', exact: true,  name: 'ProgramInstructor', component: Contactuss },
+  { path: '/ContactUs/:id', exact: true, name: 'VideoListing', component: Contactus },
+  { path: '/RecommendedPrograms', exact: true,  name: 'ProgramInstructor', component: Recommendedprograms },
+  { path: '/RecommendedPrograms/:id', exact: true, name: 'VideoListing', component: Recommendedprogram },
   
 
 

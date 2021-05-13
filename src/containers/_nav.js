@@ -125,10 +125,51 @@ const _nav =  [
 
     ]
 },
+{
+  _tag: 'CSidebarNavDropdown',
+name: 'Content Management',
+to: '',
+icon: 'cil-notes',
+_children:[
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Instructor',
+    to: '/ProgramInstructor',
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Exercise Name',
+    to: '/ExerciseName',
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'FAQ',
+    to: '/FAQ',
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Contact us Enquiries',
+    to: '/ContactUs',
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Recommended Programs',
+    to: '/RecommendedPrograms',
+  },
+
+
+]
+  },
 
     
     
- 
+  {
+    _tag: 'CSidebarNavItem',
+  name: ' Category Management ',
+  to: '',
+  icon: 'cil-moon',
+  
+},
  
 
 
