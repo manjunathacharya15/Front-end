@@ -81,6 +81,11 @@ const Contactuss=React.lazy(() => import('./views/base/ContactUs/Users'));
 const Contactus=React.lazy(() => import('./views/base/ContactUs/User'));
 const Recommendedprograms=React.lazy(() => import('./views/base/RecommendedPrograms/Users'));
 const Recommendedprogram=React.lazy(() => import('./views/base/RecommendedPrograms/User'));
+const Categorymanagements=React.lazy(() => import('./views/base/Categorymanagement/Users'));
+const Categorymanagement=React.lazy(() => import('./views/base/Categorymanagement/User'));
+const Newcategory=React.lazy(() => import('./componets/newcategory.componet'));
+const UpdateCategory=React.lazy(() => import('./componets/updatecategory.componet'));
+const Activate=React.lazy(() => import('./componets/activedeactive.componet'));
 
 
 
@@ -135,19 +140,19 @@ const routes = [
   { path: '/Instructor/:id', exact: true, name: 'User Details', component: Userr },
   { path: '/catagory', exact: true,  name: 'Category', component: Catagory },
   { path: '/catagory/:id', exact: true, name: 'User Details', component: Catagoryy },
-  { path: '/userrs', exact: true,  name: 'Users', component: Trainers },
+  { path: '/userrs', exact: true,  name: 'Trainer', component: Trainers },
   { path: '/userrs/:id', exact: true, name: 'User Details', component: Trainer },
-  { path: '/video', exact: true,  name: 'Users', component: Videos },
+  { path: '/video', exact: true,  name: 'Video', component: Videos },
   { path: '/video/:id', exact: true, name: 'User Details', component: Video },
   { path: '/Dashboards', exact: true,  name: 'Users', component: Dashboardss },
   { path: '/Dashboards/:id', exact: true, name: 'User Details', component: Dashboards },
   { path: '/Lowerbody', exact: true,  name: 'Lowerbody', component: Subcatagorys },
   { path: '/Lowerbody/:id', exact: true, name: 'User Details', component: Subcatagory },
-  { path: '/Packages', exact: true,  name: 'Users', component: Packagess },
+  { path: '/Packages', exact: true,  name: 'Packages', component: Packagess },
   { path: '/Packages/:id', exact: true, name: 'User Details', component: Packages },
   { path: '/upperbody', exact: true,  name: 'Upperbody', component: Upperbodys },
   { path: '/upperbody/:id', exact: true, name: 'UpperBody', component: Upperbody },
-  { path: '/Videolisting', exact: true,  name: 'Users', component: VideoListings },
+  { path: '/Videolisting', exact: true,  name: 'Programs', component: VideoListings },
   { path: '/Videolisting/:id', exact: true, name: 'VideoListing', component: VideoListing },
   { path: '/Filtering', exact: true,  name: 'Filtering', component: Filterings },
   { path: '/Filtering/:id', exact: true, name: 'Filtering', component: Filtering },
@@ -163,16 +168,22 @@ const routes = [
   { path: '/addvideo', exact: true,  name: 'NewVideo', component: Addvideocomponet},
   
   { path: '/program', exact: true,  name: 'Newprogram', component:Addnewprogram},
-  { path: '/ProgramInstructor', exact: true,  name: 'ProgramInstructor', component: ProgramInstructors },
+  { path: '/ProgramInstructor', exact: true,  name: 'Program Instructor Details', component: ProgramInstructors },
   { path: '/ProgramInstructor/:id', exact: true, name: 'VideoListing', component: ProgramInstructor },
-  { path: '/ExerciseName', exact: true,  name: 'ProgramInstructor', component: ExerciseNames },
+  { path: '/ExerciseName', exact: true,  name: 'Exercise Details', component: ExerciseNames },
   { path: '/ExerciseName/:id', exact: true, name: 'VideoListing', component: ExerciseName },
-  { path: '/FAQ', exact: true,  name: 'ProgramInstructor', component: Faqs },
+  { path: '/FAQ', exact: true,  name: 'FAQ', component: Faqs },
   { path: '/FAQ:id', exact: true, name: 'VideoListing', component: Faq },
-  { path: '/ContactUs', exact: true,  name: 'ProgramInstructor', component: Contactuss },
+  { path: '/ContactUs', exact: true,  name: 'Contactus', component: Contactuss },
   { path: '/ContactUs/:id', exact: true, name: 'VideoListing', component: Contactus },
-  { path: '/RecommendedPrograms', exact: true,  name: 'ProgramInstructor', component: Recommendedprograms },
+  { path: '/RecommendedPrograms', exact: true,  name: 'Recommended Programs', component: Recommendedprograms },
   { path: '/RecommendedPrograms/:id', exact: true, name: 'VideoListing', component: Recommendedprogram },
+  { path: '/Categorymanagement', exact: true,  name: 'Category Management', component: Categorymanagements },
+  { path: '/Categorymanagement/:id', exact: true, name: 'VideoListing', component: Categorymanagement },
+  { path: '/newcategory', exact: true,  name: 'New Category', component:Newcategory},
+  { path: '/updatecategory', exact: true,  name: 'Update Category', component:UpdateCategory},
+  { path: '/activate', exact: true,  name: 'Activate Or Deactivate', component:Activate},
+
   
 
 

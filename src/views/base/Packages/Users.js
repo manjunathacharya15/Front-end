@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link,useHistory, useLocation } from 'react-router-dom'
+import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
+import Search from '@material-ui/icons/SearchRounded';
+
 import {
   CBadge,
   CCard,
@@ -48,7 +51,9 @@ const Users = () => {
           <CCardHeader>
           <div style={{display:"flex"}}>
     <div style={{width:"82%"}}>Packages</div>
-    <div style={{width:"18%"}}> <Link to="/package" className="nav-link"><button type="submit" value="AddNewUser" >AddNewPackages+</button></Link></div>
+    <div style={{width:"22%"}}><Link to="" className="nav-link"><button ><Search/>Search</button></Link></div>
+    <div  style={{width:"21%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/>Filter</button></Link></div>
+    <div style={{width:"20%"}}> <Link to="/package" className="nav-link"><button type="submit" value="AddNewUser" >AddNewPackages+</button></Link></div>
 </div>               
             <small className="text-muted"> </small>
           </CCardHeader>

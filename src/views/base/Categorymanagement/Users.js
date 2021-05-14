@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { Link,useHistory, useLocation } from 'react-router-dom'
 import {
   CBadge,
   CCard,
@@ -11,14 +11,14 @@ import {
   CPagination
 } from '@coreui/react'
 
-import usersData from './VideoListingData'
+import usersData from './CategorymanagementData'
 
 const getBadge = status => {
   switch (status) {
     case 'Active': return 'success'
     case 'Inactive': return 'secondary'
     case 'Pending': return 'warning'
-    case 'Banned': return 'danger'  
+    case 'Banned': return 'danger'
     default: return 'primary'
   }
 }
@@ -30,7 +30,7 @@ const Users = () => {
   const [page, setPage] = useState(currentPage)
 
   const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/VideoListingg?page=${newPage}`)
+    currentPage !== newPage && history.push(`/Categorymanagement?page=${newPage}`)
   }
 
   useEffect(() => {
@@ -47,26 +47,28 @@ const Users = () => {
         <CCard>
           <CCardHeader>
           <div style={{display:"flex"}}>
-    <div style={{width:"88%"}}>Video Listing </div>
-    <div style={{width:"12%"},{}}><a href="https://www.google.com/"><button>CTA BUY</button></a></div>
+    <div style={{width:"80%"}}>Category Management</div>
+    
+    <div style={{width:"15%"}}> <Link to="/newcategory" className="nav-link"><button type="submit" value="AddNewUser" >NewCategory+</button></Link></div>
+    <div style={{width:"20%"}}> <Link to="/updatecategory" className="nav-link"><button type="submit" value="AddNewUser" >UpdateCategory+</button></Link></div>
+    <div style={{width:"35%"}}> <Link to="/activate" className="nav-link"><button type="submit" value="AddNewUser" >Activate/DeActivate   +</button></Link></div>
+</div> 
 
-    <div style={{width:"10%"},{}}></div>
-</div>               
             <small className="text-muted"> </small>
           </CCardHeader>
           <CCardBody>
-          <CDataTable 
+          <CDataTable
             items={usersData}
             fields={[
-              { key: 'Exercise_Name', _classes: 'font-weight-bold' },
-              'Featured_Video', 'Exercise_Duration'
+              { key: 'Sr.no', _classes: 'font-weight-bold' },
+              
             ]}
             hover
             striped
-            itemsPerPage={10}
+            itemsPerPage={5}
             activePage={page}
             clickableRows
-            onRowClick={(item) => history.push(`/VideoListingg/${item.Program_name}`)}
+            onRowClick={(item) => history.push(`/Categorymanagement/${item.id}`)}
             scopedSlots = {{
               'status':
                 (item)=>(
@@ -87,9 +89,9 @@ const Users = () => {
           />
           </CCardBody>
         </CCard>
-    </div>
-    </div>
-    </div>
+     </div>
+     </div>
+     </div>
   )
 }
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { Link,useHistory, useLocation } from 'react-router-dom'
+import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
+import Search from '@material-ui/icons/SearchRounded';
 import {
   CBadge,
   CCard,
@@ -48,7 +50,15 @@ const Users = () => {
         <CCard>
           <CCardHeader>
           <div style={{display:"flex"}}>
-    <div style={{width:"82%"}}>Program Instructor</div>
+    <div style={{width:"82%"}}>Instructor Exercise Details</div>
+    
+
+    <div style={{width:"20%"}}><Link to="" className="nav-link"><button ><Search/>Search</button></Link></div>
+    <div  style={{width:"13%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/>Filter</button></Link></div>
+
+   
+
+                
     <div style={{width:"18%"}}> </div>
 </div>               
             <small className="text-muted"> </small>
@@ -58,7 +68,7 @@ const Users = () => {
             items={usersData}
             fields={[
               { key: 'Category_Name', _classes: 'font-weight-bold' },
-              'Image', 'Calories',
+              'VideoOrImage', 'Calories_burnt',
             ]}
             hover
             striped

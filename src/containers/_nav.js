@@ -103,12 +103,7 @@ const _nav =  [
             name:'Programs',
             to:'/Videolisting',
           },
-          {
-            _tag: 'CSidebarNavItem',
-            name: 'ProgramSearch & Filtering',
-            to: '/Filtering',
-           
-          },  {
+            {
             _tag: 'CSidebarNavItem',
             name: 'Subscribe without payment',
             to: '/addvideo',
@@ -133,12 +128,12 @@ icon: 'cil-notes',
 _children:[
   {
     _tag: 'CSidebarNavItem',
-    name: 'Instructor',
+    name: 'Inst Excr Deatials',
     to: '/ProgramInstructor',
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Exercise Name',
+    name: 'Cust Excr Deatials',
     to: '/ExerciseName',
   },
   {
@@ -166,7 +161,7 @@ _children:[
   {
     _tag: 'CSidebarNavItem',
   name: ' Category Management ',
-  to: '',
+  to: '/Categorymanagement',
   icon: 'cil-moon',
   
 },
