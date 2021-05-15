@@ -50,9 +50,9 @@ const Users = () => {
           <CCardHeader>
           <div style={{display:"flex"}}>
     <div style={{width:"84%"}}>Trainers</div>
-    <div style={{width:"22%"}}><Link to="" className="nav-link"><button ><Search/>Search</button></Link></div>
-    <div  style={{width:"21%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/>Filter</button></Link></div>
-    <div style={{width:"20%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
+    <div style={{width:"11%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"11%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
 </div>            
             <small className="text-muted"> </small>
           </CCardHeader>
@@ -61,7 +61,7 @@ const Users = () => {
             items={usersData}
             fields={[
               { key: 'slno', _classes: 'font-weight-bold' },
-              'Full_Name', 'Email_ID', 'Phone_Number','Created_Date', 'status','Action'
+              'FirstName','LastName','Email','Role','ProfilePicture','Age','Weight','Height','Gender','PhoneNumber','Career','introduction','Briefhistory','Specializedin','Status','Posttype','Numberofapplicants','Numberofattendees','Numberofsubscribers'
             ]}
             hover
             striped

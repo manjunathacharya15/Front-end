@@ -51,8 +51,8 @@ const Users = () => {
           <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Customer Exercise Details</div>
   
-    <div style={{width:"20%"}}><Link to="" className="nav-link"><button ><Search/>Search</button></Link></div>
-    <div  style={{width:"18%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/>Filter</button></Link></div>
+    <div style={{width:"9%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"15%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
 
 </div>               
             <small className="text-muted"> </small>

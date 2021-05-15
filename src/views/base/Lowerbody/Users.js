@@ -50,10 +50,10 @@ const Users = () => {
           <CCardHeader>
           <div style={{display:"flex"}}>
     <div style={{width:"82%"}}>Lowerbody</div>
-    <div style={{width:"22%"}}><Link to="" className="nav-link"><button ><Search/>Search</button></Link></div>
-    <div  style={{width:"21%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/>Filter</button></Link></div>
+    <div style={{width:"10%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"9%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
     
-    <div style={{width:"20%"}}> <Link to="/come" className="nav-link"><button type="submit" value="AddNewUser" >AddNewLowerbody+</button></Link></div>
+    <div style={{width:"24%"}}> <Link to="/come" className="nav-link"><button type="submit" value="AddNewUser" >AddNewLowerbody+</button></Link></div>
     
 </div> 
 

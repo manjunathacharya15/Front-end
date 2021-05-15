@@ -53,8 +53,8 @@ const Users = () => {
     <div style={{width:"82%"}}>Category</div>
     
 
-    <div style={{width:"22%"}}><Link to="" className="nav-link"><button ><Search/>Search</button></Link></div>
-    <div  style={{width:"18%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/>Filter</button></Link></div>
+    <div style={{width:"10%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"18%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
 
    
 

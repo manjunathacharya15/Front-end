@@ -126,16 +126,7 @@ name: 'Content Management',
 to: '',
 icon: 'cil-notes',
 _children:[
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Inst Excr Deatials',
-    to: '/ProgramInstructor',
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Cust Excr Deatials',
-    to: '/ExerciseName',
-  },
+  
   {
     _tag: 'CSidebarNavItem',
     name: 'FAQ',
@@ -159,10 +150,27 @@ _children:[
     
     
   {
-    _tag: 'CSidebarNavItem',
+    _tag: 'CSidebarNavDropdown',
   name: ' Category Management ',
-  to: '/Categorymanagement',
+  to: '',
   icon: 'cil-moon',
+  _children:[
+    {
+      _tag: 'CSidebarNavItem',
+      name: 'Category ',
+      to: '/Categorymanagement',
+    },
+    {
+      _tag: 'CSidebarNavItem',
+      name: 'Inst Excr Details',
+      to: '/ProgramInstructor',
+    },
+    {
+      _tag: 'CSidebarNavItem',
+      name: 'Cust Excr Details',
+      to: '/ExerciseName',
+    },
+  ]
   
 },
  

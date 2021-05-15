@@ -49,9 +49,9 @@ const Users = () => {
           <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Category Management</div>
     
-    <div style={{width:"15%"}}> <Link to="/newcategory" className="nav-link"><button type="submit" value="AddNewUser" >NewCategory+</button></Link></div>
-    <div style={{width:"20%"}}> <Link to="/updatecategory" className="nav-link"><button type="submit" value="AddNewUser" >UpdateCategory+</button></Link></div>
-    <div style={{width:"35%"}}> <Link to="/activate" className="nav-link"><button type="submit" value="AddNewUser" >Activate/DeActivate   +</button></Link></div>
+    <div style={{width:"15%"}}> <Link to="/newcategory" className="nav-link"><button type="submit" value="AddNewUser" >NewCategory</button></Link></div>
+    <div style={{width:"20%"}}> <Link to="/updatecategory" className="nav-link"><button type="submit" value="AddNewUser" >UpdateCategory</button></Link></div>
+    <div style={{width:"35%"}}> <Link to="/activate" className="nav-link"><button type="submit" value="AddNewUser" >Activate/DeActivate   </button></Link></div>
 </div> 
 
             <small className="text-muted"> </small>
@@ -60,8 +60,8 @@ const Users = () => {
           <CDataTable
             items={usersData}
             fields={[
-              { key: 'Sr.no', _classes: 'font-weight-bold' },
-              
+              { key: 'Category_name', _classes: 'font-weight-bold' },
+              'Image', 'Calories_burnt'
             ]}
             hover
             striped

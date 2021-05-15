@@ -53,13 +53,13 @@ const Users = () => {
     <div style={{width:"82%"}}>Instructor Exercise Details</div>
     
 
-    <div style={{width:"20%"}}><Link to="" className="nav-link"><button ><Search/>Search</button></Link></div>
-    <div  style={{width:"13%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/>Filter</button></Link></div>
+    <div style={{width:"9%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"15%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
 
    
 
                 
-    <div style={{width:"18%"}}> </div>
+    
 </div>               
             <small className="text-muted"> </small>
           </CCardHeader>

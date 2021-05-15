@@ -53,9 +53,9 @@ const Users = () => {
           <CCardHeader>
           <div style={{display:"flex"}}>
     <div style={{width:"82%"}}>Videos</div>
-    <div style={{width:"22%"}}><Link to="" className="nav-link"><button ><Search/>Search</button></Link></div>
-    <div  style={{width:"21%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/>Filter</button></Link></div>
-    <div style={{width:"20%"}}> <Link to="/videos" className="nav-link"><button type="submit" value="AddNewUser" >AddNewVideo+</button></Link></div>
+    <div style={{width:"9%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"9%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{width:"23%"}}> <Link to="/videos" className="nav-link"><button type="submit" value="AddNewUser" >AddNewVideo+</button></Link></div>
    
 </div>      
             <small className="text-muted"> </small>

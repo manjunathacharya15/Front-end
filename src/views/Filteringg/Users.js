@@ -82,7 +82,7 @@ const Users = () => {
             activePage={page}
             onActivePageChange={pageChange}
             pages={5}
-            doubleArrows={false} 
+            doubleArrowsdads={false} 
             align="center"
           />
           </CCardBody>
