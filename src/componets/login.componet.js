@@ -152,7 +152,7 @@ export default class CreateExercise extends Component {
 
     console.log(customer);
 
-    axios.post('http://localhost:80/customers/signup', customer)
+    axios.post('https://vast-river-32952.herokuapp.com/customers/signup', customer)
       .then(res => console.log(res.data));
   }
 

@@ -37,7 +37,7 @@ export default class CustomersList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:80/customers/')
+    axios.get('https://vast-river-32952.herokuapp.com/customers/')
       .then(response => {
         this.setState({ customers: response.data })
       })
@@ -47,7 +47,7 @@ export default class CustomersList extends Component {
   }
 
   deleteCustomer(id) {
-    axios.delete('http://localhost:80/customers/'+id)
+    axios.delete('https://vast-river-32952.herokuapp.com/customers/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
