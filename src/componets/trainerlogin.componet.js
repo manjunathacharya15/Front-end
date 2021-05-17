@@ -10,9 +10,12 @@ export default class CreateExercise extends Component {
     this.onChangefirstname = this.onChangefirstname.bind(this);
     this.onChangelastname = this.onChangelastname.bind(this);
     this.onChangeemail=this.onChangeemail.bind(this);
-    this.onChangepassword=this.onChangepassword.bind(this);
-
+    this.onChangepassword=this.onChangepassword.bind(this)
+    this.onChangephonenumber=this.onChangephonenumber.bind(this);
+    this.onChangerole=this.onChangerole.bind(this)
     this.onChangegender=this.onChangegender.bind(this);
+    this.onChangestatus=this.onChangestatus.bind(this)
+    this.onChangeposttype=this.onChangeposttype.bind(this)
     this.onChangeage=this.onChangeage.bind(this);
     this.onChangeweight=this.onChangeweight.bind(this);
     this.onChangeheight=this.onChangeheight.bind(this);
@@ -20,9 +23,9 @@ export default class CreateExercise extends Component {
     this.onChangeintroduction=this.onChangeintroduction.bind(this);
     this.onChangebriefhistory=this.onChangebreifhistory.bind(this);
     this.onChangespecializedin=this.onChangespecializedin.bind(this);
-    this.onChangenoofapplicants=this.onChangenoofapplicants.bind(this);
-    this.onChangenoofattendees=this.onChangenoofattendees.bind(this);
-    this.onChangenoofsubscribers=this.onChangenoofsubscribers.bind(this);
+    this.onChangenumberofapplicants=this.onChangenumberofapplicants.bind(this);
+    this.onChangenumberofattendees=this.onChangenumberofattendees.bind(this);
+    this.onChangenumberofsubscribers=this.onChangenumberofsubscribers.bind(this);
     
     
 
@@ -33,8 +36,11 @@ export default class CreateExercise extends Component {
       lastname: '',
       email:'',
       password:'',
+      role:'',
+      phonenumber:'',
+      status:'',
+      posttype:'',
       gender:'',
-     
       age:'',
       weight:'',
       height:'',
@@ -42,9 +48,9 @@ export default class CreateExercise extends Component {
       introduction:'',
       briefhistory:'',
       specializedin:'',
-      noofapplicants:'',
-      noofattendees:'',
-      noofsubscribers:'',
+      numberofapplicants:'',
+      numberofattendees:'',
+      numberofsubscribers:'',
       trainer:[]
       
       
@@ -79,6 +85,27 @@ export default class CreateExercise extends Component {
       gender: e.target.value
     })
   }
+  onChangerole(e) {
+    this.setState({
+      role: e.target.value
+    })
+  }
+  onChangephonenumber(e) {
+    this.setState({
+      phonenumber: e.target.value
+    })
+  }
+  onChangestatus(e) {
+    this.setState({
+      status: e.target.value
+    })
+  }
+  onChangeposttype(e) {
+    this.setState({
+      posttype: e.target.value
+    })
+  }
+
   onChangeage(e) {
     this.setState({
       age: e.target.value
@@ -114,17 +141,17 @@ export default class CreateExercise extends Component {
       specializedin: e.target.value
     })
   }
-  onChangenoofapplicants(e) {
+  onChangenumberofapplicants(e) {
     this.setState({
       noofapplicants: e.target.value
     })
   }
-  onChangenoofattendees(e) {
+  onChangenumberofattendees(e) {
     this.setState({
       noofattendees: e.target.value
     })
   }
-  onChangenoofsubscribers(e) {
+  onChangenumberofsubscribers(e) {
     this.setState({
       noofsubscribers: e.target.value
     })
@@ -138,6 +165,10 @@ export default class CreateExercise extends Component {
       lastname: this.state.lastname,
       email: this.state.email,
       password:this.state.password,
+      role:this.state.role,
+      phonenumber:this.state.phonenumber,
+      status:this.state.status,
+      posttype:this.state.posttype,
       gender: this.state.gender,
       age: this.state.age,
       weight: this.state.weight,
@@ -146,9 +177,9 @@ export default class CreateExercise extends Component {
       introduction: this.state.introduction,
       briefhistory: this.state.briefhistory,
       specializedin: this.state.specializedin,
-      noofapplicants: this.state.noofapplicants,
-      noofattendees: this.state.noofattendees,
-      noofsubscribers: this.state.noofsubscribers,
+      numberofapplicants: this.state.numberofapplicants,
+      numberofattendees: this.state.numberofattendees,
+      numberofsubscribers: this.state.numberofsubscribers,
 
     }
 
@@ -189,6 +220,7 @@ export default class CreateExercise extends Component {
               value={this.state.email}
               onChange={this.onChangeemail}
               />
+              
         </div>
         <div className="form-group">
           <label>Password </label>
@@ -200,6 +232,7 @@ export default class CreateExercise extends Component {
               />
         </div>
         
+        
         <div className="form-group">
           <label>Gender </label>
           <input 
@@ -207,6 +240,42 @@ export default class CreateExercise extends Component {
               className="form-control"
               value={this.state.gender}
               onChange={this.onChangegender}
+              />
+        </div>
+        <div className="form-group">
+          <label>Role </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.role}
+              onChange={this.onChangerole}
+              />
+        </div>
+        <div className="form-group">
+          <label>PhoneNumber </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.phonenumber}
+              onChange={this.onChangephonenumber}
+              />
+        </div>
+        <div className="form-group">
+          <label>Status </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.status}
+              onChange={this.onChangestatus}
+              />
+        </div>
+        <div className="form-group">
+          <label>Posttype </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.posttype}
+              onChange={this.onChangeposttype}
               />
         </div>
         <div className="form-group">
@@ -277,8 +346,8 @@ export default class CreateExercise extends Component {
           <input 
               type="text" 
               className="form-control"
-              value={this.state.noofapplicants}
-              onChange={this.onChangenoofapplicants}
+              value={this.state.numberofapplicants}
+              onChange={this.onChangenumberofapplicants}
               />
         </div>
         <div className="form-group">
@@ -286,8 +355,8 @@ export default class CreateExercise extends Component {
           <input 
               type="text" 
               className="form-control"
-              value={this.state.noofattendees}
-              onChange={this.onChangenoofattendees}
+              value={this.state.numberofattendees}
+              onChange={this.onChangenumberofattendees}
               />
         </div>
         <div className="form-group">
@@ -295,8 +364,8 @@ export default class CreateExercise extends Component {
           <input 
               type="text" 
               className="form-control"
-              value={this.state.noofsubscribers}
-              onChange={this.onChangenoofsubscribers}
+              value={this.state.numnerofsubscribers}
+              onChange={this.onChangenumberofsubscribers}
               />
         </div>
         <div className="form-group">
