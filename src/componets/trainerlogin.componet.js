@@ -21,7 +21,7 @@ export default class CreateExercise extends Component {
     this.onChangeheight=this.onChangeheight.bind(this);
     this.onChangecareer=this.onChangecareer.bind(this);
     this.onChangeintroduction=this.onChangeintroduction.bind(this);
-    this.onChangebriefhistory=this.onChangebreifhistory.bind(this);
+    this.onChangebriefhistory=this.onChangebriefhistory.bind(this);
     this.onChangespecializedin=this.onChangespecializedin.bind(this);
     this.onChangenumberofapplicants=this.onChangenumberofapplicants.bind(this);
     this.onChangenumberofattendees=this.onChangenumberofattendees.bind(this);
@@ -131,7 +131,7 @@ export default class CreateExercise extends Component {
       introduction: e.target.value
     })
   }
-  onChangebreifhistory(e) {
+  onChangebriefhistory(e) {
     this.setState({
       briefhistory: e.target.value
     })
@@ -143,17 +143,17 @@ export default class CreateExercise extends Component {
   }
   onChangenumberofapplicants(e) {
     this.setState({
-      noofapplicants: e.target.value
+      numberofapplicants: e.target.value
     })
   }
   onChangenumberofattendees(e) {
     this.setState({
-      noofattendees: e.target.value
+      numberofattendees: e.target.value
     })
   }
   onChangenumberofsubscribers(e) {
     this.setState({
-      noofsubscribers: e.target.value
+      numberofsubscribers: e.target.value
     })
   }
  
@@ -329,7 +329,7 @@ export default class CreateExercise extends Component {
               type="text" 
               className="form-control"
               value={this.state.briefhistory}
-              onChange={this.onChangebreifhistory}
+              onChange={this.onChangebriefhistory}
               />
         </div>
         <div className="form-group">
