@@ -5,9 +5,9 @@ import CIcon from '@coreui/icons-react'
 import usersData from './UsersData'
 
 const User = ({match}) => {
-  const user = usersData.find( user => user.slno.toString() === match.params.slno)
+  const user = usersData.find( user => user._id.toString() === match.params._id)
   const userDetails = user ? Object.entries(user) : 
-    [['slno', (<span><CIcon className="text-muted" name="cui-icon-ban" /> Not found</span>)]]
+    [['_id', (<span><CIcon className="text-muted" name="cui-icon-ban" /> Not found</span>)]]
 
   return (
     <div class="container">
@@ -20,7 +20,7 @@ const User = ({match}) => {
       <CCol sm={8}>
         <CCard>
           <CCardHeader>
-            User slno: {match.params.slno}
+            User _id: {match.params._id}
           </CCardHeader>
           <CCardBody>
               <table className="table table-striped table-hover">

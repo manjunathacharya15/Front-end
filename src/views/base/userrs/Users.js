@@ -1,98 +1,104 @@
-import React, { useState, useEffect } from 'react'
-import { Link,useHistory, useLocation } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
 import Search from '@material-ui/icons/SearchRounded';
-import {
-  CBadge,
-  CCard,
-  CCardBody,
-  CCardHeader,
-  CCol,
-  CDataTable,
-  CRow,
-  CPagination
-} from '@coreui/react'
 
-import usersData from './TrainerData'
+const Customer = props => (
+  <tr>
+    <td>{props.customer.firstname}</td>
+    <td>{props.customer.lastname}</td>
+    <td>{props.customer.email}</td>
+    <td>{props.customer.role}</td>
+    <td>{props.customer.age}</td>
+    <td>{props.customer.weight}</td>
+    <td>{props.customer.height}</td>
+    <td>{props.customer.address}</td>
+    <td>{props.customer.currentplan}</td>
+    <td>{props.customer.nextrenewdate}</td>
+    <td>{props.customer.numberofexercises}</td>
+    <td>{props.customer.timedurationofallexercises}</td>
+    <td>{props.customer.totalcaloriesburnt}</td>
+    <td>{props.customer.phonenumber}</td>
+    
+    <td>
+      <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
+    </td>
+  </tr>
+)
 
-const getBadge = status => {
-  switch (status) {
-    case 'Active': return 'success'
-    case 'Inactive': return 'secondary'
-    case 'Pending': return 'warning'
-    case 'Banned': return 'danger'
-    default: return 'primary'
+export default class CustomersList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.deleteCustomer = this.deleteCustomer.bind(this)
+
+    this.state = {customers: []};
   }
-}
 
-const Users = () => {
-  const history = useHistory()
-  const queryPage = useLocation().search.match(/page=([0-9]+)/, '')
-  const currentPage = Number(queryPage && queryPage[1] ? queryPage[1] : 1)
-  const [page, setPage] = useState(currentPage)
-
-  const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/userrs?page=${newPage}`)
+  componentDidMount() {
+    axios.get('http://localhost:80/instructors/')
+      .then(response => {
+        this.setState({ customers: response.data })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
-  useEffect(() => {
-    currentPage !== page && setPage(currentPage)
-  }, [currentPage, page])
+  deleteCustomer(id) {
+    axios.delete('http://localhost:80/instructors/'+id)
+      .then(response => { console.log(response.data)});
 
-  return (
-    <div class="container">
+    this.setState({
+      customers: this.state.customers.filter(el => el._id !== id)
+    })
+  }
 
+  customerList() {
+    return this.state.customers.map(currentcustomer => {
+      return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
+    })
+  }
 
-
-    <div class="row">
-      <div class="col-md">
-        <CCard>
-          <CCardHeader>
-          <div style={{display:"flex"}}>
+  render() {
+    return (
+      <div>
+        <div style={{overflowX:"scroll"}}>
+        <div style={{display:"flex"}}>
     <div style={{width:"84%"}}>Trainers</div>
     <div style={{width:"11%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
     <div  style={{width:"11%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
-    <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
+    <div style={{width:"22%"}}><Link to="/welcome" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewUser+</button></Link></div>
 </div>            
-            <small className="text-muted"> </small>
-          </CCardHeader>
-          <CCardBody>
-          <CDataTable
-            items={usersData}
-            fields={[
-              { key: 'slno', _classes: 'font-weight-bold' },
-              'FirstName','LastName','Email','Role','ProfilePicture','Age','Weight','Height','Gender','PhoneNumber','Career','introduction','Briefhistory','Specializedin','Status','Posttype','Numberofapplicants','Numberofattendees','Numberofsubscribers'
-            ]}
-            hover
-            striped
-            itemsPerPage={5}
-            activePage={page}
-            clickableRows
-            onRowClick={(item) => history.push(`/userrs/${item.id}`)}
-            scopedSlots = {{
-              'status':
-                (item)=>(
-                  <td>
-                    <CBadge color={getBadge(item.status)}>
-                      {item.status}
-                    </CBadge>
-                  </td>
-                )
-            }}
-          />
-          <CPagination
-            activePage={page}
-            onActivePageChange={pageChange}
-            pages={5}
-            doubleArrows={false} 
-            align="center"
-          />
-          </CCardBody>
-        </CCard>
-     </div>
-     </div>
-     </div>
-  )
+        <table className="table">
+          <thead className="thead-light">
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Age</th>
+              <th>Weight</th>
+              <th>Height</th>
+              <th>Address</th>
+              <th>Currentplan</th>
+              <th>Nextrenewdate</th>
+              <th>Numberofexercises</th>
+              <th>TimeDurationAllExercises</th>
+              <th>TotalCaloriesBurnt</th>
+              <th>PhoneNumber</th>
+              <th>Actions</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            { this.customerList() }
+          </tbody>
+        </table>
+        </div>
+        
+      </div>
+    )
+  }
 }
-
-export default Users
