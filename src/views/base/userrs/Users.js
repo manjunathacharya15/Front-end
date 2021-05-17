@@ -18,9 +18,13 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.introduction}</td>
     <td style={{border:"3px double green"}}>{props.customer.briefhistory}</td>
     <td style={{border:"3px double green"}}>{props.customer.specializedin}</td>
-    <td style={{border:"3px double green"}}>{props.customer.noofapplicants}</td>
-    <td style={{border:"3px double green"}}>{props.customer.noofattendees}</td>
-    <td style={{border:"3px double green"}}>{props.customer.noofsubscribers}</td>
+    <td style={{border:"3px double green"}}>{props.customer.numberofapplicants}</td>
+    <td style={{border:"3px double green"}}>{props.customer.numberofattendees}</td>
+    <td style={{border:"3px double green"}}>{props.customer.numberofsubscribers}</td>
+    <td style={{border:"3px double green"}}>{props.customer.status}</td>
+    <td style={{border:"3px double green"}}>{props.customer.phonenumber}</td>
+    <td style={{border:"3px double green"}}>{props.customer.posttype}</td>
+
     
     <td>
       <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
@@ -83,10 +87,11 @@ export default class CustomersList extends Component {
               <th style={{border:"3px double green"}}>FirstName</th>
               <th style={{border:"3px double green"}}>LastName</th>
               <th style={{border:"3px double green"}}>Email</th>
-              <th style={{border:"3px double green"}}>Phone</th>
-              <th style={{border:"3px double green"}}>Phone</th>
-              <th style={{border:"3px double green"}} >Phone</th>
               <th style={{border:"3px double green"}}>Gender</th>
+              <th style={{border:"3px double green"}}>Status</th>
+              <th style={{border:"3px double green"}}>Phonenumber</th>
+              <th style={{border:"3px double green"}}>Posttype</th>
+              <th style={{border:"3px double green"}}>Role</th>
               <th style={{border:"3px double green"}}>Age</th>
               <th style={{border:"3px double green"}}>Weight</th>
               <th style={{border:"3px double green"}}>Height</th>
