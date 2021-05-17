@@ -73,8 +73,8 @@ export default class CustomersList extends Component {
 
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Customer</div>
-    <div style={{width:"4%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"4%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{width:"5%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"5%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
     <div style={{width:"22%"}}><Link to="/welcome" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewUser+</button></Link></div>
 </div>
         <div style={{overflowX:"scroll"}}>
