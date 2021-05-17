@@ -37,7 +37,7 @@ export default class CustomersList extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://vast-river-32952.herokuapp.com/customers/')
+    axios.get('https://vast-river-32952.herokuapp.com/cust/')
       .then(response => {
         this.setState({ customers: response.data })
       })
