@@ -42,49 +42,10 @@ const _nav =  [
  
     },
     {
-      _tag: 'CSidebarNavDropdown',
+      _tag: 'CSidebarNavItem',
   name: 'PACKAGES',
-    to: '',
+    to: '/packages',
     icon: 'cil-storage',
-    _children:[
-      {
-        _tag: 'CSidebarNavItem',
-      name: ' Category',
-      to: '/catagory',
-     
-     
-      },
-     
-      {
-        _tag: 'CSidebarNavDropdown',
-    name: 'SubCategory',
-    to: '',
-    _children:[
-      {
-        _tag:'CSidebarNavItem',
-        name:'Upperbody',
-        to:'/Upperbody'
-      },
-      {
-        _tag:'CSidebarNavItem',
-        name:'Lowerbody',
-        to:'/Lowerbody'
-
-      }
-    ]
-    
-      },
-     {
-            _tag: 'CSidebarNavItem',
-          name: 'Videos',
-          to: '/video',
-         },
-         {
-          _tag: 'CSidebarNavItem',
-        name: 'Packages',
-        to: '/Packages',
-       },
-    ]
  
     },
     {
@@ -103,6 +64,11 @@ const _nav =  [
             name:'Programs',
             to:'/Videolisting',
           },
+          {
+            _tag: 'CSidebarNavItem',
+          name: 'Videolisting',
+          to: '/video',
+         },
             {
             _tag: 'CSidebarNavItem',
             name: 'Subscribe without payment',
@@ -110,7 +76,7 @@ const _nav =  [
           },
           {
             _tag: 'CSidebarNavItem',
-            name: 'VideoListing',
+            name: 'Liveclasses',
             to: '/VideoListingg',
           },
          
@@ -172,6 +138,12 @@ _children:[
     },
   ]
   
+},
+{
+  _tag: 'CSidebarNavItem',
+name: ' Payment List ',
+to: '/Lowerbody',
+icon: 'cil-moon',
 },
  
 

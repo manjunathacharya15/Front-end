@@ -1,103 +1,96 @@
-import React, { useState, useEffect } from 'react'
-import { Link,useHistory, useLocation } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
 import Search from '@material-ui/icons/SearchRounded';
-import {
-  CBadge,
-  CCard,
-  CCardBody,
-  CCardHeader,
-  CCol,
-  CDataTable,
-  CRow,
-  CPagination
-} from '@coreui/react'
 
-import usersData from './VideoData'
-
-
-const getBadge = status => {
-  switch (status) {
-    case 'Active': return 'success'
-    case 'Inactive': return 'secondary'
-    case 'Pending': return 'warning'
-    case 'Banned': return 'danger'
-    default: return 'primary'
-  }
-}
-
-const Users = () => {
-  const history = useHistory()
-  const queryPage = useLocation().search.match(/page=([0-9]+)/, '')
-  const currentPage = Number(queryPage && queryPage[1] ? queryPage[1] : 1)
-  const [page, setPage] = useState(currentPage)
-
-  const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/video?page=${newPage}`)
-  }
-
-  useEffect(() => {
-    currentPage !== page && setPage(currentPage)
-  }, [currentPage, page])
-
-  return (
-    <div class="container">
-
-
-
-    <div class="row">
-      <div class="col-md">
+const Customer = props => (
+  <tr>
+    <td style={{border:"3px double green"}}>{props.customer.exercisename}</td>
+    <td style={{border:"3px double green"}}>{props.customer.vname}</td>
+    <td style={{border:"3px double green"}}>{props.customer.exerciseduration}</td>
+    <td style={{border:"3px double green"}}>{props.customer.exerciseprice}</td>
+    <td style={{border:"3px double green"}}>{props.customer.access}</td>
+    <td style={{border:"3px double green"}}>{props.customer.status}</td>
     
     
-        <CCard>
-          <CCardHeader>
-          <div style={{display:"flex"}}>
-    <div style={{width:"82%"}}>Videos</div>
-    <div style={{width:"9%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"9%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
-    <div style={{width:"23%"}}> <Link to="/videos" className="nav-link"><button type="submit" value="AddNewUser" >AddNewVideo+</button></Link></div>
-   
-</div>      
-            <small className="text-muted"> </small>
-          </CCardHeader>
-          <CCardBody>
-          <CDataTable
-            items={usersData}
-            fields={[
-              { key: 'Sr.no', _classes: 'font-weight-bold' },
-              'Video Name', 'Catagory', 'Sub Catagory','Pakages', 'Action'
-            ]}
-            hover
-            striped
-            itemsPerPage={8}
-            activePage={page}
-            clickableRows
-            onRowClick={(item) => history.push(`/video/${item.id}`)}
-            scopedSlots = {{
-              'status':
-                (item)=>(
-                  <td>
-                    <CBadge color={getBadge(item.status)}>
-                      {item.status}
-                    </CBadge>
-                  </td>
-                )
-            }}
-          />
-          <CPagination
-            activePage={page}
-            onActivePageChange={pageChange}
-            pages={5}
-            doubleArrows={false} 
-            align="center"
-          />
-          </CCardBody>
-        </CCard>
-        </div>
-        </div>
-        </div>
-     
-  )
-}
+  </tr>
+)
 
-export default Users
+export default class CustomersList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.deleteCustomer = this.deleteCustomer.bind(this)
+
+    this.state = {customers: []};
+  }
+
+  componentDidMount() {
+    axios.get('https://obscure-shelf-98404.herokuapp.com/videos/')
+      .then(response => {
+        this.setState({ customers: response.data })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+  deleteCustomer(id) {
+    axios.delete('https://obscure-shelf-98404.herokuapp.com/videos/'+id)
+      .then(response => { console.log(response.data)});
+
+    this.setState({
+      customers: this.state.customers.filter(el => el._id !== id)
+    })
+  }
+
+  customerList() {
+    return this.state.customers.map(currentcustomer => {
+      return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <div class="container">
+
+
+
+<div class="row">
+  <div class="col-md">
+
+             <div style={{display:"flex"}}>
+    <div style={{width:"80%"}}>Videos</div>
+    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{width:"22%"}}><Link to="/videos" className="nav-link"><button type="submit" value="AddNewTrainer">Addvideo+</button></Link></div>
+</div>
+        <div style={{overflowX:"scroll"}}>
+               
+        <table className="table" style={{border:"3px double green"}}>
+          <thead className="thead-light">
+            <tr>
+              <th style={{border:"3px double green"}}>Exercisename</th>
+              <th style={{border:"3px double green"}}>Videoname</th>
+              <th style={{border:"3px double green"}}>Exerciseduration</th>
+              <th style={{border:"3px double green"}}>Exerciseprice</th>
+              <th style={{border:"3px double green"}}>Access</th>
+              <th style={{border:"3px double green"}}>Status</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            { this.customerList() }
+          </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+      </div>
+    )
+  }
+}

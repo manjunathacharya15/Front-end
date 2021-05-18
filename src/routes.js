@@ -146,7 +146,7 @@ const routes = [
   { path: '/video/:id', exact: true, name: 'User Details', component: Video },
   { path: '/Dashboards', exact: true,  name: 'Users', component: Dashboardss },
   { path: '/Dashboards/:id', exact: true, name: 'User Details', component: Dashboards },
-  { path: '/Lowerbody', exact: true,  name: 'Lowerbody', component: Subcatagorys },
+  { path: '/Lowerbody', exact: true,  name: 'Payment list', component: Subcatagorys },
   { path: '/Lowerbody/:id', exact: true, name: 'User Details', component: Subcatagory },
   { path: '/Packages', exact: true,  name: 'Packages', component: Packagess },
   { path: '/Packages/:id', exact: true, name: 'User Details', component: Packages },

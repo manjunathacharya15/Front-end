@@ -9,8 +9,11 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.firstname}</td>
     <td style={{border:"3px double green"}}>{props.customer.lastname}</td>
     <td style={{border:"3px double green"}}>{props.customer.email}</td>
-    <td style={{border:"3px double green"}}>{props.customer.role}</td>
     <td style={{border:"3px double green"}}>{props.customer.gender}</td>
+    <td style={{border:"3px double green"}}>{props.customer.status}</td>
+    <td style={{border:"3px double green"}}>{props.customer.phonenumber}</td>
+    <td style={{border:"3px double green"}}>{props.customer.posttype}</td>
+    <td style={{border:"3px double green"}}>{props.customer.role}</td>
     <td style={{border:"3px double green"}}>{props.customer.age}</td>
     <td  style={{border:"3px double green"}}>{props.customer.weight}</td>
     <td style={{border:"3px double green"}}>{props.customer.height}</td>
@@ -21,9 +24,8 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.numberofapplicants}</td>
     <td style={{border:"3px double green"}}>{props.customer.numberofattendees}</td>
     <td style={{border:"3px double green"}}>{props.customer.numberofsubscribers}</td>
-    <td style={{border:"3px double green"}}>{props.customer.status}</td>
-    <td style={{border:"3px double green"}}>{props.customer.phonenumber}</td>
-    <td style={{border:"3px double green"}}>{props.customer.posttype}</td>
+    
+    
 
     
     <td>
@@ -75,9 +77,9 @@ export default class CustomersList extends Component {
   <div class="col-md">
          <div style={{display:"flex"}}>
     <div style={{width:"84%"}}>Trainers</div>
-    <div style={{width:"5%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"5%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
-    <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewUser+</button></Link></div>
+    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
 </div>            
         <div style={{overflowX:"scroll"}}>
        

@@ -1,52 +1,159 @@
-import React,{Component} from 'react';
-export default class Videocomponet extends Component{
-    render(){
-        return(
-            <form  >
-                         <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">SLNO:</label>
-  <input type="number" id="email" placeholder=" SLNO" name="email"></input>
-  </div>
-  
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">VIDEO NAME:</label>
-  <input type="text" id="files" placeholder=" VIDEONAME" name="files"></input>
-  </div>
-  
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2"> CATEGORY:</label>
-  <input type="text" id="email" placeholder="CATEGORY " name="email"></input>
-  </div>
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">SUB CATEGORY:</label>
-  <input type="text" id="email" placeholder=" SUB CATEGORY" name="email"></input>
-  </div>
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">PACKAGES:</label>
-  <input type="text" id="text" placeholder=" PACKAGES" name="email"></input>
-  </div>
-  
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">ACTIONS:</label>
-  <input type="text" id="email" placeholder=" ACTIONS" name="email"></input>
-  </div>
+import React, { Component } from 'react';
+import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
+export default class CreateExercise extends Component {
+  constructor(props) {
+    super(props);
 
-  <div class="input-group mb-3">
-                       
-                        <input type="file" name="images" id="imgid" className="imgcls"  multiple/>
-  </div>
+    this.onChangeexercisename = this.onChangeexercisename.bind(this);
+    this.onChangevideoname = this.onChangevideoname.bind(this);
+    this.onChangeexerciseduration=this.onChangeexerciseduration.bind(this);
+    this.onChangeexerciseprice=this.onChangeexerciseprice.bind(this);
+    this.onChangeaccess=this.onChangeaccess.bind(this);
+    this.onChangestatus=this.onChangestatus.bind(this);
+   
+    
 
-                        
-     
-                        
-                        
-                
-               
-            <div> 
-                  <br/>   
-             <button type="submit" class="btn btn-default">Submit</button></div>
-                </form>
-        )
+    this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+      exercisename: '',
+      videoname: '',
+      exerciseduration:'',
+      exerciseprice:'',
+      access: '',
+      status:'',
+      
+      customer:[]
+      
+      
     }
+  }
+
+  onChangeexercisename(e) {
+    this.setState({
+      exercisename: e.target.value
+    })
+  }
+
+  onChangevideoname(e) {
+    this.setState({
+      videoname: e.target.value
+    })
+  }
+  onChangeexerciseduration(e) {
+    this.setState({
+      exerciseduration: e.target.value
+    })
+  }
+  
+
+  onChangeexerciseprice(e) {
+    this.setState({
+      exerciseprice: e.target.value
+    })
+  }
+  onChangeaccess(e) {
+    this.setState({
+      access: e.target.value
+    })
+  }
+  onChangestatus(e) {
+    this.setState({
+      status: e.target.value
+    })
+  }
+ 
+  
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const customer = {
+      exercisename: this.state.exercisename,
+      vname: this.state.videoname,
+      exerciseduration: this.state.exerciseduration,
+      exerciseprice:this.state.exerciseprice,
+      access: this.state.access,
+      status: this.state.status,
+      
+
+    }
+
+    console.log(customer);
+
+    axios.post('https://obscure-shelf-98404.herokuapp.com/videos/add', customer)
+      .then(res => console.log(res.data));
+  }
+
+  render() {
+    return (
+    <div>
+      <h3>Create Videos </h3>
+      <form onSubmit={this.onSubmit}>
+      <div className="form-group"> 
+          <label>Exercisename: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.exercisename}
+              onChange={this.onChangeexercisename}
+              />
+        </div>
+        <div className="form-group"> 
+          <label>Videoname: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.videoname}
+              onChange={this.onChangevideoname}
+              />
+        </div>
+        <div className="form-group">
+          <label>Exerciseduration </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.exerciseduration}
+              onChange={this.onChangeexerciseduration}
+              />
+        </div>
+        <div className="form-group">
+          <label>Exerciseprice </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.exerciseprice}
+              onChange={this.onChangeexerciseprice}
+              />
+        </div>
+        
+        <div className="form-group">
+          <label>Access </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.access}
+              onChange={this.onChangeaccess}
+              />
+        </div>
+        <div className="form-group">
+          <label>Staus </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.status}
+              onChange={this.onChangestatus}
+              />
+        </div>
+       
+        <div className="form-group">
+          <input type="submit" value="Create videos" className="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+    )
+  }
 }
