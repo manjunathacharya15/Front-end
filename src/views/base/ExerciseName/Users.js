@@ -1,99 +1,99 @@
-import React, { useState, useEffect } from 'react'
-import { Link,useHistory, useLocation } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
 import Search from '@material-ui/icons/SearchRounded';
-import {
-  CBadge,
-  CCard,
-  CCardBody,
-  CCardHeader,
-  CCol,
-  CDataTable,
-  CRow,
-  CPagination
-} from '@coreui/react'
 
-import usersData from './ExercisenameData'
 
-const getBadge = status => {
-  switch (status) {
-    case 'Active': return 'success'
-    case 'Inactive': return 'secondary'
-    case 'Pending': return 'warning'
-    case 'Banned': return 'danger'  
-    default: return 'primary'
-  }
-}
+const Customer = props => (
+  <tr>
+    <td style={{border:"3px double green"}}>{props.customer.cname}</td>
+    <td style={{border:"3px double green"}}>{props.customer.image}</td>
+    <td style={{border:"3px double green"}}>{props.customer.caloriesburnt}</td>
+    <td>
+      <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
+    </td>
+    
+  </tr>
+)
 
-const Users = () => {
-  const history = useHistory()
-  const queryPage = useLocation().search.match(/page=([0-9]+)/, '')
-  const currentPage = Number(queryPage && queryPage[1] ? queryPage[1] : 1)
-  const [page, setPage] = useState(currentPage)
+export default class CustomersList extends Component {
+  constructor(props) {
+    super(props);
 
-  const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/ExerciseName?page=${newPage}`)
+    this.deleteCustomer = this.deleteCustomer.bind(this)
+
+    this.state = {customers: []};
   }
 
-  useEffect(() => {
-    currentPage !== page && setPage(currentPage)
-  }, [currentPage, page])
+  componentDidMount() {
+    axios.get('')
+      .then(response => {
+        this.setState({ customers: response.data })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
-  return (
-    <div class="container">
+  deleteCustomer(id) {
+    axios.delete(''+id)
+      .then(response => { console.log(response.data)});
+
+    this.setState({
+      customers: this.state.customers.filter(el => el._id !== id)
+    })
+  }
+
+  customerList() {
+    return this.state.customers.map(currentcustomer => {
+      return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <div class="container">
 
 
 
-    <div class="row">
-      <div class="col-md">
-        <CCard>
-          <CCardHeader>
-          <div style={{display:"flex"}}>
+<div class="row">
+  <div class="col-md">
+
+             <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Customer Exercise Details</div>
-  
-    <div style={{width:"9%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"15%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div  style={{width:"22%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    
+    
+    
 
-</div>               
-            <small className="text-muted"> </small>
-          </CCardHeader>
-          <CCardBody>
-          <CDataTable 
-            items={usersData}
-            fields={[
-              { key: 'Category_Name', _classes: 'font-weight-bold' },
-              'VideoOrImage','Calories_Burnt'
-            ]}
-            hover
-            striped
-            itemsPerPage={10}
-            activePage={page}
-            clickableRows
-            onRowClick={(item) => history.push(`/ExerciseName/${item.Program_name}`)}
-            scopedSlots = {{
-              'status':
-                (item)=>(
-                  <td>
-                    <CBadge color={getBadge(item.status)}>
-                      {item.status}
-                    </CBadge>
-                  </td>
-                )
-            }}
-          />
-          <CPagination
-            activePage={page}
-            onActivePageChange={pageChange}
-            pages={5}
-            doubleArrows={false} 
-            align="center"
-          />
-          </CCardBody>
-        </CCard>
+    
+</div>
+        <div style={{overflowX:"scroll"}}>
+               
+        <table className="table" style={{border:"3px double green"}}>
+          <thead className="thead-light">
+            <tr>
+              <th style={{border:"3px double green"}}>Category Name</th>
+              <th style={{border:"3px double green"}}>Image/Video</th>
+              <th style={{border:"3px double green"}}>Calories Burnt</th>
+              <th style={{border:"3px double green"}}>Actions</th>
+              
+             
+            </tr>
+          </thead>
+          <tbody>
+            { this.customerList() }
+          </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+        </div>
+        
       </div>
-      </div>
-      </div>
-  )
+    )
+  }
 }
-
-export default Users

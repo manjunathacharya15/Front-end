@@ -72,10 +72,10 @@ export default class CustomersList extends Component {
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>Exercisename</th>
-              <th style={{border:"3px double green"}}>Videoname</th>
-              <th style={{border:"3px double green"}}>Exerciseduration</th>
-              <th style={{border:"3px double green"}}>Exerciseprice</th>
+              <th style={{border:"3px double green"}}>Exercise Name</th>
+              <th style={{border:"3px double green"}}>Video Name</th>
+              <th style={{border:"3px double green"}}>Exercise Duration</th>
+              <th style={{border:"3px double green"}}>Exercise Price</th>
               <th style={{border:"3px double green"}}>Access</th>
               <th style={{border:"3px double green"}}>Status</th>
               

@@ -82,20 +82,20 @@ export default class CustomersList extends Component {
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>FirstName</th>
-              <th style={{border:"3px double green"}}>LastName</th>
+              <th style={{border:"3px double green"}}>First Name</th>
+              <th style={{border:"3px double green"}}>Last Name</th>
               <th style={{border:"3px double green"}}>Email</th>
               <th style={{border:"3px double green"}}>Role</th>
               <th style={{border:"3px double green"}}>Age</th>
               <th style={{border:"3px double green"}}>Weight</th>
               <th style={{border:"3px double green"}}>Height</th>
               <th style={{border:"3px double green"}}>Address</th>
-              <th style={{border:"3px double green"}}>Currentplan</th>
-              <th style={{border:"3px double green"}}>Nextrenewdate</th>
-              <th style={{border:"3px double green"}}>Numberofexercises</th>
-              <th style={{border:"3px double green"}}>TimeDurationAllExercises</th>
-              <th style={{border:"3px double green"}}>TotalCaloriesBurnt</th>
-              <th style={{border:"3px double green"}}>PhoneNumber</th>
+              <th style={{border:"3px double green"}}>Current Plan</th>
+              <th style={{border:"3px double green"}}>Next Renew Date</th>
+              <th style={{border:"3px double green"}}>Number Of Exercises</th>
+              <th style={{border:"3px double green"}}>Time Duration All Exercises</th>
+              <th style={{border:"3px double green"}}>Total Calories Burnt</th>
+              <th style={{border:"3px double green"}}>Phone Number</th>
               <th style={{border:"3px double green"}}>Actions</th>
              
             </tr>

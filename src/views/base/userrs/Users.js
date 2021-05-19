@@ -86,21 +86,21 @@ export default class CustomersList extends Component {
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>FirstName</th>
-              <th style={{border:"3px double green"}}>LastName</th>
+              <th style={{border:"3px double green"}}>First Name</th>
+              <th style={{border:"3px double green"}}>Last Name</th>
               <th style={{border:"3px double green"}}>Email</th>
               <th style={{border:"3px double green"}}>Gender</th>
               <th style={{border:"3px double green"}}>Status</th>
-              <th style={{border:"3px double green"}}>Phonenumber</th>
-              <th style={{border:"3px double green"}}>Posttype</th>
+              <th style={{border:"3px double green"}}>Phone Number</th>
+              <th style={{border:"3px double green"}}>Post Type</th>
               <th style={{border:"3px double green"}}>Role</th>
               <th style={{border:"3px double green"}}>Age</th>
               <th style={{border:"3px double green"}}>Weight</th>
               <th style={{border:"3px double green"}}>Height</th>
               <th style={{border:"3px double green"}}>Career</th>
               <th style={{border:"3px double green"}}>Introduction</th>
-              <th style={{border:"3px double green"}}>Briefhistory</th>
-              <th style={{border:"3px double green"}}>SpecializedIn</th>
+              <th style={{border:"3px double green"}}>Brief History</th>
+              <th style={{border:"3px double green"}}>Specialized In</th>
               <th style={{border:"3px double green"}}>No.of.applicants</th>
               <th style={{border:"3px double green"}}>No.of.attendees</th>
               <th style={{border:"3px double green"}}>No.of.subscribers</th>

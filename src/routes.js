@@ -86,6 +86,7 @@ const Categorymanagement=React.lazy(() => import('./views/base/Categorymanagemen
 const Newcategory=React.lazy(() => import('./componets/newcategory.componet'));
 const UpdateCategory=React.lazy(() => import('./componets/updatecategory.componet'));
 const Activate=React.lazy(() => import('./componets/activedeactive.componet'));
+const Password=React.lazy(() => import('./componets/changepassword.componet'));
 
 
 
@@ -183,6 +184,7 @@ const routes = [
   { path: '/newcategory', exact: true,  name: 'New Category', component:Newcategory},
   { path: '/updatecategory', exact: true,  name: 'Update Category', component:UpdateCategory},
   { path: '/activate', exact: true,  name: 'Activate Or Deactivate', component:Activate},
+  { path: '/change', exact: true,  name: 'Changepassword', component:Password},
 
   
 

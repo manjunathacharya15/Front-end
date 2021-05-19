@@ -1,48 +1,146 @@
-import React,{Component} from 'react';
-export default class Packagecomponet extends Component{
-    render(){
-        return(
-            <form>
-            <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">SLNO:</label>
-  <input type="number" id="email" placeholder=" SLNO" name="email"></input>
-  </div>
+import React, { Component } from 'react';
+import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+
+export default class CreateExercise extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onChangepackagename = this.onChangepackagename.bind(this);
+    this.onChangecategory = this.onChangecategory.bind(this);
+    this.onChangevideo=this.onChangevideo.bind(this);
+    this.onChangeprice=this.onChangeprice.bind(this);
+    this.onChangesubscribers=this.onChangesubscribers.bind(this);
   
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">PACKAGE NAME:</label>
-  <input type="text" id="email" placeholder=" PACKAGENAME" name="email"></input>
-  </div>
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2"> CATEGORY:</label>
-  <input type="text" id="email" placeholder="CATEGORY " name="email"></input>
-  </div>
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">SUB CATEGORY:</label>
-  <input type="text" id="email" placeholder=" SUBCATEGORY" name="email"></input>
-  </div>
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">VIDEOS:</label>
-  <input type="text" id="text" placeholder=" VIDEOS" name="email"></input>
-  </div>
- 
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">PRICE:</label>
-  <input type="text" id="email" placeholder=" PRICE" name="email"></input>
-  </div>
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">SUBCRIBERS:</label>
-  <input type="text" id="email" placeholder="SUBCRIBERS " name="email"></input>
-  </div>
-  <div class="input-group mb-3">
-                        <label for="email" class="col-lg-2">ACTIONS:</label>
-  <input type="text" id="email" placeholder="ACTIONS " name="email"></input>
-  </div>
-         
-        
-         <div>
-               <br/>
-         <button type="submit" class="btn btn-default">Submit</button></div>
-         </form>
-        )
+   
+    
+
+    this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+      packagename: '',
+      category: '',
+      video:'',
+      price:'',
+      subscribers: '',
+
+      
+      customer:[]
+      
+      
     }
+  }
+
+  onChangepackagename(e) {
+    this.setState({
+      packagename: e.target.value
+    })
+  }
+
+  onChangecategory(e) {
+    this.setState({
+      category: e.target.value
+    })
+  }
+  onChangevideo(e) {
+    this.setState({
+      video: e.target.value
+    })
+  }
+  
+
+  onChangeprice(e) {
+    this.setState({
+      price: e.target.value
+    })
+  }
+  onChangesubscribers(e) {
+    this.setState({
+      subscribers: e.target.value
+    })
+  }
+ 
+ 
+  
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const customer = {
+      packagename: this.state.packagename,
+      category: this.state.category,
+      video: this.state.video,
+      price:this.state.price,
+      subscribers: this.state.subscribers,
+     
+      
+
+    }
+
+    console.log(customer);
+
+    axios.post('https://obscure-shelf-98404.herokuapp.com/packages/add', customer)
+      .then(res => console.log(res.data));
+  }
+
+  render() {
+    return (
+    <div>
+      <h3>Create Packages </h3>
+      <form onSubmit={this.onSubmit}>
+      <div className="form-group"> 
+          <label>ProgramName: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.packagename}
+              onChange={this.onChangepackagename}
+              />
+        </div>
+        <div className="form-group"> 
+          <label>Category: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.category}
+              onChange={this.onChangecategory}
+              />
+        </div>
+        <div className="form-group">
+          <label>Video </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.video}
+              onChange={this.onChangevideo}
+              />
+        </div>
+        <div className="form-group">
+          <label>Price </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.price}
+              onChange={this.onChangeprice}
+              />
+        </div>
+        <div className="form-group">
+          <label>Subscribers </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.subscribers}
+              onChange={this.onChangesubscribers}
+              />
+        </div>
+       
+       
+        <div className="form-group">
+          <input type="submit" value="Create packages" className="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+    )
+  }
 }

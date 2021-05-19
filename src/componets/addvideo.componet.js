@@ -9,17 +9,75 @@ export default class Addvideocomponet extends Component{
 
 
     <div class="row">
-      <div class="col-md">
-            <div>
-                
+      <div class="col-md-6">
+            
+                <div>
                     <Reactplayer controls url="https://www.youtube.com/watch?v=OKL8Mw9EqZQ" />
-                    <input type="file" name="images" id="imgid" className="imgcls"  multiple/>
+                    
+           </div>
+            </div>
+            <div class="col-md-6">
+            <div >
+
+                
+                    <Reactplayer  url="https://www.youtube.com/watch?v=OKL8Mw9EqZQ" />
+                    
+                   </div>
+            </div>
+            <div class="col-md-6">
+            <div >
+
+                
+                    <Reactplayer  url="https://www.youtube.com/watch?v=OKL8Mw9EqZQ" />
+                    
+                   </div>
+            </div>
+            <div class="col-md-6">
+            <div >
+
+                
+                    <Reactplayer  url="https://www.youtube.com/watch?v=OKL8Mw9EqZQ" />
+                    
+                   </div>
+            </div>
+            <div class="col-md-6">
+            <div >
+
+                
+                    <Reactplayer  url="https://www.youtube.com/watch?v=OKL8Mw9EqZQ" />
+                    
+                   </div>
+            </div>
+            <div class="col-md-6">
+            <div >
+
+                
+                    <Reactplayer  url="https://www.youtube.com/watch?v=OKL8Mw9EqZQ" />
+                    
+                   </div>
+            </div>
+            <div class="col-md-6">
+            <div >
+
+                
+                    <Reactplayer  url="https://www.youtube.com/watch?v=OKL8Mw9EqZQ" />
+                    
+                   </div>
+            </div>
+            <div class="col-md-6">
+            <div >
+
+                
+                    <Reactplayer  url="https://www.youtube.com/watch?v=OKL8Mw9EqZQ" />
+                    
+                   </div>
+            </div>
+         
+            </div>
+            <input type="file" name="images" id="imgid" className="imgcls"  multiple/>
                     <br/>
                     <br/>
                    <center><button type="submit" class="btn btn-secondary">Submit</button></center> 
-            </div>
-            </div>
-            </div>
             </div>
             
 

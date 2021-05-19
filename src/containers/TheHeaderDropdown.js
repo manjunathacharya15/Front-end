@@ -1,5 +1,8 @@
 import React from 'react'
 import {
+  Link
+} from 'react-router-dom'
+import {
   CBadge,
   CDropdown,
   CDropdownItem,
@@ -42,7 +45,7 @@ const TheHeaderDropdown = () => {
         </CDropdownItem>
         <CDropdownItem>
           <CIcon name="cil-settings" className="mfe-2" />
-          ChangePassword
+ <Link to="/change" className="nav-link">ChangePassword</Link> 
           <CBadge color="success" className="mfs-auto"></CBadge>
         </CDropdownItem>
         <CDropdownItem>

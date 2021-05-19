@@ -88,15 +88,15 @@ export default class CustomersList extends Component {
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
-            <th style={{border:"3px double green"}}>Programname</th>
-              <th style={{border:"3px double green"}}>Programimage</th>
+            <th style={{border:"3px double green"}}>Program Name</th>
+              <th style={{border:"3px double green"}}>Program Image</th>
               <th style={{border:"3px double green"}}>Category</th>
               <th style={{border:"3px double green"}}>Duration</th>
-              <th style={{border:"3px double green"}}>Totalexercises</th>
-              <th style={{border:"3px double green"}}>Programdescription</th>
-              <th style={{border:"3px double green"}}>Chooseinstructor</th>
+              <th style={{border:"3px double green"}}>Total Exercises</th>
+              <th style={{border:"3px double green"}}>Program Description</th>
+              <th style={{border:"3px double green"}}>Choose Instructor</th>
               <th style={{border:"3px double green"}}>Exercise</th>
-              <th style={{border:"3px double green"}}>Instructorprofile</th>
+              <th style={{border:"3px double green"}}>Instructor Profile</th>
               <th style={{border:"3px double green"}}>Access</th>
               <th style={{border:"3px double green"}}>Price</th>
               <th style={{border:"3px double green"}}>Actions</th>

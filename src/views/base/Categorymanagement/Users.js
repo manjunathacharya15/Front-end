@@ -63,8 +63,8 @@ export default class CustomersList extends Component {
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Category</div>
     
-    <div style={{width:"11%"}}><Link to="" className="nav-link"><button >Newcategory</button></Link></div>
-    <div  style={{width:"12%"}}><Link to="" className="nav-link"><button >updatecategory</button></Link></div>
+    <div style={{width:"11%"}}><Link to="/newcategory" className="nav-link"><button >Newcategory</button></Link></div>
+    
     <div  style={{width:"24%"}}><Link to="" className="nav-link"><button >Activate/Deactivate</button></Link></div>
 
     
@@ -74,9 +74,9 @@ export default class CustomersList extends Component {
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>CategoryName</th>
+              <th style={{border:"3px double green"}}>Category Name</th>
               <th style={{border:"3px double green"}}>Image/Video</th>
-              <th style={{border:"3px double green"}}>Caloriesburnt</th>
+              <th style={{border:"3px double green"}}>Calories Burnt</th>
               <th style={{border:"3px double green"}}>Actions</th>
               
              

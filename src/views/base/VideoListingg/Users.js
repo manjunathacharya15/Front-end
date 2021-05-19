@@ -88,16 +88,16 @@ export default class CustomersList extends Component {
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
-            <th style={{border:"3px double green"}}>Classname</th>
-              <th style={{border:"3px double green"}}>Featuredimage</th>
-              <th style={{border:"3px double green"}}>Classdescription</th>
-              <th style={{border:"3px double green"}}>Classcategory</th>
-              <th style={{border:"3px double green"}}>Classduration</th>
-              <th style={{border:"3px double green"}}>Expectedcaloriesburnt</th>
-              <th style={{border:"3px double green"}}>Instructorname&image</th>
-               <th style={{border:"3px double green"}}>Instructorprofile</th>
-              <th style={{border:"3px double green"}}>Startdate&time</th>
-              <th style={{border:"3px double green"}}>Subscribersnames&count</th> 
+            <th style={{border:"3px double green"}}>Class Name</th>
+              <th style={{border:"3px double green"}}>Featured Image</th>
+              <th style={{border:"3px double green"}}>Class Description</th>
+              <th style={{border:"3px double green"}}>Class Category</th>
+              <th style={{border:"3px double green"}}>Class Duration</th>
+              <th style={{border:"3px double green"}}>Expected Calories Burnt</th>
+              <th style={{border:"3px double green"}}>Instructor Name&Image</th>
+               <th style={{border:"3px double green"}}>Instructor Profile</th>
+              <th style={{border:"3px double green"}}>Start Date&Time</th>
+              <th style={{border:"3px double green"}}>Subscribers Names&Count</th> 
               <th style={{border:"3px double green"}}>Actions</th>
 
             </tr>

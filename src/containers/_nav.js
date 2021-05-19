@@ -52,7 +52,7 @@ const _nav =  [
       _tag: 'CSidebarNavDropdown',
   name: 'Program Management',
     to: '',
-    icon: 'cil-group',
+    icon: 'cil-layers',
     _children:[
       {
         _tag: 'CSidebarNavDropdown',
@@ -119,7 +119,7 @@ _children:[
     _tag: 'CSidebarNavDropdown',
   name: ' Category Management ',
   to: '',
-  icon: 'cil-moon',
+  icon: 'cil-graph',
   _children:[
     {
       _tag: 'CSidebarNavItem',
@@ -143,6 +143,18 @@ _children:[
   _tag: 'CSidebarNavItem',
 name: ' Payment List ',
 to: '/Lowerbody',
+icon: 'cil-dollar',
+},
+{
+  _tag: 'CSidebarNavItem',
+name: ' Block Users ',
+to: '',
+icon: 'cil-lock-locked',
+},
+{
+  _tag: 'CSidebarNavItem',
+name: ' Span ',
+to: '',
 icon: 'cil-moon',
 },
  
