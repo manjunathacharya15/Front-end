@@ -40,9 +40,13 @@ export default class CustomersList extends Component {
 
     this.deleteCustomer = this.deleteCustomer.bind(this)
 
-    this.state = {customers: []};
+    this.onChangefirstname = this.onChangefirstname.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      firstname:'',
+      customers: []
+    };
   }
-
   componentDidMount() {
     axios.get('https://instructor9513.herokuapp.com/instructors/')
       .then(response => {
@@ -52,6 +56,26 @@ export default class CustomersList extends Component {
         console.log(error);
       })
   }
+
+  onChangefirstname(e) {
+    this.setState({
+      firstname: e.target.value
+    })
+  }
+  onSubmit(e) {
+    e.preventDefault();
+
+    const customer = {
+      firstname: this.state.firstname
+    }
+    axios.post('https://instructor9513.herokuapp.com/instructors/search', customer)
+      .then(res => {
+        this.setState({ customers: res.data })
+      })
+      .catch((error) => {
+             console.log(error);
+           })
+          }
 
   deleteCustomer(id) {
     axios.delete('https://instructor9513.herokuapp.com/instructors/'+id)
@@ -77,7 +101,23 @@ export default class CustomersList extends Component {
   <div class="col-md">
          <div style={{display:"flex"}}>
     <div style={{width:"84%"}}>Trainers</div>
-    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div style={{marginTop:"5px"}}>
+    <form onSubmit={this.onSubmit}>
+      <div className="form-group" style={{width:"100%"}}> 
+          
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.firstname}
+              onChange={this.onChangefirstname}
+              />
+        </div>
+        <div className="form-group" style={{width:"6%"}}>
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
+        </form>
+    </div>
+    
     <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
     <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
 </div>            

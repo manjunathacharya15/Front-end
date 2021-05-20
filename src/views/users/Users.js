@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
 import Search from '@material-ui/icons/SearchRounded';
+import { Input } from '@material-ui/core';
+
 
 const Customer = props => (
   <tr>
@@ -22,30 +24,58 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.phonenumber}</td>
     
     <td>
-      <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
+      <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a> 
     </td>
   </tr>
 )
 
+
 export default class CustomersList extends Component {
+
   constructor(props) {
     super(props);
 
     this.deleteCustomer = this.deleteCustomer.bind(this)
-
-    this.state = {customers: []};
+    this.onChangefirstname = this.onChangefirstname.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      firstname:'',
+      customers: []
+    };
   }
+  
 
   componentDidMount() {
-    axios.get('https://vast-river-32952.herokuapp.com/customers/')
-      .then(response => {
-        this.setState({ customers: response.data })
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+   
+      axios.get('https://vast-river-32952.herokuapp.com/customers/')
+    .then(response => {
+      this.setState({ customers: response.data })
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
+  onChangefirstname(e) {
+    this.setState({
+      firstname: e.target.value
+    })
+  }
+  onSubmit(e) {
+    e.preventDefault();
+
+    const customer = {
+      firstname: this.state.firstname
+    }
+    axios.post('https://vast-river-32952.herokuapp.com/customers/search', customer)
+      .then(res => {
+        this.setState({ customers: res.data })
+      })
+      .catch((error) => {
+             console.log(error);
+           })
+      
+  }
   deleteCustomer(id) {
     axios.delete('https://vast-river-32952.herokuapp.com/customers/'+id)
       .then(response => { console.log(response.data)});
@@ -54,16 +84,27 @@ export default class CustomersList extends Component {
       customers: this.state.customers.filter(el => el._id !== id)
     })
   }
-
+  
   customerList() {
     return this.state.customers.map(currentcustomer => {
       return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
     })
+    
   }
+  
+  
+ 
 
-  render() {
+
+
+  render()
+ {
+
+  
     return (
+      
       <div>
+        
         <div class="container">
 
 
@@ -73,11 +114,27 @@ export default class CustomersList extends Component {
 
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Customer</div>
-    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
+    <div style={{marginTop:"5px"}}>
+    <form onSubmit={this.onSubmit}>
+      <div className="form-group"> 
+          
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.firstname}
+              onChange={this.onChangefirstname}
+              />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
+        </form>
+        </div>
     <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
     <div style={{width:"22%"}}><Link to="/welcome" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewUser+</button></Link></div>
 </div>
         <div style={{overflowX:"scroll"}}>
+       
                
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">

@@ -23,9 +23,21 @@ export default class CustomersList extends Component {
     super(props);
 
     this.deleteCustomer = this.deleteCustomer.bind(this)
-
-    this.state = {customers: []};
+    
+    this.deleteCustomer = this.deleteCustomer.bind(this)
+    this.onChangepaymentid = this.onChangepaymentid.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      paymentid:'',
+      customers: []
+    };
   }
+
+   
+    
+    
+  
+  
 
   componentDidMount() {
     axios.get('https://vast-river-32952.herokuapp.com/payments/')
@@ -35,6 +47,26 @@ export default class CustomersList extends Component {
       .catch((error) => {
         console.log(error);
       })
+  }
+  onChangepaymentid(e) {
+    this.setState({
+      paymentid: e.target.value
+    })
+  }
+  onSubmit(e) {
+    e.preventDefault();
+
+    const customer = {
+      paymentid: this.state.paymentid
+    }
+    axios.post('https://vast-river-32952.herokuapp.com/payments/search', customer)
+      .then(res => {
+        this.setState({ customers: res.data })
+      })
+      .catch((error) => {
+             console.log(error);
+           })
+      
   }
 
   deleteCustomer(id) {
@@ -64,8 +96,24 @@ export default class CustomersList extends Component {
 
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Payments</div>
-    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{marginTop:"5px"}}>
+    <form onSubmit={this.onSubmit}>
+      <div className="form-group"> 
+         
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.paymentid}
+              onChange={this.onChangepaymentid}
+              />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
+        </form>
+        </div>
+
+    <div  style={{width:"18%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
     
 </div>
         <div style={{overflowX:"scroll"}}>

@@ -23,8 +23,12 @@ export default class CustomersList extends Component {
 
     this.deleteCustomer = this.deleteCustomer.bind(this)
 
-    this.state = {customers: []};
-  }
+    this.onChangeexercisename = this.onChangeexercisename.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      exercisename:'',
+      customers: []};
+}
 
   componentDidMount() {
     axios.get('https://obscure-shelf-98404.herokuapp.com/videos/')
@@ -34,6 +38,26 @@ export default class CustomersList extends Component {
       .catch((error) => {
         console.log(error);
       })
+  }
+  onChangeexercisename(e) {
+    this.setState({
+      exercisename: e.target.value
+    })
+  }
+  onSubmit(e) {
+    e.preventDefault();
+
+    const customer = {
+      exercisename: this.state.exercisename
+    }
+    axios.post('https://obscure-shelf-98404.herokuapp.com/videos/search', customer)
+      .then(res => {
+        this.setState({ customers: res.data })
+      })
+      .catch((error) => {
+             console.log(error);
+           })
+      
   }
 
   deleteCustomer(id) {
@@ -63,9 +87,24 @@ export default class CustomersList extends Component {
 
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Videos</div>
-    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
-    <div style={{width:"22%"}}><Link to="/videos" className="nav-link"><button type="submit" value="AddNewTrainer">Addvideo+</button></Link></div>
+    <div style={{marginTop:"5px"}}>
+    <form onSubmit={this.onSubmit}>
+      <div className="form-group"> 
+          
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.exercisename}
+              onChange={this.onChangeexercisename}
+              />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
+        </form>
+        </div>
+    <div  style={{width:"5%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{width:"26%"}}><Link to="/videos" className="nav-link"><button type="submit" value="AddNewTrainer">Addvideo+</button></Link></div>
 </div>
         <div style={{overflowX:"scroll"}}>
                

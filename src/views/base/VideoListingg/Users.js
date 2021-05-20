@@ -39,8 +39,12 @@ export default class CustomersList extends Component {
 
     this.deleteCustomer = this.deleteCustomer.bind(this)
 
-    this.state = {customers: []};
-  }
+    this.onChangeclassname = this.onChangeclassname.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      classname:'',
+      customers: []};
+}
 
   componentDidMount() {
     axios.get('https://instructor9513.herokuapp.com/liveclasses/')
@@ -50,6 +54,26 @@ export default class CustomersList extends Component {
       .catch((error) => {
         console.log(error);
       })
+  }
+  onChangeclassname(e) {
+    this.setState({
+      classname: e.target.value
+    })
+  }
+  onSubmit(e) {
+    e.preventDefault();
+
+    const customer = {
+      classname: this.state.classname
+    }
+    axios.post('https://instructor9513.herokuapp.com/liveclasses/search', customer)
+      .then(res => {
+        this.setState({ customers: res.data })
+      })
+      .catch((error) => {
+             console.log(error);
+           })
+      
   }
 
   deleteCustomer(id) {
@@ -78,9 +102,24 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}>Videos</div>
-    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{width:"80%"}}>Live Classes</div>
+    <div style={{marginTop:"5px"}}>
+    <form onSubmit={this.onSubmit}>
+      <div className="form-group"> 
+        
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.classname}
+              onChange={this.onChangeclassname}
+              />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
+        </form>
+        </div>
+    <div  style={{width:"18%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
    
 </div>
         <div style={{overflowX:"scroll"}}>

@@ -27,9 +27,13 @@ export default class CustomersList extends Component {
     super(props);
 
     this.deleteCustomer = this.deleteCustomer.bind(this)
-
-    this.state = {customers: []};
-  }
+    this.onChangepackagename = this.onChangepackagename.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      packagename:'',
+      customers: []};
+}
+  
 
   componentDidMount() {
     axios.get('https://obscure-shelf-98404.herokuapp.com/packages/')
@@ -39,6 +43,26 @@ export default class CustomersList extends Component {
       .catch((error) => {
         console.log(error);
       })
+  }
+  onChangepackagename(e) {
+    this.setState({
+      packagename: e.target.value
+    })
+  }
+  onSubmit(e) {
+    e.preventDefault();
+
+    const customer = {
+      packagename: this.state.packagename
+    }
+    axios.post('https://obscure-shelf-98404.herokuapp.com/packages/search', customer)
+      .then(res => {
+        this.setState({ customers: res.data })
+      })
+      .catch((error) => {
+             console.log(error);
+           })
+      
   }
 
   deleteCustomer(id) {
@@ -67,10 +91,25 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}>Category</div>
-    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
-    <div  style={{width:"25%"}}><Link to="/package" className="nav-link"><button >AddNewPackages</button></Link></div>
+    <div style={{width:"80%"}}>Packages</div>
+    <div style={{marginTop:"5px"}}>
+    <form onSubmit={this.onSubmit}>
+      <div className="form-group"> 
+          
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.packagename}
+              onChange={this.onChangepackagename}
+              />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
+        </form>
+        </div>
+    <div  style={{width:"5%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div  style={{width:"26%"}}><Link to="/package" className="nav-link"><button >AddNewPackages</button></Link></div>
     
 </div>
         <div style={{overflowX:"scroll"}}>
