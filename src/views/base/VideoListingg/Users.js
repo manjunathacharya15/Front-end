@@ -86,6 +86,11 @@ export default class CustomersList extends Component {
   }
 
   customerList() {
+    this.state.customers.sort(function(a,b){
+      if(a.classname.toLowerCase() < b.classname.toLowerCase()) return -1;
+      if(a.classname.toLowerCase() > b.classname.toLowerCase()) return 1;
+      return 0;
+     })
     return this.state.customers.map(currentcustomer => {
       return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
     })
@@ -103,7 +108,7 @@ export default class CustomersList extends Component {
 
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}>Live Classes</div>
-    <div style={{marginTop:"5px"}}>
+    <div style={{marginTop:"5px"}}  >
     <form onSubmit={this.onSubmit}>
       <div className="form-group"> 
         
@@ -119,7 +124,7 @@ export default class CustomersList extends Component {
         </div>
         </form>
         </div>
-    <div  style={{width:"18%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+   
    
 </div>
         <div style={{overflowX:"scroll"}}>

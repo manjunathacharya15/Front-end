@@ -79,6 +79,11 @@ export default class CustomersList extends Component {
   }
 
   customerList() {
+    this.state.customers.sort(function(a,b){
+        if(a.paymentid.toLowerCase() < b.paymentid.toLowerCase()) return -1;
+        if(a.paymentid.toLowerCase() > b.paymentid.toLowerCase()) return 1;
+        return 0;
+       })
     return this.state.customers.map(currentcustomer => {
       return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
     })
@@ -113,7 +118,6 @@ export default class CustomersList extends Component {
         </form>
         </div>
 
-    <div  style={{width:"18%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
     
 </div>
         <div style={{overflowX:"scroll"}}>
@@ -121,12 +125,12 @@ export default class CustomersList extends Component {
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>Paymentid</th>
-              <th style={{border:"3px double green"}}>Customername</th>
-              <th style={{border:"3px double green"}}>Programname</th>
+              <th style={{border:"3px double green"}}>Payment id</th>
+              <th style={{border:"3px double green"}}>Customer Name</th>
+              <th style={{border:"3px double green"}}>Program Name</th>
               <th style={{border:"3px double green"}}>Amount</th>
-              <th style={{border:"3px double green"}}>Paymentdate</th>
-              <th style={{border:"3px double green"}}>Accessibilityenddate</th>
+              <th style={{border:"3px double green"}}>Payment Date</th>
+              <th style={{border:"3px double green"}}>Accessibility Enddate</th>
               
 
               

@@ -79,6 +79,7 @@ export default class CustomersList extends Component {
   }
 
   deleteCustomer(id) {
+   
     axios.delete('https://instructor9513.herokuapp.com/programs/'+id)
       .then(response => { console.log(response.data)});
 
@@ -88,6 +89,11 @@ export default class CustomersList extends Component {
   }
 
   customerList() {
+    this.state.customers.sort(function(a,b){
+      if(a.classname.toLowerCase() < b.classname.toLowerCase()) return -1;
+      if(a.classname.toLowerCase() > b.classname.toLowerCase()) return 1;
+      return 0;
+     })
     return this.state.customers.map(currentcustomer => {
       return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
     })
@@ -122,7 +128,7 @@ export default class CustomersList extends Component {
         </div>
         </form>
         </div>
-    <div  style={{width:"15%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    
    
 </div>
         <div style={{overflowX:"scroll"}}>

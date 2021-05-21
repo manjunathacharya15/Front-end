@@ -4,6 +4,7 @@ import axios from 'axios';
 import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
 import Search from '@material-ui/icons/SearchRounded';
 
+
 const Customer = props => (
   <tr>
     <td style={{border:"3px double green"}}>{props.customer.firstname}</td>
@@ -50,11 +51,16 @@ export default class CustomersList extends Component {
   componentDidMount() {
     axios.get('https://instructor9513.herokuapp.com/instructors/')
       .then(response => {
+        
         this.setState({ customers: response.data })
+       
+       
       })
       .catch((error) => {
         console.log(error);
       })
+     
+    
   }
 
   onChangefirstname(e) {
@@ -62,6 +68,8 @@ export default class CustomersList extends Component {
       firstname: e.target.value
     })
   }
+ 
+
   onSubmit(e) {
     e.preventDefault();
 
@@ -85,8 +93,16 @@ export default class CustomersList extends Component {
       customers: this.state.customers.filter(el => el._id !== id)
     })
   }
+  
+    
+  
 
   customerList() {
+   this.state.customers.sort(function(a,b){
+    if(a.firstname.toLowerCase() < b.firstname.toLowerCase()) return -1;
+    if(a.firstname.toLowerCase() > b.firstname.toLowerCase()) return 1;
+    return 0;
+   })
     return this.state.customers.map(currentcustomer => {
       return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
     })
@@ -115,10 +131,12 @@ export default class CustomersList extends Component {
         <div className="form-group" style={{width:"6%"}}>
           <input type="submit" value="Search" className="btn btn-primary" />
         </div>
+        
         </form>
+       
     </div>
     
-    <div  style={{width:"6%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+   
     <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
 </div>            
         <div style={{overflowX:"scroll"}}>

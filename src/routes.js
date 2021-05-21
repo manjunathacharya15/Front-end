@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-const Dash = React.lazy(() => import('./containers/TheLayout'));
 const Toaster = React.lazy(() => import('./views/notifications/toaster/Toaster'));
 const Tables = React.lazy(() => import('./views/base/tables/Tables'));
 
@@ -185,7 +184,6 @@ const routes = [
   { path: '/updatecategory', exact: true,  name: 'Update Category', component:UpdateCategory},
   { path: '/activate', exact: true,  name: 'Activate Or Deactivate', component:Activate},
   { path: '/change', exact: true,  name: 'Changepassword', component:Password},
-  { path: '/containers', exact: true,  name: 'Changepassword', component:Dash},
 
 
   
