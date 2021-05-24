@@ -62,7 +62,7 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}>Customer Exercise Details</div>
+    <div style={{width:"80%"}}><h4><b >Customer Exercise Details</b></h4></div>
     <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
     <div  style={{width:"22%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
     

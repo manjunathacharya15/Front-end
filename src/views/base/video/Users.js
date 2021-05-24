@@ -91,7 +91,7 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}>Videos</div>
+    <div style={{width:"80%"}}><h4><b>Videos</b></h4></div>
     <div style={{marginTop:"5px"}}>
     <form onSubmit={this.onSubmit}>
       <div className="form-group"> 

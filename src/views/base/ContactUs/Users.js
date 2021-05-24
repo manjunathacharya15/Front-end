@@ -63,15 +63,28 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}>Contact Us</div>
-    
+    <div style={{width:"80%"}}><h4><b>Contact Us</b></h4></div>
+    <form onSubmit={this.onSubmit}>
+      <div className="form-group"> 
+         
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.paymentid}
+              onChange={this.onChangepaymentid}
+              />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
+        </form>
     
     
 
     
 </div>
         <div style={{overflowX:"scroll"}}>
-               
+         <div style={{overflowY:"scroll"}}>     
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
@@ -88,6 +101,7 @@ export default class CustomersList extends Component {
             { this.customerList() }
           </tbody>
         </table>
+        </div>
         </div>
         </div>
         </div>

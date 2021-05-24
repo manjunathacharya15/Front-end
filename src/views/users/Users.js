@@ -118,7 +118,7 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}>Customer</div>
+    <div style={{width:"80%"}}><h4><b>Customer</b></h4></div>
     <div style={{marginTop:"5px"}}>
     <form onSubmit={this.onSubmit}>
       <div className="form-group"> 
@@ -138,7 +138,9 @@ export default class CustomersList extends Component {
     
     <div style={{width:"22%"}}><Link to="/welcome" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewUser+</button></Link></div>
 </div>
-        <div style={{overflowX:"scroll"}}>
+        <div style={{overflowY:"scroll"}}>
+        
+          
        
                
         <table className="table" style={{border:"3px double green"}}>
@@ -159,13 +161,16 @@ export default class CustomersList extends Component {
               <th style={{border:"3px double green"}}>Total Calories Burnt</th>
               <th style={{border:"3px double green"}}>Phone Number</th>
               <th style={{border:"3px double green"}}>Actions</th>
-             
+           
             </tr>
+            
           </thead>
           <tbody>
             { this.customerList() }
           </tbody>
+         
         </table>
+        
         </div>
         </div>
         </div>

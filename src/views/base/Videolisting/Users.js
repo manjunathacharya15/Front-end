@@ -110,7 +110,7 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}>Programs</div>
+    <div style={{width:"80%"}}><h4><b>Programs</b></h4></div>
     
     <div style={{marginTop:"5px"}}>
 <form onSubmit={this.onSubmit}>

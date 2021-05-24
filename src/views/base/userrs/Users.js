@@ -116,7 +116,7 @@ export default class CustomersList extends Component {
 <div class="row">
   <div class="col-md">
          <div style={{display:"flex"}}>
-    <div style={{width:"84%"}}>Trainers</div>
+    <div style={{width:"84%"}}><h4><b>Trainers</b></h4></div>
     <div style={{marginTop:"5px"}}>
     <form onSubmit={this.onSubmit}>
       <div className="form-group" style={{width:"100%"}}> 
@@ -139,7 +139,7 @@ export default class CustomersList extends Component {
    
     <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
 </div>            
-        <div style={{overflowX:"scroll"}}>
+        <div style={{overflowY:"scroll"}}>
        
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">

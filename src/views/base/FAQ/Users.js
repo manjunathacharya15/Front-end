@@ -62,7 +62,7 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}>FAQ</div>
+    <div style={{width:"80%"}}><h4><b>FAQ</b></h4></div>
     
     
     
