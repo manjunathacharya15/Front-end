@@ -109,7 +109,7 @@ export default class CustomersList extends Component {
         </form>
         </div>
     
-    <div style={{width:"26%"}}><Link to="/videos" className="nav-link"><button type="submit" value="AddNewTrainer">Addvideo+</button></Link></div>
+    <div style={{width:"26%"}}><Link to="/videos" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success">Addvideo+</button></Link></div>
 </div>
         <div style={{overflowX:"scroll"}}>
                

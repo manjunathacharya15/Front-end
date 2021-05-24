@@ -63,8 +63,23 @@ export default class CustomersList extends Component {
 
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}><h4><b>Instructor Exercise Details</b></h4></div>
-    <div style={{width:"6%"}}><Link to="" className="nav-link"><button ><Search/></button></Link></div>
-    <div  style={{width:"22%"}}><Link to="" className="nav-link"><button ><FilterListRoundedIcon/></button></Link></div>
+    <div style={{marginTop:"5px"}}>
+    <form onSumit={this.onSubmit}>
+      <div className="form-group"> 
+         
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.paymentid}
+              onChange={this.onChangepaymentid}
+              />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
+        </form>
+        </div>
+        <div style={{width:"17%"}}><h4><b ></b></h4></div>
     
     
     

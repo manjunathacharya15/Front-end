@@ -63,9 +63,9 @@ export default class CustomersList extends Component {
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}><h4><b>Category</b></h4></div>
     
-    <div style={{width:"11%"}}><Link to="/newcategory" className="nav-link"><button >Newcategory</button></Link></div>
+    <div style={{width:"11%"}}><Link to="/newcategory" className="nav-link"><button className="btn btn-success" >Newcategory</button></Link></div>
     
-    <div  style={{width:"24%"}}><Link to="" className="nav-link"><button >Activate/Deactivate</button></Link></div>
+    <div  style={{width:"24%"}}><Link to="" className="nav-link"><button className="btn btn-secondary" >Activate/Deactivate</button></Link></div>
 
     
 </div>

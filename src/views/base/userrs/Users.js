@@ -137,7 +137,7 @@ export default class CustomersList extends Component {
     </div>
     
    
-    <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer">AddNewTrainer+</button></Link></div>
+    <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success">AddNewTrainer+</button></Link></div>
 </div>            
         <div style={{overflowY:"scroll"}}>
        
