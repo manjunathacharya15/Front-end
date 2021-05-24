@@ -124,7 +124,7 @@ export default class CustomersList extends Component {
         </div>
         </form>
         </div>
-   
+        <div style={{width:"19%"}}><h4><b></b></h4></div>
    
 </div>
         <div style={{overflowX:"scroll"}}>
