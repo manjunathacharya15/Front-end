@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
-import Search from '@material-ui/icons/SearchRounded';
+
 
 
 const Customer = props => (
@@ -46,6 +45,11 @@ export default class CustomersList extends Component {
   }
 
   customerList() {
+     this.state.customers.sort(function(a,b){
+      if(a.firstname.toLowerCase() < b.firstname.toLowerCase()) return -1;
+      if(a.firstname.toLowerCase() > b.firstname.toLowerCase()) return 1;
+      return 0;
+     })
     return this.state.customers.map(currentcustomer => {
       return <Customer customer={currentcustomer} deleteCustomer={this.deleteCustomer} key={currentcustomer._id}/>;
     })
@@ -63,23 +67,7 @@ export default class CustomersList extends Component {
 
              <div style={{display:"flex"}}>
     <div style={{width:"80%"}}><h4><b >Customer Exercise Details</b></h4></div>
-    <div style={{marginTop:"5px"}}>
-    <form onSumit={this.onSubmit}>
-      <div className="form-group"> 
-         
-          <input  type="text"
-              required
-              className="form-control"
-              value={this.state.paymentid}
-              onChange={this.onChangepaymentid}
-              />
-        </div>
-        <div className="form-group">
-          <input type="submit" value="Search" className="btn btn-primary" />
-        </div>
-        </form>
-        </div>
-        <div style={{width:"17%"}}><h4><b ></b></h4></div>
+    
     
     
     

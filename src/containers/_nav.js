@@ -96,17 +96,17 @@ _children:[
   {
     _tag: 'CSidebarNavItem',
     name: 'FAQ',
-    to: '/FAQ',
+    to: '',
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Contact us Enquiries',
-    to: '/ContactUs',
+    to: '',
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Recommended Programs',
-    to: '/RecommendedPrograms',
+    to: '',
   },
 
 
@@ -129,12 +129,12 @@ _children:[
     {
       _tag: 'CSidebarNavItem',
       name: 'Inst Excr Details',
-      to: '/ProgramInstructor',
+      to: '',
     },
     {
       _tag: 'CSidebarNavItem',
       name: 'Cust Excr Details',
-      to: '/ExerciseName',
+      to: '',
     },
   ]
   
