@@ -19,12 +19,13 @@ const Customer = props => (
     <tr>Duration:{props.customer.duration}</tr>
     <tr>Category:{props.customer.category}</tr>
     <tr>Image:{props.customer.image}</tr>
+    
     </td>
     <td style={{border:"3px double green"}}>{props.customer.instructorprofile}</td>
     <td style={{border:"3px double green"}}>{props.customer.access}</td>
     <td style={{border:"3px double green"}}>{props.customer.price}</td>
     <td style={{border:"3px double green"}}>
-      <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="/videolisting" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
+      <Link to={"/program/"+props.customer._id}>edit</Link> | <a href="/videolisting" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td>
     
 

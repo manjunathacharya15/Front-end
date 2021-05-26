@@ -13,7 +13,7 @@ export default class CreateExercise extends Component {
     this.onChangepassword=this.onChangepassword.bind(this);
     this.onChangerole=this.onChangerole.bind(this);
     this.onChangeage=this.onChangeage.bind(this);
-    this.onChangeweight=this.onChangeweight.bind(this);
+    this.onChangeweight=this.onChangeweight.bind(this); 
     this.onChangeheight=this.onChangeheight.bind(this);
     this.onChangeaddress=this.onChangeaddress.bind(this);
     this.onChangecurrentplan=this.onChangecurrentplan.bind(this);

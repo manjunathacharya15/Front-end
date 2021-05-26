@@ -83,9 +83,12 @@ const Recommendedprogram=React.lazy(() => import('./views/base/RecommendedProgra
 const Categorymanagements=React.lazy(() => import('./views/base/Categorymanagement/Users'));
 const Categorymanagement=React.lazy(() => import('./views/base/Categorymanagement/User'));
 const Newcategory=React.lazy(() => import('./componets/newcategory.componet'));
-const UpdateCategory=React.lazy(() => import('./componets/updatecategory.componet'));
+const UpdateCategory=React.lazy(() => import('./componets/updateuser.componet'));
 const Activate=React.lazy(() => import('./componets/activedeactive.componet'));
 const Password=React.lazy(() => import('./componets/changepassword.componet'));
+const Trainerupdate=React.lazy(() => import('./componets/updatetrainer.componet'));
+const Programupdate=React.lazy(() => import('./componets/updateprograms.componet'));
+
 
 
 
@@ -135,7 +138,6 @@ const routes = [
   { path: '/notifications/toaster', name: 'Toaster', component: Toaster },
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/users', exact: true,  name: 'Users', component: Users },
-  { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/Instructor', exact: true,  name: 'Users', component: Userrs },
   { path: '/Instructor/:id', exact: true, name: 'User Details', component: Userr },
   { path: '/catagory', exact: true,  name: 'Category', component: Catagory },
@@ -181,9 +183,13 @@ const routes = [
   { path: '/Categorymanagement', exact: true,  name: 'Category Management', component: Categorymanagements },
   { path: '/Categorymanagement/:id', exact: true, name: 'VideoListing', component: Categorymanagement },
   { path: '/newcategory', exact: true,  name: 'New Category', component:Newcategory},
-  { path: '/updatecategory', exact: true,  name: 'Update Category', component:UpdateCategory},
+  { path: '/update/:id', exact: true,  name: 'Update user', component:UpdateCategory},
   { path: '/activate', exact: true,  name: 'Activate Or Deactivate', component:Activate},
   { path: '/change', exact: true,  name: 'Changepassword', component:Password},
+  { path: '/updates/:id', exact: true,  name: 'updatetrainer', component:Trainerupdate},
+  { path: '/program/:id', exact: true,  name: 'updatetrainer', component:Programupdate},
+
+
 
 
   

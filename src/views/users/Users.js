@@ -11,20 +11,20 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.firstname}</td>
     <td style={{border:"3px double green"}}>{props.customer.lastname}</td>
     <td style={{border:"3px double green"}}>{props.customer.email}</td>
-    <td style={{border:"3px double green"}}>{props.customer.role}</td>
+    {/* <td style={{border:"3px double green"}}>{props.customer.role}</td> */}
     <td style={{border:"3px double green"}}>{props.customer.age}</td>
-    <td style={{border:"3px double green"}}>{props.customer.weight}</td>
+    {/* <td style={{border:"3px double green"}}>{props.customer.weight}</td>
     <td style={{border:"3px double green"}}>{props.customer.height}</td>
     <td style={{border:"3px double green"}}>{props.customer.address}</td>
     <td style={{border:"3px double green"}}>{props.customer.currentplan}</td>
     <td style={{border:"3px double green"}}>{props.customer.nextrenewdate}</td>
     <td style={{border:"3px double green"}}>{props.customer.numberofexercises}</td>
     <td style={{border:"3px double green"}}>{props.customer.timedurationofallexercises}</td>
-    <td style={{border:"3px double green"}}>{props.customer.totalcaloriesburnt}</td>
+    <td style={{border:"3px double green"}}>{props.customer.totalcaloriesburnt}</td> */}
     <td style={{border:"3px double green"}}>{props.customer.phonenumber}</td>
     
-    <td>
-      <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a> 
+    <td style={{border:"3px double green"}}>
+      <Link to={"/update/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a> 
     </td>
   </tr>
 )
@@ -146,21 +146,21 @@ export default class CustomersList extends Component {
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>First Name</th>
-              <th style={{border:"3px double green"}}>Last Name</th>
-              <th style={{border:"3px double green"}}>Email</th>
-              <th style={{border:"3px double green"}}>Role</th>
-              <th style={{border:"3px double green"}}>Age</th>
-              <th style={{border:"3px double green"}}>Weight</th>
+              <th style={{border:"3px double green",width:"150px"}}>First Name</th>
+              <th style={{border:"3px double green",width:"100px"}}>Last Name</th>
+              <th style={{border:"3px double green",width:"150px"}}>Email</th>
+              {/* <th style={{border:"3px double green"}}>Role</th> */}
+              <th style={{border:"3px double green",width:"30px"}}>Age</th>
+              {/* <th style={{border:"3px double green"}}>Weight</th>
               <th style={{border:"3px double green"}}>Height</th>
               <th style={{border:"3px double green"}}>Address</th>
               <th style={{border:"3px double green"}}>Current Plan</th>
               <th style={{border:"3px double green"}}>Next Renew Date</th>
               <th style={{border:"3px double green"}}>Number Of Exercises</th>
               <th style={{border:"3px double green"}}>Time Duration All Exercises</th>
-              <th style={{border:"3px double green"}}>Total Calories Burnt</th>
-              <th style={{border:"3px double green"}}>Phone Number</th>
-              <th style={{border:"3px double green"}}>Actions</th>
+              <th style={{border:"3px double green"}}>Total Calories Burnt</th> */} 
+              <th style={{border:"3px double green",width:"70px"}}>Phone Number</th>
+              <th style={{border:"3px double green",width:"100px"}}>Actions</th>
            
             </tr>
             

@@ -14,7 +14,7 @@ const Customer = props => (
 
 
     <td>
-    <a   href="#" >update</a> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
+     <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td> 
     
   </tr>
