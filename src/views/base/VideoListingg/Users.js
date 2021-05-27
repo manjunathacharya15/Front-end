@@ -24,7 +24,7 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.sdateandtime}</td>
     <td style={{border:"3px double green"}}>{props.customer.snameandcount}</td>
     <td style={{border:"3px double green"}}>
-      <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="/videolisting" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
+      <Link to={"/liveupdate/"+props.customer._id}>edit</Link> | <a href="/videolisting" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td>
     
 

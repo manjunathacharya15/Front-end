@@ -88,6 +88,11 @@ const Activate=React.lazy(() => import('./componets/activedeactive.componet'));
 const Password=React.lazy(() => import('./componets/changepassword.componet'));
 const Trainerupdate=React.lazy(() => import('./componets/updatetrainer.componet'));
 const Programupdate=React.lazy(() => import('./componets/updateprograms.componet'));
+const Userdetails=React.lazy(() => import('./componets/userview.componet'));
+const Trainerdetails=React.lazy(() => import('./componets/trainerview.componet'));
+const Updatecategoryy=React.lazy(() => import('./componets/updatecategory.componet'));
+const Liveupdate=React.lazy(() => import('./componets/liveclassesupdate.componet'));
+
 
 
 
@@ -187,7 +192,12 @@ const routes = [
   { path: '/activate', exact: true,  name: 'Activate Or Deactivate', component:Activate},
   { path: '/change', exact: true,  name: 'Changepassword', component:Password},
   { path: '/updates/:id', exact: true,  name: 'updatetrainer', component:Trainerupdate},
-  { path: '/program/:id', exact: true,  name: 'updatetrainer', component:Programupdate},
+  { path: '/program/:id', exact: true,  name: 'updatePrograms', component:Programupdate},
+  { path: '/userdetail/:id', exact: true,  name: 'View UserDetails', component:Userdetails},
+  { path: '/trainerdetail/:id', exact: true,  name: 'View Trainer Details', component:Trainerdetails},
+  { path: '/updatecategory/:id', exact: true,  name: 'Update Category', component:Updatecategoryy},
+  { path: '/liveupdate/:id', exact: true,  name: 'Live Class Update', component:Liveupdate},
+
 
 
 

@@ -10,7 +10,7 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.image}</td>
     <td style={{border:"3px double green"}}>{props.customer.caloriesburnt}</td>
     <td>
-      <Link to={"/edit/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
+      <Link to={"/updatecategory/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td>
     
   </tr>

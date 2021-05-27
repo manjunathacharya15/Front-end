@@ -103,7 +103,7 @@ export default class updateuser extends Component {
   render() {
     return (
     <div>
-      <h3>Update User </h3>
+      <h3>Update Trainer </h3>
       <form onSubmit={this.onSubmit}>
       <div className="form-group"> 
           <label>First Name: </label>

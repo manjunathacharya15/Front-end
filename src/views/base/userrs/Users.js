@@ -7,7 +7,7 @@ import Search from '@material-ui/icons/SearchRounded';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}>{props.customer.firstname}</td>
+    <td style={{border:"3px double green"}}><Link to= {"/trainerdetail/"+props.customer._id}>{props.customer.firstname}</Link></td>
     <td style={{border:"3px double green"}}>{props.customer.lastname}</td>
     <td style={{border:"3px double green"}}>{props.customer.email}</td>
     <td style={{border:"3px double green"}}>{props.customer.gender}</td>
