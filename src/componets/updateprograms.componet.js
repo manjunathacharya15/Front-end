@@ -41,9 +41,9 @@ export default class updateuser extends Component {
       access:'',
      price:'',
      exercisename:'',
-     file:null,
+     video:'',
      categoryname:'',
-     file: null,
+     cimage:'',
       caloriesburnt: '',
       pmaterial:'',
      status:'',
@@ -142,7 +142,7 @@ export default class updateuser extends Component {
   }
   onChangevideo(e) {
     this.setState({
-      file: e.target.files[0]
+      video: e.target.value
     })
   }
 
@@ -154,7 +154,7 @@ export default class updateuser extends Component {
   }
   onChangecimage(e) {
     this.setState({
-      file: e.target.files[0]
+      cimage: e.target.value
     })
   }
   onChangecaloriesburnt(e) {
@@ -202,6 +202,19 @@ export default class updateuser extends Component {
     formData.append('classname',this.state.classname);
     formData.append('image',this.state.file);
     formData.append('description',this.state.description);
+    formData.append('duration',this.state.duration);
+    formData.append('chooseinstructor',this.state.chooseinstructor);
+    formData.append('category',this.state.category);
+    formData.append('access',this.state.access);
+    formData.append('price',this.state.price);
+    formData.append('exercisename',this.state.exercisename);
+    formData.append('video',this.state.video);
+    formData.append('categoryname',this.state.categoryname);
+    formData.append('cimage',this.state.cimage);
+    formData.append('caloriesburnt',this.state.caloriesburnt);
+    formData.append('pmaterial',this.state.pmaterial);
+    formData.append('status',this.state.status);
+
     
     
     const config={
@@ -217,7 +230,7 @@ export default class updateuser extends Component {
 
     }
 
-    axios.post('https://instructor9513.herokuapp.com/programs/update/' + this.props.match.params.id, formData)
+    axios.post('https://instructor9513.herokuapp.com/programs/update/' + this.props.match.params.id, formData,config)
     .then(function(response){
         if(response.data==='Program updated!'){
             window.location='/Videolisting'
@@ -233,6 +246,7 @@ export default class updateuser extends Component {
       <div className="form-group"> 
           <label>Class Name: </label>
           <input  type="text"
+          name="classname"
               className="form-control"
               value={this.state.classname}
               onChange={this.onChangeclassname}
@@ -241,7 +255,7 @@ export default class updateuser extends Component {
         <div className="form-group"> 
           <label>Image: </label>
           <input  type="file"
-             
+             name="image"
               className="form-control"
               value={this.state.image}
               onChange={this.onChangeimage}
@@ -250,6 +264,7 @@ export default class updateuser extends Component {
         <div className="form-group">
           <label>Description </label>
           <input 
+          name="description"
               type="text" 
               className="form-control"
              value={this.state.description}
@@ -259,6 +274,7 @@ export default class updateuser extends Component {
         <div className="form-group">
           <label>Duration</label>
           <input 
+          name="duration"
               type="text" 
               className="form-control"
               value={this.state.duration}
@@ -268,6 +284,7 @@ export default class updateuser extends Component {
         <div className="form-group"> 
           <label>Choose Instructor: </label>
           <input  type="text"
+          name="chooseinstructor"
               className="form-control"
               value={this.state.chooseinstructor}
               onChange={this.onChangechooseinstructor}
@@ -276,7 +293,7 @@ export default class updateuser extends Component {
         <div className="form-group"> 
           <label>Category: </label>
           <input  type="text"
-             
+             name="category"
               className="form-control"
               value={this.state.category}
               onChange={this.onChangecategory}
@@ -284,7 +301,8 @@ export default class updateuser extends Component {
         </div>
         <div className="form-group">
           <label>Access </label>
-          <input 
+          <input
+          name="access" 
               type="text" 
               className="form-control"
              value={this.state.access}
@@ -294,6 +312,7 @@ export default class updateuser extends Component {
         <div className="form-group">
           <label>Price </label>
           <input 
+          name="price"
               type="number" 
               className="form-control"
               value={this.state.price}
@@ -303,6 +322,7 @@ export default class updateuser extends Component {
         <div className="form-group"> 
           <label>Exercise Name: </label>
           <input  type="text"
+          name="exercisename"
               className="form-control"
               value={this.state.exercisename}
               onChange={this.onChangeexercisename}
@@ -310,8 +330,8 @@ export default class updateuser extends Component {
         </div>
         <div className="form-group"> 
           <label>Video: </label>
-          <input  type="text"
-             
+          <input  type="file"
+             name="video"
               className="form-control"
               value={this.state.video}
               onChange={this.onChangevideo}
@@ -320,6 +340,7 @@ export default class updateuser extends Component {
         <div className="form-group">
           <label>Category Name </label>
           <input 
+          name="categoryname"
               type="text" 
               className="form-control"
              value={this.state.categoryname}
@@ -329,7 +350,8 @@ export default class updateuser extends Component {
         <div className="form-group">
           <label>Category Image </label>
           <input 
-              type="text" 
+          name="cimage"
+              type="file" 
               className="form-control"
               value={this.state.cimage}
               onChange={this.onChangecimage}
@@ -338,6 +360,7 @@ export default class updateuser extends Component {
         <div className="form-group"> 
           <label>Calories Burnt: </label>
           <input  type="number"
+          name="caloriesburnt"
               className="form-control"
               value={this.state.caloriesburnt}
               onChange={this.onChangecaloriesburnt}
@@ -346,7 +369,7 @@ export default class updateuser extends Component {
         <div className="form-group"> 
           <label>Program Material: </label>
           <input  type="text"
-             
+             name="pmaterial"
               className="form-control"
               value={this.state.pmaterial}
               onChange={this.onChangepmaterial}
@@ -355,6 +378,7 @@ export default class updateuser extends Component {
         <div className="form-group">
           <label>Status </label>
           <input 
+          name="status"
               type="text" 
               className="form-control"
              value={this.state.status}

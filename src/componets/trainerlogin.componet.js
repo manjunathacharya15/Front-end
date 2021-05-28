@@ -186,7 +186,12 @@ export default class CreateExercise extends Component {
     console.log(trainer);
 
     axios.post('https://instructor9513.herokuapp.com/instructors/signup', trainer)
-      .then(res => console.log(res.data));
+    .then(function(response){
+
+      if(response.data.message ==='Successful Online Account Creation Informing That The Admin Will Review Your Profile And Will Get Back To You Within 48 Hours.'){
+          window.location='/userrs'
+      }
+     }) 
   }
 
   render() {
