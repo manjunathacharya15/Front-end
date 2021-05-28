@@ -20,7 +20,7 @@ export default class updateuser extends Component {
 
     this.state = {
       cname: '',
-      image: '',
+      file:null,
       caloriesburnt:'',
       
 
@@ -37,7 +37,7 @@ export default class updateuser extends Component {
       .then(response => {
     this.setState({
         cname:response.data.cname,
-        image:response.data.image,
+        
         caloriesburnt:response.data.caloriesburnt,
        
    
@@ -56,7 +56,7 @@ export default class updateuser extends Component {
   }
   onChangeimage(e) {
     this.setState({
-      image: e.target.value
+      file: e.target.files[0]
     })
   }
 
@@ -75,18 +75,23 @@ export default class updateuser extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const customer = {
-      cname: this.state.cname,
-      image: this.state.image,
-      caloriesburnt: this.state.caloriesburnt,
-      
-
+    
+    const formData=new FormData();
+    formData.append('cname',this.state.cname);
+    formData.append('image',this.state.file);
+    formData.append('caloriesburnt',this.state.caloriesburnt);
+    
+    
+    const config={
+      headers:{
+        'content-type':'multipart/form-data'
+      }
      
       
 
     }
 
-    axios.post('https://obscure-shelf-98404.herokuapp.com/categories/update/' + this.props.match.params.id, customer)
+    axios.post('https://obscure-shelf-98404.herokuapp.com/categories/update/' + this.props.match.params.id, formData)
       .then(function(response){
        if(response.data==='Category updated!'){
            window.location='/Categorymanagement'
@@ -102,6 +107,7 @@ export default class updateuser extends Component {
       <div className="form-group"> 
           <label>Category Name: </label>
           <input  type="text"
+          name="cname"
               className="form-control"
               value={this.state.cname}
               onChange={this.onChangecname}
@@ -109,8 +115,8 @@ export default class updateuser extends Component {
         </div>
         <div className="form-group"> 
           <label>Image: </label>
-          <input  type="text"
-             
+          <input  type="file"
+             name="image"
               className="form-control"
               value={this.state.image}
               onChange={this.onChangeimage}
@@ -119,6 +125,7 @@ export default class updateuser extends Component {
         <div className="form-group">
           <label>Calories Burnt </label>
           <input 
+          name="caloriesburnt"
               type="number" 
               className="form-control"
              value={this.state.caloriesburnt}

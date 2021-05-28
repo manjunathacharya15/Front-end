@@ -33,7 +33,7 @@ export default class updateuser extends Component {
 
     this.state = {
     classname: '',
-      image: '',
+      file: null,
       description:'',
      duration:'',
      chooseinstructor: '',
@@ -41,9 +41,9 @@ export default class updateuser extends Component {
       access:'',
      price:'',
      exercisename:'',
-     video:'',
+     file:null,
      categoryname:'',
-     cimage: '',
+     file: null,
       caloriesburnt: '',
       pmaterial:'',
      status:'',
@@ -64,7 +64,7 @@ export default class updateuser extends Component {
       .then(response => {
     this.setState({
         classname:response.data.classname,
-        image:response.data.image,
+       
         description:response.data.description,
         duration:response.data.duration,
         chooseinstructor:response.data.chooseinstructor,
@@ -72,9 +72,9 @@ export default class updateuser extends Component {
         access:response.data.access,
         price:response.data.price,
         exercisename:response.data.exercisename,
-        video:response.data.video,
+        
         categoryname:response.data.categoryname,
-        cimage:response.data.cimage,
+        
         caloriesburnt:response.data.caloriesburnt,
         pmaterial:response.data.pmaterial,
         status:response.data.status,
@@ -98,7 +98,7 @@ export default class updateuser extends Component {
   }
   onChangeimage(e) {
     this.setState({
-      image: e.target.value
+      file: e.target.files[0]
     })
   }
 
@@ -142,7 +142,7 @@ export default class updateuser extends Component {
   }
   onChangevideo(e) {
     this.setState({
-      video: e.target.value
+      file: e.target.files[0]
     })
   }
 
@@ -154,7 +154,7 @@ export default class updateuser extends Component {
   }
   onChangecimage(e) {
     this.setState({
-      cimage: e.target.value
+      file: e.target.files[0]
     })
   }
   onChangecaloriesburnt(e) {
@@ -181,24 +181,34 @@ export default class updateuser extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const customer = {
-      classname: this.state.classname,
-      image: this.state.image,
-      description: this.state.description,
-      duration:this.state.duration,
-      chooseinstructor: this.state.chooseinstructor,
-      category: this.state.category,
-      access: this.state.access,
-      price:this.state.price,
-      exercisename: this.state.exercisename,
-      video: this.state.video,
-      categoryname: this.state.categoryname,
-      cimage:this.state.cimage,
-      caloriesburnt: this.state.caloriesburnt,
-      pmaterial: this.state.pmaterial,
-      status: this.state.status,
+    // const customer = {
+    //   classname: this.state.classname,
+    //   image: this.state.image,
+    //   description: this.state.description,
+    //   duration:this.state.duration,
+    //   chooseinstructor: this.state.chooseinstructor,
+    //   category: this.state.category,
+    //   access: this.state.access,
+    //   price:this.state.price,
+    //   exercisename: this.state.exercisename,
+    //   video: this.state.video,
+    //   categoryname: this.state.categoryname,
+    //   cimage:this.state.cimage,
+    //   caloriesburnt: this.state.caloriesburnt,
+    //   pmaterial: this.state.pmaterial,
+    //   status: this.state.status,
       
-      
+    const formData=new FormData();
+    formData.append('classname',this.state.classname);
+    formData.append('image',this.state.file);
+    formData.append('description',this.state.description);
+    
+    
+    const config={
+      headers:{
+        'content-type':'multipart/form-data'
+      }
+     
       
       
 
@@ -207,7 +217,7 @@ export default class updateuser extends Component {
 
     }
 
-    axios.post('https://instructor9513.herokuapp.com/programs/update/' + this.props.match.params.id, customer)
+    axios.post('https://instructor9513.herokuapp.com/programs/update/' + this.props.match.params.id, formData)
     .then(function(response){
         if(response.data==='Program updated!'){
             window.location='/Videolisting'
@@ -230,7 +240,7 @@ export default class updateuser extends Component {
         </div>
         <div className="form-group"> 
           <label>Image: </label>
-          <input  type="text"
+          <input  type="file"
              
               className="form-control"
               value={this.state.image}

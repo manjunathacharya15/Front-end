@@ -13,7 +13,7 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.totalexercises}</td>
     <td style={{border:"3px double green"}}>{props.customer.description}</td>
     <td style={{border:"3px double green"}}>{props.customer.chooseinstructor}</td>
-    <td style={{border:"3px double green"}}>
+    <td style={{border:"3px double green",width:"50px"}}>
     <tr>ExerciseName:{props.customer.exercise.exercisename}</tr>
     <tr>Video:{props.customer.exercise.video}</tr>
     <tr>Duration:{props.customer.duration}</tr>
@@ -133,7 +133,7 @@ export default class CustomersList extends Component {
     
    
 </div>
-        <div style={{overflowX:"scroll"}}>
+        <div style={{overflowY:"scroll"}}>
                
         <table className="table" style={{border:"3px double green"}}>
           <thead className="thead-light">
@@ -146,7 +146,7 @@ export default class CustomersList extends Component {
               <th style={{border:"3px double green"}}>Program Description</th>
               <th style={{border:"3px double green"}}>Choose Instructor</th>
               <th style={{border:"3px double green"}}>Exercise</th>
-              <th style={{border:"3px double green"}}>Instructor Profile</th>
+              <th style={{border:"3px double green",width:"50px"}}>Instructor Profile</th>
               <th style={{border:"3px double green"}}>Access</th>
               <th style={{border:"3px double green"}}>Price</th>
               <th style={{border:"3px double green"}}>Actions</th>

@@ -18,7 +18,7 @@ export default class CreateExercise extends Component {
 
     this.state = {
       cname: '',
-      image: '',
+      file: null,
       caloriesburnt:'',
       
 
@@ -36,7 +36,7 @@ export default class CreateExercise extends Component {
   }
   onChangeimage(e) {
     this.setState({
-      image: e.target.value
+     file:e.target.files[0]
     })
   }
 
@@ -54,20 +54,24 @@ export default class CreateExercise extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const customer = {
-      cname: this.state.cname,
-      image: this.state.image,
-      caloriesburnt: this.state.caloriesburnt,
-      
-     
-      
+const formData=new FormData();
+formData.append('cname',this.state.cname);
+formData.append('image',this.state.file);
+formData.append('caloriesburnt',this.state.caloriesburnt);
 
-    }
 
-    console.log(customer);
+const config={
+  headers:{
+    'content-type':'multipart/form-data'
+  }
 
-    axios.post('https://obscure-shelf-98404.herokuapp.com/categories/add', customer)
-      .then(res => console.log(res.data));
+  }
+    axios.post('https://obscure-shelf-98404.herokuapp.com/categories/add',formData)
+    .then(function(response){
+      if(response.data==='Category Added'){
+          window.location='/Categorymanagement'
+      }
+     }) 
   }
 
   render() {
@@ -78,6 +82,7 @@ export default class CreateExercise extends Component {
       <div className="form-group"> 
           <label>Category Name: </label>
           <input  type="text"
+              name="cname"
               className="form-control"
               value={this.state.cname}
               onChange={this.onChangecname}
@@ -95,7 +100,8 @@ export default class CreateExercise extends Component {
         <div className="form-group">
           <label>Calories Burnt </label>
           <input 
-              type="number" 
+              type="number"
+              name="caloriesburnt"
               className="form-control"
               value={this.state.caloriesburnt}
               onChange={this.onChangecaloriesburnt}
