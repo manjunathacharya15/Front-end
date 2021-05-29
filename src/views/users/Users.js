@@ -8,11 +8,11 @@ import { Input } from '@material-ui/core';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}><Link to={"/userdetail/"+props.customer._id}>{props.customer.firstname}</Link></td>
-    <td style={{border:"3px double green"}}>{props.customer.lastname}</td>
-    <td style={{border:"3px double green"}}>{props.customer.email}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}><Link to={"/userdetail/"+props.customer._id}>{props.customer.firstname}</Link></td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.lastname}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.email}</td>
     {/* <td style={{border:"3px double green"}}>{props.customer.role}</td> */}
-    <td style={{border:"3px double green"}}>{props.customer.age}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.age}</td>
     {/* <td style={{border:"3px double green"}}>{props.customer.weight}</td>
     <td style={{border:"3px double green"}}>{props.customer.height}</td>
     <td style={{border:"3px double green"}}>{props.customer.address}</td>
@@ -21,9 +21,9 @@ const Customer = props => (
     <td style={{border:"3px double green"}}>{props.customer.numberofexercises}</td>
     <td style={{border:"3px double green"}}>{props.customer.timedurationofallexercises}</td>
     <td style={{border:"3px double green"}}>{props.customer.totalcaloriesburnt}</td> */}
-    <td style={{border:"3px double green"}}>{props.customer.phonenumber}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.phonenumber}</td>
     
-    <td style={{border:"3px double green"}}>
+    <td style={{border:"1px double grey",textAlign:"center"}}>
       <Link to={"/update/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a> 
     </td>
   </tr>
@@ -143,14 +143,14 @@ export default class CustomersList extends Component {
           
        
                
-        <table className="table" style={{border:"3px double green"}}>
+        <table className="table" style={{border:"1px double grey"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green",width:"150px"}}>First Name</th>
-              <th style={{border:"3px double green",width:"100px"}}>Last Name</th>
-              <th style={{border:"3px double green",width:"150px"}}>Email</th>
+              <th style={{border:"1px double white",width:"150px" ,backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>First Name</th>
+              <th style={{border:"1px double white",width:"100px",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Last Name</th>
+              <th style={{border:"1px double white",width:"150px",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Email</th>
               {/* <th style={{border:"3px double green"}}>Role</th> */}
-              <th style={{border:"3px double green",width:"30px"}}>Age</th>
+              <th style={{border:"1px double white",width:"30px",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Age</th>
               {/* <th style={{border:"3px double green"}}>Weight</th>
               <th style={{border:"3px double green"}}>Height</th>
               <th style={{border:"3px double green"}}>Address</th>
@@ -159,8 +159,8 @@ export default class CustomersList extends Component {
               <th style={{border:"3px double green"}}>Number Of Exercises</th>
               <th style={{border:"3px double green"}}>Time Duration All Exercises</th>
               <th style={{border:"3px double green"}}>Total Calories Burnt</th> */} 
-              <th style={{border:"3px double green",width:"70px"}}>Phone Number</th>
-              <th style={{border:"3px double green",width:"100px"}}>Actions</th>
+              <th style={{border:"1px double white",width:"70px",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Phone Number</th>
+              <th style={{border:"1px double white",width:"100px",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Actions</th>
            
             </tr>
             

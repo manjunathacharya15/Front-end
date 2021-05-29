@@ -6,10 +6,10 @@ import Search from '@material-ui/icons/SearchRounded';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}>{props.customer.cname}</td>
-    <td style={{border:"3px double green"}}>{props.customer.image}</td>
-    <td style={{border:"3px double green"}}>{props.customer.caloriesburnt}</td>
-    <td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.cname}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.image}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.caloriesburnt}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>
       <Link to={"/updatecategory/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td>
     
@@ -71,13 +71,21 @@ export default class CustomersList extends Component {
 </div>
         <div style={{overflowX:"scroll"}}>
                
-        <table className="table" style={{border:"3px double green"}}>
+        <table className="table" style={{border:"1px double grey"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>Category Name</th>
-              <th style={{border:"3px double green"}}>Image/Video</th>
-              <th style={{border:"3px double green"}}>Calories Burnt</th>
-              <th style={{border:"3px double green"}}>Actions</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Category Name</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Image/Video</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Calories Burnt</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Actions</th>
               
              
             </tr>

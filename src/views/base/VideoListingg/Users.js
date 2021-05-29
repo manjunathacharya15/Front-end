@@ -6,24 +6,24 @@ import Search from '@material-ui/icons/SearchRounded';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}>{props.customer.classname}</td>
-    <td style={{border:"3px double green"}}>{props.customer.image}</td>
-    <td style={{border:"3px double green"}}>{props.customer.description}</td>
-    <td style={{border:"3px double green"}}>{props.customer.category}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.classname}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.image}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.description}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.category}</td>
     
-    <td style={{border:"3px double green"}}>{props.customer.duration}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.duration}</td>
     
-    <td style={{border:"3px double green"}}>{props.customer.caloriesburnt}</td>
-    <td style={{border:"3px double green"}}>
-    <tr>name:{props.customer.instructor.name}</tr>
-    <tr>image:{props.customer.instructor.img}</tr>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.caloriesburnt}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>
+    <tr style={{textAlign:"center"}}>name:{props.customer.instructor.name}</tr>
+    <tr style={{textAlign:"center"}}>image:{props.customer.instructor.img}</tr>
    
 
     </td>
-    <td style={{border:"3px double green"}}>{props.customer.instructorprofile}</td>
-    <td style={{border:"3px double green"}}>{props.customer.sdateandtime}</td>
-    <td style={{border:"3px double green"}}>{props.customer.snameandcount}</td>
-    <td style={{border:"3px double green"}}>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.instructorprofile}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.sdateandtime}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.snameandcount}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>
       <Link to={"/liveupdate/"+props.customer._id}>edit</Link> | <a href="/videolisting" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td>
     
@@ -127,22 +127,22 @@ export default class CustomersList extends Component {
         <div style={{width:"19%"}}><h4><b></b></h4></div>
    
 </div>
-        <div style={{overflowX:"scroll"}}>
+        <div style={{overflowY:"scroll"}}>
                
-        <table className="table" style={{border:"3px double green"}}>
+        <table className="table" style={{border:"1px double grey"}}>
           <thead className="thead-light">
             <tr>
-            <th style={{border:"3px double green"}}>Class Name</th>
-              <th style={{border:"3px double green"}}>Featured Image</th>
-              <th style={{border:"3px double green"}}>Class Description</th>
-              <th style={{border:"3px double green"}}>Class Category</th>
-              <th style={{border:"3px double green"}}>Class Duration</th>
-              <th style={{border:"3px double green"}}>Expected Calories Burnt</th>
-              <th style={{border:"3px double green"}}>Instructor Name&Image</th>
-               <th style={{border:"3px double green"}}>Instructor Profile</th>
-              <th style={{border:"3px double green"}}>Start Date&Time</th>
-              <th style={{border:"3px double green"}}>Subscribers Names&Count</th> 
-              <th style={{border:"3px double green"}}>Actions</th>
+            <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Class Name</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Featured Image</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Class Description</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Class Category</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Class Duration</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Expected Calories Burnt</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Instructor Name&Image</th>
+               <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Instructor Profile</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Start Date&Time</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Subscribers Names&Count</th> 
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Actions</th>
 
             </tr>
           </thead>

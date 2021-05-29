@@ -6,12 +6,12 @@ import Search from '@material-ui/icons/SearchRounded';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}>{props.customer.exercisename}</td>
-    <td style={{border:"3px double green"}}>{props.customer.vname}</td>
-    <td style={{border:"3px double green"}}>{props.customer.exerciseduration}</td>
-    <td style={{border:"3px double green"}}>{props.customer.exerciseprice}</td>
-    <td style={{border:"3px double green"}}>{props.customer.access}</td>
-    <td style={{border:"3px double green"}}>{props.customer.status}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.exercisename}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.vname}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.exerciseduration}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.exerciseprice}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.access}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.status}</td>
     
     
   </tr>
@@ -113,15 +113,15 @@ export default class CustomersList extends Component {
 </div>
         <div style={{overflowX:"scroll"}}>
                
-        <table className="table" style={{border:"3px double green"}}>
+        <table className="table" style={{border:"1px double grey"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>Exercise Name</th>
-              <th style={{border:"3px double green"}}>Video Name</th>
-              <th style={{border:"3px double green"}}>Exercise Duration</th>
-              <th style={{border:"3px double green"}}>Exercise Price</th>
-              <th style={{border:"3px double green"}}>Access</th>
-              <th style={{border:"3px double green"}}>Status</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Exercise Name</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Video Name</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Exercise Duration</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Exercise Price</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Access</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Status</th>
               
             </tr>
           </thead>

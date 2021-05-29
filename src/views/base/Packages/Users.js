@@ -6,14 +6,14 @@ import Search from '@material-ui/icons/SearchRounded';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}>{props.customer.packagename}</td>
-    <td style={{border:"3px double green"}}>{props.customer.category}</td>
-    <td style={{border:"3px double green"}}>{props.customer.video}</td>
-    <td style={{border:"3px double green"}}>{props.customer.price}</td>
-    <td style={{border:"3px double green"}}>{props.customer.subscribers}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.packagename}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.category}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.video}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.price}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.subscribers}</td>
 
 
-    <td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>
      <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td> 
     
@@ -119,15 +119,15 @@ export default class CustomersList extends Component {
 </div>
         <div style={{overflowX:"scroll"}}>
                
-        <table className="table" style={{border:"3px double green"}}>
+        <table className="table" style={{border:"1px double grey"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>Package Name</th>
-              <th style={{border:"3px double green"}}>Category</th>
-              <th style={{border:"3px double green"}}>Video</th>
-              <th style={{border:"3px double green"}}>Price</th>
-              <th style={{border:"3px double green"}}>Subscribers</th>
-              <th style={{border:"3px double green"}}>Actions</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Package Name</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Category</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Video</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Price</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Subscribers</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Actions</th>
 
               
               

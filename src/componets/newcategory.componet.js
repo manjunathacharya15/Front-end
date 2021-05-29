@@ -77,7 +77,7 @@ const config={
   render() {
     return (
     <div>
-      <h3>Create Packages </h3>
+      <h3>Create Category </h3>
       <form onSubmit={this.onSubmit}>
       <div className="form-group"> 
           <label>Category Name: </label>

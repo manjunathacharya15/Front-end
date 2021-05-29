@@ -96,17 +96,17 @@ _children:[
   {
     _tag: 'CSidebarNavItem',
     name: 'FAQ',
-    to: '',
+    to: '/FAQ',
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Contact us Enquiries',
-    to: '',
+    to: '/ContactUs',
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Recommended Programs',
-    to: '',
+    to: '/RecommendedPrograms',
   },
 
 

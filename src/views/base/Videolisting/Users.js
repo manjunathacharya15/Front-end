@@ -6,25 +6,25 @@ import Search from '@material-ui/icons/SearchRounded';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}>{props.customer.classname}</td>
-    <td style={{border:"3px double green"}}>{props.customer.image}</td>
-    <td style={{border:"3px double green"}}>{props.customer.category}</td>
-    <td style={{border:"3px double green"}}>{props.customer.duration}</td>
-    <td style={{border:"3px double green"}}>{props.customer.totalexercises}</td>
-    <td style={{border:"3px double green"}}>{props.customer.description}</td>
-    <td style={{border:"3px double green"}}>{props.customer.chooseinstructor}</td>
-    <td style={{border:"3px double green",width:"50px"}}>
-    <tr>ExerciseName:{props.customer.exercise.exercisename}</tr>
-    <tr>Video:{props.customer.exercise.video}</tr>
-    <tr>Duration:{props.customer.duration}</tr>
-    <tr>Category:{props.customer.category}</tr>
-    <tr>Image:{props.customer.image}</tr>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.classname}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.image}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.category}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.duration}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.totalexercises}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.description}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.chooseinstructor}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>
+    <tr style={{textAlign:"center"}}>ExerciseName:{props.customer.exercise.exercisename}</tr>
+    <tr style={{textAlign:"center"}}>Video:{props.customer.exercise.video}</tr>
+    <tr style={{textAlign:"center"}}>Duration:{props.customer.duration}</tr>
+    <tr style={{textAlign:"center"}}>Category:{props.customer.category}</tr>
+    <tr style={{textAlign:"center"}}>Image:{props.customer.image}</tr>
     
     </td>
-    <td style={{border:"3px double green"}}>{props.customer.instructorprofile}</td>
-    <td style={{border:"3px double green"}}>{props.customer.access}</td>
-    <td style={{border:"3px double green"}}>{props.customer.price}</td>
-    <td style={{border:"3px double green"}}>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.instructorprofile}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.access}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.price}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>
       <Link to={"/program/"+props.customer._id}>edit</Link> | <a href="/videolisting" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td>
     
@@ -135,21 +135,21 @@ export default class CustomersList extends Component {
 </div>
         <div style={{overflowY:"scroll"}}>
                
-        <table className="table" style={{border:"3px double green"}}>
+        <table className="table" style={{border:"1px double grey"}}>
           <thead className="thead-light">
             <tr>
-            <th style={{border:"3px double green"}}>Program Name</th>
-              <th style={{border:"3px double green"}}>Program Image</th>
-              <th style={{border:"3px double green"}}>Category</th>
-              <th style={{border:"3px double green"}}>Duration</th>
-              <th style={{border:"3px double green"}}>Total Exercises</th>
-              <th style={{border:"3px double green"}}>Program Description</th>
-              <th style={{border:"3px double green"}}>Choose Instructor</th>
-              <th style={{border:"3px double green"}}>Exercise</th>
-              <th style={{border:"3px double green",width:"50px"}}>Instructor Profile</th>
-              <th style={{border:"3px double green"}}>Access</th>
-              <th style={{border:"3px double green"}}>Price</th>
-              <th style={{border:"3px double green"}}>Actions</th>
+            <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Program Name</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Program Image</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Category</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Duration</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Total Exercises</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Program Description</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Choose Instructor</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Exercise</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Instructor Profile</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Access</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Price</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Actions</th>
 
             </tr>
           </thead>

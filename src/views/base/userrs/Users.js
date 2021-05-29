@@ -7,29 +7,29 @@ import Search from '@material-ui/icons/SearchRounded';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}><Link to= {"/trainerdetail/"+props.customer._id}>{props.customer.firstname}</Link></td>
-    <td style={{border:"3px double green"}}>{props.customer.lastname}</td>
-    <td style={{border:"3px double green"}}>{props.customer.email}</td>
-    <td style={{border:"3px double green"}}>{props.customer.gender}</td>
-    {/* <td style={{border:"3px double green"}}>{props.customer.status}</td> */}
-    <td style={{border:"3px double green"}}>{props.customer.phonenumber}</td>
-    {/* <td style={{border:"3px double green"}}>{props.customer.posttype}</td>
-    <td style={{border:"3px double green"}}>{props.customer.role}</td>
-    <td style={{border:"3px double green"}}>{props.customer.age}</td>
-    <td  style={{border:"3px double green"}}>{props.customer.weight}</td>
-    <td style={{border:"3px double green"}}>{props.customer.height}</td>
-    <td style={{border:"3px double green"}}>{props.customer.career}</td>
-    <td style={{border:"3px double green"}}>{props.customer.introduction}</td>
-    <td style={{border:"3px double green"}}>{props.customer.briefhistory}</td>
-    <td style={{border:"3px double green"}}>{props.customer.specializedin}</td>
-    <td style={{border:"3px double green"}}>{props.customer.numberofapplicants}</td>
-    <td style={{border:"3px double green"}}>{props.customer.numberofattendees}</td>
-    <td style={{border:"3px double green"}}>{props.customer.numberofsubscribers}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}><Link to= {"/trainerdetail/"+props.customer._id}>{props.customer.firstname}</Link></td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.lastname}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.email}</td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.gender}</td>
+    {/* <td style={{border:"1px double grey"}}>{props.customer.status}</td> */}
+    <td style={{border:"1px double grey",textAlign:"center"}}>{props.customer.phonenumber}</td>
+    {/* <td style={{border:"1px double grey"}}>{props.customer.posttype}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.role}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.age}</td>
+    <td  style={{border:"1px double grey"}}>{props.customer.weight}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.height}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.career}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.introduction}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.briefhistory}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.specializedin}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.numberofapplicants}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.numberofattendees}</td>
+    <td style={{border:"1px double grey"}}>{props.customer.numberofsubscribers}</td>
      */}
     
 
     
-    <td>
+    <td style={{border:"1px double grey",textAlign:"center"}}>
       <Link to={"/updates/"+props.customer._id}>edit</Link> | <a href="#" onClick={() => { props.deleteCustomer(props.customer._id) }}>delete</a>
     </td>
   </tr>
@@ -141,28 +141,28 @@ export default class CustomersList extends Component {
 </div>            
         <div style={{overflowY:"scroll"}}>
        
-        <table className="table" style={{border:"3px double green"}}>
+        <table className="table" style={{border:"1px double grey"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>First Name</th>
-              <th style={{border:"3px double green"}}>Last Name</th>
-              <th style={{border:"3px double green"}}>Email</th>
-              <th style={{border:"3px double green"}}>Gender</th>
-              {/* <th style={{border:"3px double green"}}>Status</th> */}
-              <th style={{border:"3px double green"}}>Phone Number</th>
-              {/* <th style={{border:"3px double green"}}>Post Type</th>
-              <th style={{border:"3px double green"}}>Role</th>
-              <th style={{border:"3px double green"}}>Age</th>
-              <th style={{border:"3px double green"}}>Weight</th>
-              <th style={{border:"3px double green"}}>Height</th>
-              <th style={{border:"3px double green"}}>Career</th>
-              <th style={{border:"3px double green"}}>Introduction</th>
-              <th style={{border:"3px double green"}}>Brief History</th>
-              <th style={{border:"3px double green"}}>Specialized In</th>
-              <th style={{border:"3px double green"}}>No.of.applicants</th>
-              <th style={{border:"3px double green"}}>No.of.attendees</th>
-              <th style={{border:"3px double green"}}>No.of.subscribers</th> */}
-              <th style={{border:"3px double green"}}>Actions</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>First Name</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Last Name</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Email</th>
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Gender</th>
+              {/* <th style={{border:"1px double grey"}}>Status</th> */}
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Phone Number</th>
+              {/* <th style={{border:"1px double grey"}}>Post Type</th>
+              <th style={{border:"1px double grey"}}>Role</th>
+              <th style={{border:"1px double grey"}}>Age</th>
+              <th style={{border:"1px double grey"}}>Weight</th>
+              <th style={{border:"1px double grey"}}>Height</th>
+              <th style={{border:"1px double grey"}}>Career</th>
+              <th style={{border:"1px double grey"}}>Introduction</th>
+              <th style={{border:"1px double grey"}}>Brief History</th>
+              <th style={{border:"1px double grey"}}>Specialized In</th>
+              <th style={{border:"1px double grey"}}>No.of.applicants</th>
+              <th style={{border:"1px double grey"}}>No.of.attendees</th>
+              <th style={{border:"1px double grey"}}>No.of.subscribers</th> */}
+              <th style={{border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"}}>Actions</th>
              
             </tr>
           </thead>

@@ -6,12 +6,18 @@ import Search from '@material-ui/icons/SearchRounded';
 
 const Customer = props => (
   <tr>
-    <td style={{border:"3px double green"}}>{props.customer.paymentid}</td>
-    <td style={{border:"3px double green"}}>{props.customer.cname}</td>
-    <td style={{border:"3px double green"}}>{props.customer.pname}</td>
-    <td style={{border:"3px double green"}}>{props.customer.amount}</td>
-    <td style={{border:"3px double green"}}>{props.customer.paymentdate}</td>
-    <td style={{border:"3px double green"}}>{props.customer.accessenddate}</td>
+    <td style={{
+border:"1px double grey",textAlign:"center"}}>{props.customer.paymentid}</td>
+    <td style={{
+border:"1px double grey",textAlign:"center"}}>{props.customer.cname}</td>
+    <td style={{
+border:"1px double grey",textAlign:"center"}}>{props.customer.pname}</td>
+    <td style={{
+border:"1px double grey",textAlign:"center"}}>{props.customer.amount}</td>
+    <td style={{
+border:"1px double grey",textAlign:"center"}}>{props.customer.paymentdate}</td>
+    <td style={{
+border:"1px double grey",textAlign:"center"}}>{props.customer.accessenddate}</td>
 
     
     
@@ -122,15 +128,27 @@ export default class CustomersList extends Component {
 </div>
         <div style={{overflowX:"scroll"}}>
                
-        <table className="table" style={{border:"3px double green"}}>
+        <table className="table" style={{border:"1px double grey"}}>
           <thead className="thead-light">
             <tr>
-              <th style={{border:"3px double green"}}>Payment id</th>
-              <th style={{border:"3px double green"}}>Customer Name</th>
-              <th style={{border:"3px double green"}}>Program Name</th>
-              <th style={{border:"3px double green"}}>Amount</th>
-              <th style={{border:"3px double green"}}>Payment Date</th>
-              <th style={{border:"3px double green"}}>Accessibility Enddate</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Payment id</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Customer Name</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Program Name</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Amount</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Payment Date</th>
+              <th style={{
+border:"1px double white",backgroundColor:"#3d84b8",color:"white",textAlign:"center"
+}}>Accessibility Enddate</th>
               
 
               

@@ -92,6 +92,8 @@ const Userdetails=React.lazy(() => import('./componets/userview.componet'));
 const Trainerdetails=React.lazy(() => import('./componets/trainerview.componet'));
 const Updatecategoryy=React.lazy(() => import('./componets/updatecategory.componet'));
 const Liveupdate=React.lazy(() => import('./componets/liveclassesupdate.componet'));
+const Addfaq=React.lazy(() => import('./componets/addfaq.componet'));
+const Addcontact=React.lazy(() => import('./componets/addcontact.componet'));
 
 
 
@@ -197,7 +199,8 @@ const routes = [
   { path: '/trainerdetail/:id', exact: true,  name: 'View Trainer Details', component:Trainerdetails},
   { path: '/updatecategory/:id', exact: true,  name: 'Update Category', component:Updatecategoryy},
   { path: '/liveupdate/:id', exact: true,  name: 'Live Class Update', component:Liveupdate},
-
+  { path: '/addfaq', exact: true,  name: 'Add Faq', component:Addfaq},
+  { path: '/addcontact', exact: true,  name: 'Add Faq', component:Addcontact},
 
 
 
