@@ -126,16 +126,7 @@ _children:[
       name: 'Category ',
       to: '/Categorymanagement',
     },
-    {
-      _tag: 'CSidebarNavItem',
-      name: 'Inst Excr Details',
-      to: '',
-    },
-    {
-      _tag: 'CSidebarNavItem',
-      name: 'Cust Excr Details',
-      to: '',
-    },
+   
   ]
   
 },
