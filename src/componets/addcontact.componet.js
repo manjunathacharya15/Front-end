@@ -9,12 +9,14 @@ export default class Addfaq extends Component{
         
         this.onChangecontactnumber = this.onChangecontactnumber.bind(this);
         this.onChangeemail= this.onChangeemail.bind(this);
+        this.onChangequery=this.onChangequery.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             firstname: '',
             lastname: '',
             contactnumber:'',
             email:'',
+            query:'',
          
          
             trainer:[]
@@ -42,6 +44,13 @@ export default class Addfaq extends Component{
               email: e.target.value
             })
           }
+          onChangequery(e) {
+            this.setState({
+              query: e.target.value
+            })
+          }
+          
+
 
           onSubmit(e) {
             e.preventDefault();
@@ -51,6 +60,7 @@ export default class Addfaq extends Component{
               lastname: this.state.lastname,
               contactnumber:this.state.contactnumber,
               email:this.state.email,
+              query:this.state.query
              
 
         
@@ -106,6 +116,15 @@ export default class Addfaq extends Component{
               className="form-control"
               value={this.state.email}
               onChange={this.onChangeemail}
+              />
+        </div>
+        <div className="form-group"> 
+          <label>Query: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.query}
+              onChange={this.onChangequery}
               />
         </div>
         <div className="form-group">

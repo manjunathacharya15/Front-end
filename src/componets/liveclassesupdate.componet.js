@@ -165,6 +165,9 @@ export default class updateuser extends Component {
       snameandcount: e.target.value
     })
   }
+  onback(){
+    window.location='/VideoListingg'
+    }
   
 
  
@@ -362,6 +365,7 @@ export default class updateuser extends Component {
           <input type="submit" value="Update LiveClass" className="btn btn-primary" />
         </div>
       </form>
+      <button type="button" class="btn btn-dark" onClick={this.onback}>Back</button>
     </div>
     )
   }

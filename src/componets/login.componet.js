@@ -22,6 +22,7 @@ export default class CreateExercise extends Component {
     this.onChangetimedurationofallexercises=this.onChangetimedurationofallexercises.bind(this);
     this.onChangetotalcaloriesburnt=this.onChangetotalcaloriesburnt.bind(this);
     this.onChangephonenumber=this.onChangephonenumber.bind(this);
+    this.onChangegender=this.onChangegender.bind(this);
     
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -32,6 +33,7 @@ export default class CreateExercise extends Component {
       email:'',
       password:'',
       role: '',
+      gender:'',
       age:'',
       weight:'',
       height:'',
@@ -69,6 +71,11 @@ export default class CreateExercise extends Component {
   onChangeemail(e) {
     this.setState({
       email: e.target.value
+    })
+  }
+  onChangegender(e) {
+    this.setState({
+      gender: e.target.value
     })
   }
   onChangerole(e) {
@@ -137,6 +144,7 @@ export default class CreateExercise extends Component {
       email: this.state.email,
       password:this.state.password,
       role: this.state.role,
+      gender:this.state.gender,
       age: this.state.age,
       weight: this.state.weight,
       height: this.state.height,
@@ -202,8 +210,17 @@ export default class CreateExercise extends Component {
               onChange={this.onChangepassword}
               />
         </div>
-        
         <div className="form-group">
+          <label>Gender </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.gender}
+              onChange={this.onChangegender}
+              />
+        </div>
+        
+        {/* <div className="form-group">
           <label>Role </label>
           <input 
               type="text" 
@@ -211,8 +228,8 @@ export default class CreateExercise extends Component {
               value={this.state.role}
               onChange={this.onChangerole}
               />
-        </div>
-        <div className="form-group">
+        </div> */}
+        {/* <div className="form-group">
           <label>Age </label>
           <input 
               type="text" 
@@ -292,7 +309,7 @@ export default class CreateExercise extends Component {
               value={this.state.totalcaloriesburnt}
               onChange={this.onChangetotalcaloriesburnt}
               />
-        </div>
+        </div> */}
         <div className="form-group">
           <label>Phonenumber </label>
           <input 

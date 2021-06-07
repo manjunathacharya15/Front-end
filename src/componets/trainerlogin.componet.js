@@ -247,7 +247,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangegender}
               />
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Role </label>
           <input 
               type="text" 
@@ -255,7 +255,7 @@ export default class CreateExercise extends Component {
               value={this.state.role}
               onChange={this.onChangerole}
               />
-        </div>
+        </div> */}
         <div className="form-group">
           <label>PhoneNumber </label>
           <input 
@@ -265,7 +265,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangephonenumber}
               />
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Status </label>
           <input 
               type="text" 
@@ -372,7 +372,7 @@ export default class CreateExercise extends Component {
               value={this.state.numnerofsubscribers}
               onChange={this.onChangenumberofsubscribers}
               />
-        </div>
+        </div> */}
         <div className="form-group">
           <input type="submit" value="Create trainer" className="btn btn-primary" />
         </div>

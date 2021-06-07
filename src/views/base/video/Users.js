@@ -31,7 +31,7 @@ export default class CustomersList extends Component {
 }
 
   componentDidMount() {
-    axios.get('https://obscure-shelf-98404.herokuapp.com/videos/')
+    axios.post('https://obscure-shelf-98404.herokuapp.com/videos/')
       .then(response => {
         this.setState({ customers: response.data })
       })
@@ -94,7 +94,7 @@ export default class CustomersList extends Component {
     <div style={{width:"80%"}}><h4><b>Videos</b></h4></div>
     <div style={{marginTop:"5px"}}>
     <form onSubmit={this.onSubmit}>
-      <div className="form-group"> 
+    <div className="input-group"> 
           
           <input  type="text"
               required
@@ -102,9 +102,11 @@ export default class CustomersList extends Component {
               value={this.state.exercisename}
               onChange={this.onChangeexercisename}
               />
-        </div>
-        <div className="form-group">
-          <input type="submit" value="Search" className="btn btn-primary" />
+              <div className="input-group-apppend">
+              <button className="btn btn-secondary" type="submit">
+              <i className="fa fa-search"></i>
+              </button>
+              </div>
         </div>
         </form>
         </div>

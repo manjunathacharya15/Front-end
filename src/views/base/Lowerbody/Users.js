@@ -46,7 +46,7 @@ export default class CustomersList extends Component {
   
 
   componentDidMount() {
-    axios.get('https://vast-river-32952.herokuapp.com/payments/')
+    axios.post('https://vast-river-32952.herokuapp.com/payments/')
       .then(response => {
         this.setState({ customers: response.data })
       })
@@ -109,17 +109,19 @@ export default class CustomersList extends Component {
     <div style={{width:"80%"}}><h4><b>Payments</b></h4></div>
     <div style={{marginTop:"5px"}}>
     <form onSubmit={this.onSubmit}>
-      <div className="form-group"> 
-         
+    <div className="input-group"> 
+          
           <input  type="text"
               required
               className="form-control"
               value={this.state.paymentid}
               onChange={this.onChangepaymentid}
               />
-        </div>
-        <div className="form-group">
-          <input type="submit" value="Search" className="btn btn-primary" />
+              <div className="input-group-apppend">
+              <button className="btn btn-secondary" type="submit">
+              <i className="fa fa-search"></i>
+              </button>
+              </div>
         </div>
         </form>
         </div>

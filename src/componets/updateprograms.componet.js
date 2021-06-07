@@ -60,7 +60,7 @@ export default class updateuser extends Component {
     }
   }
   componentDidMount(){
-      axios.get('https://instructor9513.herokuapp.com/programs/' + this.props.match.params.id)
+      axios.post('https://instructor9513.herokuapp.com/programs/' + this.props.match.params.id)
       .then(response => {
     this.setState({
         classname:response.data.classname,
@@ -200,7 +200,7 @@ export default class updateuser extends Component {
       
     const formData=new FormData();
     formData.append('classname',this.state.classname);
-    formData.append('image',this.state.file);
+    formData.append('images',this.state.file);
     formData.append('description',this.state.description);
     formData.append('duration',this.state.duration);
     formData.append('chooseinstructor',this.state.chooseinstructor);
@@ -255,9 +255,8 @@ export default class updateuser extends Component {
         <div className="form-group"> 
           <label>Image: </label>
           <input  type="file"
-             name="image"
+             name="images"
               className="form-control"
-              value={this.state.image}
               onChange={this.onChangeimage}
               />
         </div>
@@ -330,7 +329,7 @@ export default class updateuser extends Component {
         </div>
         <div className="form-group"> 
           <label>Video: </label>
-          <input  type="file"
+          <input  type="text"
              name="video"
               className="form-control"
               value={this.state.video}
@@ -351,7 +350,7 @@ export default class updateuser extends Component {
           <label>Category Image </label>
           <input 
           name="cimage"
-              type="file" 
+              type="text" 
               className="form-control"
               value={this.state.cimage}
               onChange={this.onChangecimage}

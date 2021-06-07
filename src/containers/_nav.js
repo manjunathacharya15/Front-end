@@ -41,13 +41,13 @@ const _nav =  [
     ]
  
     },
-    {
-      _tag: 'CSidebarNavItem',
-  name: 'PACKAGES',
-    to: '/packages',
-    icon: 'cil-storage',
+  //   {
+  //     _tag: 'CSidebarNavItem',
+  // name: 'PACKAGES',
+  //   to: '/packages',
+  //   icon: 'cil-storage',
  
-    },
+  //   },
     {
       _tag: 'CSidebarNavDropdown',
   name: 'Program Management',
@@ -69,11 +69,11 @@ const _nav =  [
           name: 'Videolisting',
           to: '/video',
          },
-            {
-            _tag: 'CSidebarNavItem',
-            name: 'Subscribe without payment',
-            to: '/addvideo',
-          },
+          //   {
+          //   _tag: 'CSidebarNavItem',
+          //   name: 'Subscribe without payment',
+          //   to: '/addvideo',
+          // },
           {
             _tag: 'CSidebarNavItem',
             name: 'Liveclasses',
@@ -115,21 +115,21 @@ _children:[
 
     
     
-  {
-    _tag: 'CSidebarNavDropdown',
-  name: ' Category Management ',
-  to: '',
-  icon: 'cil-graph',
-  _children:[
-    {
-      _tag: 'CSidebarNavItem',
-      name: 'Category ',
-      to: '/Categorymanagement',
-    },
+//   {
+//     _tag: 'CSidebarNavDropdown',
+//   name: ' Category Management ',
+//   to: '',
+//   icon: 'cil-graph',
+//   _children:[
+//     {
+//       _tag: 'CSidebarNavItem',
+//       name: 'Category ',
+//       to: '/Categorymanagement',
+//     },
    
-  ]
+//   ]
   
-},
+// },
 {
   _tag: 'CSidebarNavItem',
 name: ' Payment List ',
@@ -144,7 +144,7 @@ icon: 'cil-lock-locked',
 },
 {
   _tag: 'CSidebarNavItem',
-name: ' Span ',
+name: ' Spam ',
 to: '',
 icon: 'cil-moon',
 },
