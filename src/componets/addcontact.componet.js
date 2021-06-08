@@ -80,9 +80,10 @@ export default class Addfaq extends Component{
     render(){
         return(
             <div>
-                <h3>Create Contact </h3>
+                <h3 style={{marginLeft:"530px"}}>Create Contact </h3>
+                <br/>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group"> 
+      <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
           <label>First Name: </label>
           <input  type="text"
               required
@@ -91,7 +92,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangefirstname}
               />
         </div>
-        <div className="form-group"> 
+        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
           <label>Last Name: </label>
           <input  type="text"
               required
@@ -100,7 +101,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangelastname}
               />
         </div>
-        <div className="form-group"> 
+        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
           <label>Contact Number: </label>
           <input  type="number"
               required
@@ -109,7 +110,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangecontactnumber}
               />
         </div>
-        <div className="form-group"> 
+        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
           <label>Contact Email: </label>
           <input  type="email"
               required
@@ -118,7 +119,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangeemail}
               />
         </div>
-        <div className="form-group"> 
+        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
           <label>Query: </label>
           <input  type="text"
               required
@@ -127,7 +128,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangequery}
               />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{marginLeft:"600px"}}>
           <input type="submit" value="Create Contact us" className="btn btn-primary" />
         </div>
       </form>

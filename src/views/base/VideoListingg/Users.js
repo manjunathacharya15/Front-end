@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
-import Search from '@material-ui/icons/SearchRounded';
-import { Checkbox, Input } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 
@@ -199,7 +197,7 @@ export default class CustomersList extends Component {
           this.deleteCustomerByIds();
         }}
       >
-        Delete Liveclasses
+   <DeleteIcon/>
       </button>
     </div>
        

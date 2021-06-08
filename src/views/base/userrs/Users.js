@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
-import Search from '@material-ui/icons/SearchRounded';
-import { Checkbox, Input } from '@material-ui/core';
+
+
+import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@material-ui/icons/Add';
 
 
 
@@ -210,7 +211,7 @@ export default class CustomersList extends Component {
           this.deleteCustomerByIds();
         }}
       >
-        Delete Trainer
+       <DeleteIcon/>
       </button>
     </div>
         
@@ -218,7 +219,7 @@ export default class CustomersList extends Component {
         
         </div>
     
-    <div style={{width:"22%"}}><Link to="/welcome" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success">AddTrainer+</button></Link></div>
+    <div style={{width:"22%"}}><Link to="/trainer" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success"><AddIcon/></button></Link></div>
     
 </div>
         <div style={{overflowX:"scroll",overflowY:"scroll"}}>

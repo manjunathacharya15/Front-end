@@ -172,9 +172,10 @@ export default class CreateExercise extends Component {
   render() {
     return (
     <div>
-      <h3>Create customer </h3>
+      <h3 style={{marginLeft:"530px"}} >Create customer </h3>
+      <br/>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group"> 
+      <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
           <label>FirstName: </label>
           <input  type="text"
               required
@@ -183,7 +184,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangefirstname}
               />
         </div>
-        <div className="form-group"> 
+        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
           <label>Lastname: </label>
           <input  type="text"
               required
@@ -192,7 +193,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangelastname}
               />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
           <label>Email </label>
           <input 
               type="text" 
@@ -201,7 +202,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeemail}
               />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
           <label>Password </label>
           <input 
               type="password" 
@@ -210,7 +211,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangepassword}
               />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
           <label>Gender </label>
           <input 
               type="text" 
@@ -310,7 +311,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangetotalcaloriesburnt}
               />
         </div> */}
-        <div className="form-group">
+        <div className="form-group" style={{width:"400px",marginLeft:"450px"}} >
           <label>Phonenumber </label>
           <input 
               type="text" 
@@ -319,7 +320,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangephonenumber}
               />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{marginLeft:"600px"}} >
           <input type="submit" value="Create Customer" className="btn btn-primary" />
         </div>
       </form>

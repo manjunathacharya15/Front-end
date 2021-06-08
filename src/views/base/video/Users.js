@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
-import Search from '@material-ui/icons/SearchRounded';
+import AddIcon from '@material-ui/icons/Add';
 
 const Customer = props => (
   <tr>
@@ -111,7 +110,7 @@ export default class CustomersList extends Component {
         </form>
         </div>
     
-    <div style={{width:"26%"}}><Link to="/videos" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success">Addvideo+</button></Link></div>
+    <div style={{width:"26%"}}><Link to="/videos" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success"><AddIcon/></button></Link></div>
 </div>
         <div style={{overflowX:"scroll"}}>
                

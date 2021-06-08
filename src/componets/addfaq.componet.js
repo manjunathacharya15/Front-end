@@ -52,9 +52,10 @@ export default class Addfaq extends Component{
     render(){
         return(
             <div>
-                <h3>Create Faq </h3>
+                <h3 style={{marginLeft:"530px"}}>Create Faq </h3>
+                <br/>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group"> 
+      <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
           <label>Question: </label>
           <input  type="text"
               required
@@ -63,7 +64,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangequestion}
               />
         </div>
-        <div className="form-group"> 
+        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
           <label>Answer: </label>
           <input  type="text"
               required
@@ -72,7 +73,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangeanswer}
               />
         </div>
-        <div className="form-group">
+        <div className="form-group"  style={{marginLeft:"600px"}}>
           <input type="submit" value="Create Faq" className="btn btn-primary" />
         </div>
       
