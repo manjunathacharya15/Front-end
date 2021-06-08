@@ -60,7 +60,7 @@ export default class updateuser extends Component {
     }
   }
   componentDidMount(){
-      axios.get('https://instructor9513.herokuapp.com/programs/' + this.props.match.params.id)
+      axios.get('https://mitnessnew.herokuapp.com/programs/' + this.props.match.params.id)
       .then(response => {
     this.setState({
         classname:response.data.classname,
@@ -232,7 +232,7 @@ export default class updateuser extends Component {
 
     }
 
-    axios.post('https://instructor9513.herokuapp.com/programs/update/' + this.props.match.params.id, formData,config)
+    axios.post('https://mitnessnew.herokuapp.com/programs/update/' + this.props.match.params.id, formData,config)
     .then(function(response){
         if(response.data==='Program updated!'){
             window.location='/Videolisting'
@@ -243,10 +243,10 @@ export default class updateuser extends Component {
   render() {
     return (
     <div>
-      <h3 style={{marginLeft:"530px"}}>Update Program </h3>
+      <h3>Update Program </h3>
       <br/>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group" style={{width:"450px"}} > 
           <label>Class Name: </label>
           <input  type="text"
           name="classname"
@@ -255,7 +255,7 @@ export default class updateuser extends Component {
               onChange={this.onChangeclassname}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Image: </label>
           <input  type="file"
              name="images"
@@ -263,7 +263,7 @@ export default class updateuser extends Component {
               onChange={this.onChangeimage}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}} >
           <label>Description </label>
           <input 
           name="description"
@@ -273,7 +273,7 @@ export default class updateuser extends Component {
               onChange={this.onChangedescription}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Duration</label>
           <input 
           name="duration"
@@ -283,7 +283,7 @@ export default class updateuser extends Component {
               onChange={this.onChangeduration}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}} > 
           <label>Choose Instructor: </label>
           <input  type="text"
           name="chooseinstructor"
@@ -292,7 +292,7 @@ export default class updateuser extends Component {
               onChange={this.onChangechooseinstructor}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}} > 
           <label>Category: </label>
           <input  type="text"
              name="category"
@@ -301,7 +301,7 @@ export default class updateuser extends Component {
               onChange={this.onChangecategory}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group"  style={{width:"450px"}}>
           <label>Access </label>
           <input
           name="access" 
@@ -311,7 +311,7 @@ export default class updateuser extends Component {
               onChange={this.onChangeaccess}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}} >
           <label>Price </label>
           <input 
           name="price"
@@ -321,7 +321,7 @@ export default class updateuser extends Component {
               onChange={this.onChangeprice}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}} > 
           <label>Exercise Name: </label>
           <input  type="text"
           name="exercisename"
@@ -330,7 +330,7 @@ export default class updateuser extends Component {
               onChange={this.onChangeexercisename}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Video: </label>
           <input  type="text"
              name="video"
@@ -339,7 +339,7 @@ export default class updateuser extends Component {
               onChange={this.onChangevideo}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}} >
           <label>Category Name </label>
           <input 
           name="categoryname"
@@ -349,7 +349,7 @@ export default class updateuser extends Component {
               onChange={this.onChangecategoryname}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}} >
           <label>Category Image </label>
           <input 
           name="cimage"
@@ -359,7 +359,7 @@ export default class updateuser extends Component {
               onChange={this.onChangecimage}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}} > 
           <label>Calories Burnt: </label>
           <input  type="number"
           name="caloriesburnt"
@@ -368,7 +368,7 @@ export default class updateuser extends Component {
               onChange={this.onChangecaloriesburnt}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}} > 
           <label>Program Material: </label>
           <input  type="text"
              name="pmaterial"
@@ -377,7 +377,7 @@ export default class updateuser extends Component {
               onChange={this.onChangepmaterial}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}} >
           <label>Status </label>
           <input 
           name="status"
@@ -393,10 +393,10 @@ export default class updateuser extends Component {
        
        
         <div className="form-group">
-          <input type="submit" value="Update Program" className="btn btn-primary"  style={{marginLeft:"590px"}}/>
+          <input type="submit" value="Update Program" className="btn btn-primary"  />
         </div>
       </form>
-      <button type="button" class="btn btn-dark" style={{marginLeft:"630px"}} onClick={this.onback}>Back</button>
+      <button type="button" class="btn btn-dark"  onClick={this.onback}>Back</button>
     </div>
     )
   }

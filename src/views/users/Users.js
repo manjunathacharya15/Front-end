@@ -27,7 +27,7 @@ export default class CustomersList extends Component {
 
   componentDidMount() {
    
-      axios.post('https://vast-river-32952.herokuapp.com/customers/')
+      axios.post('https://mitnessnew.herokuapp.com/customers/')
     .then(response => {
       
       this.setState({ customers: response.data})
@@ -74,7 +74,7 @@ export default class CustomersList extends Component {
       }
     });
     // console.log(arrayids)
-    axios.post('https://vast-river-32952.herokuapp.com/customers/delete',{arrayids:arrayids})
+    axios.post('https://mitnessnew.herokuapp.com/customers/delete',{arrayids:arrayids})
    
     .then(response=>{
       if(response.data.message==="Deleted Successfully")
@@ -104,7 +104,7 @@ export default class CustomersList extends Component {
     const customer = {
       firstname: this.state.firstname
     }
-    axios.post('https://vast-river-32952.herokuapp.com/customers/search', customer)
+    axios.post('https://mitnessnew.herokuapp.com/customers/search', customer)
       .then(res => {
         this.setState({ customers: res.data })
       })
@@ -114,7 +114,7 @@ export default class CustomersList extends Component {
       
   }
   deleteCustomer(id) {
-    axios.delete('https://vast-river-32952.herokuapp.com/customers/'+id)
+    axios.delete('https://mitnessnew.herokuapp.com/customers/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -185,7 +185,7 @@ export default class CustomersList extends Component {
   <div class="col-md">
 
              <div style={{display:"flex"}}>
-    <div style={{width:"80%"}}><h4><b>Customer</b></h4></div>
+    <div style={{width:"70%"}}><h4><b>Customer</b></h4></div>
     <div style={{marginTop:"5px"}}>
     <form onSubmit={this.onSubmit}>
       <div className="input-group"> 
@@ -204,8 +204,13 @@ export default class CustomersList extends Component {
         </div>
         </form>
         
-        <div >
-    <button
+       
+        </div>
+    
+    <div style={{width:"9%"}}><Link to="/welcome" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success"><AddIcon/></button></Link></div>
+    
+<div style={{width:"22%"}}  >
+    <button style={{height:"25",marginTop:"8px"}}
         className="btn btn-danger "
         onClick={() => {
           this.deleteCustomerByIds();
@@ -214,12 +219,8 @@ export default class CustomersList extends Component {
     <DeleteIcon/>
       </button>
     </div>
-       
-        </div>
-    
-    <div style={{width:"22%"}}><Link to="/welcome" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success"><AddIcon/></button></Link></div>
-    
 </div>
+
         <div style={{overflowX:"scroll",overflowY:"scroll"}}>
         
           

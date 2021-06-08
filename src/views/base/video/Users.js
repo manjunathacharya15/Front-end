@@ -30,7 +30,7 @@ export default class CustomersList extends Component {
 }
 
   componentDidMount() {
-    axios.post('https://obscure-shelf-98404.herokuapp.com/videos/')
+    axios.post('https://mitnessnew.herokuapp.com/videos/')
       .then(response => {
         this.setState({ customers: response.data })
       })
@@ -49,7 +49,7 @@ export default class CustomersList extends Component {
     const customer = {
       exercisename: this.state.exercisename
     }
-    axios.post('https://obscure-shelf-98404.herokuapp.com/videos/search', customer)
+    axios.post('https://mitnessnew.herokuapp.com/videos/search', customer)
       .then(res => {
         this.setState({ customers: res.data })
       })
@@ -60,7 +60,7 @@ export default class CustomersList extends Component {
   }
 
   deleteCustomer(id) {
-    axios.delete('https://obscure-shelf-98404.herokuapp.com/videos/'+id)
+    axios.delete('https://mitnessnew.herokuapp.com/videos/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

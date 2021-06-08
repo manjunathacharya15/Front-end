@@ -25,7 +25,7 @@ export default class CustomersList extends Component {
 
   componentDidMount() {
    
-      axios.post('https://obscure-shelf-98404.herokuapp.com/contactus/')
+      axios.post('https://mitnessnew.herokuapp.com/contactus/')
     .then(response => {
       
       this.setState({ customers: response.data})
@@ -63,7 +63,7 @@ export default class CustomersList extends Component {
       }
     });
     // console.log(arrayids)
-    axios.post('https://obscure-shelf-98404.herokuapp.com/contactus/delete',{arrayids:arrayids})
+    axios.post('https://mitnessnew.herokuapp.com/contactus/delete',{arrayids:arrayids})
     .then(response=>{
       if(response.data.message==="Deleted Successfully")
       {

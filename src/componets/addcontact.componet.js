@@ -68,7 +68,7 @@ export default class Addfaq extends Component{
         
             console.log(trainer);
         
-            axios.post('https://obscure-shelf-98404.herokuapp.com/contactus/add', trainer)
+            axios.post('https://mitnessnew.herokuapp.com/contactus/add', trainer)
             .then(function(response){
         
               if(response.data ==='Contact Added'){
@@ -80,10 +80,10 @@ export default class Addfaq extends Component{
     render(){
         return(
             <div>
-                <h3 style={{marginLeft:"530px"}}>Create Contact </h3>
+                <h3 >Create Contact </h3>
                 <br/>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group"  style={{width:"400px"}}> 
           <label>First Name: </label>
           <input  type="text"
               required
@@ -92,7 +92,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangefirstname}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group"  style={{width:"400px"}}> 
           <label>Last Name: </label>
           <input  type="text"
               required
@@ -101,7 +101,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangelastname}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group"  style={{width:"400px"}}> 
           <label>Contact Number: </label>
           <input  type="number"
               required
@@ -110,7 +110,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangecontactnumber}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group"  style={{width:"400px"}}> 
           <label>Contact Email: </label>
           <input  type="email"
               required
@@ -119,7 +119,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangeemail}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group"  style={{width:"400px"}}> 
           <label>Query: </label>
           <input  type="text"
               required
@@ -128,7 +128,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangequery}
               />
         </div>
-        <div className="form-group" style={{marginLeft:"600px"}}>
+        <div className="form-group" >
           <input type="submit" value="Create Contact us" className="btn btn-primary" />
         </div>
       </form>

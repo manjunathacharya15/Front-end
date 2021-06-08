@@ -40,7 +40,7 @@ export default class Addfaq extends Component{
         
             console.log(trainer);
         
-            axios.post('https://obscure-shelf-98404.herokuapp.com/faqs/add', trainer)
+            axios.post('https://mitnessnew.herokuapp.com/faqs/add', trainer)
             .then(function(response){
         
               if(response.data ==='FAQ Added'){
@@ -52,10 +52,10 @@ export default class Addfaq extends Component{
     render(){
         return(
             <div>
-                <h3 style={{marginLeft:"530px"}}>Create Faq </h3>
+                <h3 >Create Faq </h3>
                 <br/>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group"  style={{width:"400px"}}> 
           <label>Question: </label>
           <input  type="text"
               required
@@ -64,7 +64,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangequestion}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group"  style={{width:"400px"}}> 
           <label>Answer: </label>
           <input  type="text"
               required
@@ -73,7 +73,7 @@ export default class Addfaq extends Component{
               onChange={this.onChangeanswer}
               />
         </div>
-        <div className="form-group"  style={{marginLeft:"600px"}}>
+        <div className="form-group"  >
           <input type="submit" value="Create Faq" className="btn btn-primary" />
         </div>
       

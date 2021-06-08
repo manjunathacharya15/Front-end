@@ -185,7 +185,7 @@ export default class CreateExercise extends Component {
 
     console.log(trainer);
 
-    axios.post('https://instructor9513.herokuapp.com/instructors/signup', trainer)
+    axios.post('https://mitnessnew.herokuapp.com/instructors/signup', trainer)
     .then(function(response){
 
       if(response.data.message ==='Successful Online Account Creation Informing That The Admin Will Review Your Profile And Will Get Back To You Within 48 Hours.'){
@@ -197,10 +197,10 @@ export default class CreateExercise extends Component {
   render() {
     return (
     <div>
-      <h3 style={{marginLeft:"530px"}}>Create trainer </h3>
+      <h3>Create trainer </h3>
       <br/>
-      <form onSubmit={this.onSubmit}>
-      <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+      <form onSubmit={this.onSubmit} >
+      <div className="form-group" style={{width:"450px"}}> 
           <label>FirstName: </label>
           <input  type="text"
               required
@@ -209,7 +209,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangefirstname}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Lastname: </label>
           <input  type="text"
               required
@@ -218,7 +218,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangelastname}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Email </label>
           <input 
               type="text" 
@@ -228,7 +228,7 @@ export default class CreateExercise extends Component {
               />
               
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Password </label>
           <input 
               type="password" 
@@ -239,7 +239,7 @@ export default class CreateExercise extends Component {
         </div>
         
         
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Gender </label>
           <input 
               type="text" 
@@ -257,7 +257,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangerole}
               />
         </div> */}
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>PhoneNumber </label>
           <input 
               type="text" 
@@ -374,7 +374,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangenumberofsubscribers}
               />
         </div> */}
-        <div className="form-group" style={{marginLeft:"600px"}}>
+        <div className="form-group">
           <input type="submit" value="Create trainer" className="btn btn-primary" />
         </div>
       </form>

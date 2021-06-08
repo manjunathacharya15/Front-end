@@ -62,7 +62,7 @@ this.onback=this.onback.bind(this);
     }
   }
   componentDidMount(){
-      axios.get('https://vast-river-32952.herokuapp.com/customers/' + this.props.match.params.id)
+      axios.get('https://mitnessnew.herokuapp.com/customers/' + this.props.match.params.id)
       .then(response => {
     this.setState({
       firstname:response.data.firstname,
@@ -204,7 +204,7 @@ this.onback=this.onback.bind(this);
 
     }
 
-    axios.post('https://vast-river-32952.herokuapp.com/customers/update/' + this.props.match.params.id, customer)
+    axios.post('https://mitnessnew.herokuapp.com/customers/update/' + this.props.match.params.id, customer)
       .then(function(response){
        if(response.data==='User updated!'){
            window.location='/users'
@@ -215,10 +215,9 @@ this.onback=this.onback.bind(this);
   render() {
     return (
     <div>
-      <h3 style={{marginLeft:"530px"}}> User details/Update </h3>
-      <br/>
+      <h3> User details/Update </h3>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group"  style={{width:"400px",marginLeft:"450px"}} > 
+      <div className="form-group" style={{width:"450px"}}> 
           <label>First Name: </label>
           <input  type="text"
               className="form-control"
@@ -226,7 +225,7 @@ this.onback=this.onback.bind(this);
               onChange={this.onChangefirstname}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Last Name: </label>
           <input  type="text"
              
@@ -235,7 +234,7 @@ this.onback=this.onback.bind(this);
               onChange={this.onChangelastname}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Email </label>
           <input 
               type="email" 
@@ -244,7 +243,7 @@ this.onback=this.onback.bind(this);
               onChange={this.onChangeemail}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Phonenumber </label>
           <input 
               type="number" 
@@ -253,7 +252,7 @@ this.onback=this.onback.bind(this);
               onChange={this.onChangephonenumber}
               />
         </div>
-      <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group" style={{width:"450px"}}> 
           <label>Gender: </label>
           <input  type="text"
               className="form-control"
@@ -263,7 +262,7 @@ this.onback=this.onback.bind(this);
            
               />
               </div>
-              <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+              <div className="form-group" style={{width:"450px"}}> 
           <label>Age: </label>
           <input  type="number"
               className="form-control"
@@ -273,7 +272,7 @@ this.onback=this.onback.bind(this);
            
               />
               </div>
-      <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group" style={{width:"450px"}}> 
           <label>Gold/Platinum/Diamond: </label>
           <input  type="text"
               className="form-control"
@@ -282,7 +281,7 @@ this.onback=this.onback.bind(this);
            
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Weight: </label>
           <input  type="number"
              
@@ -292,7 +291,7 @@ this.onback=this.onback.bind(this);
              
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Height: </label>
           <input 
               type="number" 
@@ -301,7 +300,7 @@ this.onback=this.onback.bind(this);
              onChange={this.onChangeheight}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Address: </label>
           <input 
               type="text" 
@@ -310,7 +309,7 @@ this.onback=this.onback.bind(this);
               onChange={this.onChangeaddress}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Current Plan: </label>
           <input  type="text"
               className="form-control"
@@ -319,15 +318,15 @@ this.onback=this.onback.bind(this);
            
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Next Renew Date: </label>
-          <input  type="text"
+          <input  type="number"
               className="form-control"
               value={this.state.nextrenewdate}
            onChange={this.onChangenextrenewdate}
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Number Of Exercise: </label>
           <input  type="number"
               className="form-control"
@@ -336,7 +335,7 @@ this.onback=this.onback.bind(this);
            
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Time Duration Of All Exercise: </label>
           <input  type="number"
               className="form-control"
@@ -345,7 +344,7 @@ this.onback=this.onback.bind(this);
            
               />
         </div>
-        <div className="form-group"  style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Total Calories Burnt: </label>
           <input  type="number"
               className="form-control"
@@ -358,11 +357,11 @@ this.onback=this.onback.bind(this);
         
        
        
-        <div className="form-group" style={{marginLeft:"600px"}} >
+        <div className="form-group">
           <input type="submit" value="Update" className="btn btn-primary" />
         </div>
       </form>
-      <button type="button" class="btn btn-dark" style={{marginLeft:"610px"}} onClick={this.onback}>Back</button>
+      <button type="button" class="btn btn-dark" onClick={this.onback}>Back</button>
     </div>
     )
   }

@@ -66,7 +66,7 @@ export default class CreateExercise extends Component {
     }
 
 
-    axios.post('https://obscure-shelf-98404.herokuapp.com/admin/changepassword', customer)
+    axios.post('https://mitnessnew.herokuapp.com/admin/changepassword', customer)
       .then(res => alert("password changed succesfully"));
   }
 

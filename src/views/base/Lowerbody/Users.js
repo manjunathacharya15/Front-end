@@ -46,7 +46,7 @@ export default class CustomersList extends Component {
   
 
   componentDidMount() {
-    axios.post('https://vast-river-32952.herokuapp.com/payments/')
+    axios.post('https://mitnessnew.herokuapp.com/payments/')
       .then(response => {
         this.setState({ customers: response.data })
       })
@@ -65,7 +65,7 @@ export default class CustomersList extends Component {
     const customer = {
       paymentid: this.state.paymentid
     }
-    axios.post('https://vast-river-32952.herokuapp.com/payments/search', customer)
+    axios.post('https://mitnessnew.herokuapp.com/payments/search', customer)
       .then(res => {
         this.setState({ customers: res.data })
       })
@@ -76,7 +76,7 @@ export default class CustomersList extends Component {
   }
 
   deleteCustomer(id) {
-    axios.delete('https://vast-river-32952.herokuapp.com/payments/'+id)
+    axios.delete('https://mitnessnew.herokuapp.com/payments/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

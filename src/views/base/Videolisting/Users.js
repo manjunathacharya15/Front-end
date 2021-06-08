@@ -25,7 +25,7 @@ export default class CustomersList extends Component {
 
   componentDidMount() {
    
-      axios.post('https://instructor9513.herokuapp.com/programs/')
+      axios.post('https://mitnessnew.herokuapp.com/programs/')
     .then(response => {
       
       this.setState({ customers: response.data})
@@ -71,7 +71,7 @@ export default class CustomersList extends Component {
       }
     });
     console.log(arrayids)
-    axios.post('https://instructor9513.herokuapp.com/programs/delete',{arrayids:arrayids})
+    axios.post('https://mitnessnew.herokuapp.com/programs/delete',{arrayids:arrayids})
     .then(response=>{
       if(response.data.message==="Deleted Successfully")
       {
@@ -96,7 +96,7 @@ export default class CustomersList extends Component {
     const customer = {
       classname: this.state.classname
     }
-    axios.post('https://instructor9513.herokuapp.com/programs/search', customer)
+    axios.post('https://mitnessnew.herokuapp.com/programs/search', customer)
       .then(res => {
         this.setState({ customers: res.data })
       })
@@ -185,8 +185,8 @@ export default class CustomersList extends Component {
           <input  type="text"
               required
               className="form-control"
-              value={this.state.firstname}
-              onChange={this.onChangefirstname}
+              value={this.state.classname}
+              onChange={this.onChangeclassname}
               />
               <div className="input-group-apppend">
               <button className="btn btn-secondary" type="submit">
@@ -196,21 +196,21 @@ export default class CustomersList extends Component {
         </div>
         </form>
         
-        <div>
-    <button
+        <div style={{width:"9%"}}>
+    
+    </div>
+       
+        
+        </div>
+    
+    <div style={{width:"22%"}}> <button
         className="btn btn-danger btn-sm m-2"
         onClick={() => {
           this.deleteCustomerByIds();
         }}
       >
         <DeleteIcon/>
-      </button>
-    </div>
-       
-        
-        </div>
-    
-    <div style={{width:"22%"}}></div>
+      </button></div>
     
 </div>
         <div style={{overflowX:"scroll",overflowY:"scroll"}}>

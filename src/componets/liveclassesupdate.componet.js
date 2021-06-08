@@ -59,7 +59,7 @@ export default class updateuser extends Component {
     }
   }
   componentDidMount(){
-      axios.get('https://instructor9513.herokuapp.com/liveclasses/' + this.props.match.params.id)
+      axios.get('https://mitnessnew.herokuapp.com/liveclasses/' + this.props.match.params.id)
       .then(response => {
     this.setState({
         classname:response.data.classname,
@@ -200,7 +200,7 @@ export default class updateuser extends Component {
 
     }
 
-    axios.post('https://instructor9513.herokuapp.com/liveclasses/update/' + this.props.match.params.id, customer)
+    axios.post('https://mitnessnew.herokuapp.com/liveclasses/update/' + this.props.match.params.id, customer)
       .then(function(response){
        if(response.data=== 'Liveclass updated!'){
            window.location='/Videolistingg'

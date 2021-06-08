@@ -84,17 +84,17 @@ export default class CreateExercise extends Component {
 
     console.log(customer);
 
-    axios.post('https://obscure-shelf-98404.herokuapp.com/videos/add', customer)
+    axios.post('https://mitnessnew.herokuapp.com/videos/add', customer)
       .then(res => console.log(res.data));
   }
 
   render() {
     return (
     <div>
-      <h3 style={{marginLeft:"530px"}} >Create Videos </h3>
+      <h3  >Create Videos </h3>
       <br/>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group" style={{width:"450px"}}> 
           <label>Exercisename: </label>
           <input  type="text"
               required
@@ -103,7 +103,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeexercisename}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Videoname: </label>
           <input  type="text"
               required
@@ -112,7 +112,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangevideoname}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Exerciseduration </label>
           <input 
               type="text" 
@@ -121,7 +121,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeexerciseduration}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Exerciseprice </label>
           <input 
               type="text" 
@@ -131,7 +131,7 @@ export default class CreateExercise extends Component {
               />
         </div>
         
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Access </label>
           <input 
               type="text" 
@@ -140,7 +140,7 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeaccess}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Staus </label>
           <input 
               type="text" 
@@ -150,7 +150,7 @@ export default class CreateExercise extends Component {
               />
         </div>
        
-        <div className="form-group" style={{marginLeft:"600px"}} >
+        <div className="form-group">
           <input type="submit" value="Create videos" className="btn btn-primary" />
         </div>
       </form>

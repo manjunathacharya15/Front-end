@@ -68,7 +68,7 @@ export default class updateuser extends Component {
     }
   }
   componentDidMount(){
-      axios.get('https://instructor9513.herokuapp.com/instructors/' + this.props.match.params.id)
+      axios.get('https://mitnessnew.herokuapp.com/instructors/' + this.props.match.params.id)
       .then(response => {
     this.setState({
       firstname:response.data.firstname,
@@ -230,7 +230,7 @@ export default class updateuser extends Component {
 
     }
 
-    axios.post('https://instructor9513.herokuapp.com/instructors/update/' + this.props.match.params.id, customer)
+    axios.post('https://mitnessnew.herokuapp.com/instructors/update/' + this.props.match.params.id, customer)
       .then(function(response){
        if(response.data==='Instructor updated!'){
            window.location='/userrs'
@@ -241,10 +241,10 @@ export default class updateuser extends Component {
   render() {
     return (
     <div>
-      <h3 style={{marginLeft:"530px"}}> Trainer details/Update </h3>
+      <h3> Trainer details/Update </h3>
       <br/>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group" style={{width:"450px"}}> 
           <label>First Name: </label>
           <input  type="text"
               className="form-control"
@@ -252,7 +252,7 @@ export default class updateuser extends Component {
               onChange={this.onChangefirstname}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Last Name: </label>
           <input  type="text"
              
@@ -261,7 +261,7 @@ export default class updateuser extends Component {
               onChange={this.onChangelastname}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Email </label>
           <input 
               type="email" 
@@ -270,7 +270,7 @@ export default class updateuser extends Component {
               onChange={this.onChangeemail}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Phonenumber </label>
           <input 
               type="number" 
@@ -279,7 +279,7 @@ export default class updateuser extends Component {
               onChange={this.onChangephonenumber}
               />
         </div>
-      <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group" style={{width:"450px"}}> 
           <label>Gender: </label>
           <input  type="text"
               className="form-control"
@@ -289,7 +289,7 @@ export default class updateuser extends Component {
            
               />
               </div>
-              <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+              <div className="form-group" style={{width:"450px"}}> 
           <label>Age: </label>
           <input  type="text"
               className="form-control"
@@ -299,7 +299,7 @@ export default class updateuser extends Component {
            
               />
               </div>
-      <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+      <div className="form-group" style={{width:"450px"}}> 
           <label>Status: </label>
           <input  type="text"
               className="form-control"
@@ -307,7 +307,7 @@ export default class updateuser extends Component {
            onChange={this.onChangestatus}
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Posttype: </label>
           <input  type="text"
              
@@ -319,7 +319,7 @@ export default class updateuser extends Component {
         </div>
         
         
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}>
+        <div className="form-group" style={{width:"450px"}}>
           <label>Weight: </label>
           <input 
               type="text" 
@@ -329,7 +329,7 @@ export default class updateuser extends Component {
               
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Height: </label>
           <input  type="text"
               className="form-control"
@@ -338,7 +338,7 @@ export default class updateuser extends Component {
            
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Career: </label>
           <input  type="text"
               className="form-control"
@@ -347,7 +347,7 @@ export default class updateuser extends Component {
            
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Introduction: </label>
           <input  type="text"
               className="form-control"
@@ -356,7 +356,7 @@ export default class updateuser extends Component {
            
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Brief History: </label>
           <input  type="text"
               className="form-control"
@@ -365,7 +365,7 @@ export default class updateuser extends Component {
            
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Specialized In: </label>
           <input  type="text"
               className="form-control"
@@ -374,7 +374,7 @@ export default class updateuser extends Component {
            
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Number Of Applicants: </label>
           <input  type="text"
               className="form-control"
@@ -383,7 +383,7 @@ export default class updateuser extends Component {
            
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Number of Attendees: </label>
           <input  type="text"
               className="form-control"
@@ -392,7 +392,7 @@ export default class updateuser extends Component {
            
               />
         </div>
-        <div className="form-group" style={{width:"400px",marginLeft:"450px"}}> 
+        <div className="form-group" style={{width:"450px"}}> 
           <label>Number Of Subscribers: </label>
           <input  type="text"
               className="form-control"
@@ -406,10 +406,10 @@ export default class updateuser extends Component {
        
        
         <div className="form-group">
-          <input type="submit" value="Update" className="btn btn-primary" style={{marginLeft:"600px"}} />
+          <input type="submit" value="Update" className="btn btn-primary" />
         </div>
       </form>
-      <button type="button" class="btn btn-dark" style={{marginLeft:"610px"}} onClick={this.onback}>Back</button>
+      <button type="button" class="btn btn-dark" onClick={this.onback}>Back</button>
     </div>
     )
   }
