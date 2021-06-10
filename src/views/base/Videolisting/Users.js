@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@material-ui/icons/Add';
 
 
 
@@ -196,23 +197,25 @@ export default class CustomersList extends Component {
         </div>
         </form>
         
-        <div style={{width:"9%"}}>
-    
-    </div>
+        
        
         
         </div>
-    
-    <div style={{width:"22%"}}> <button
-        className="btn btn-danger btn-sm m-2"
+        <div style={{width:"9%"}}><Link to="/program" className="nav-link"><button type="submit" value="AddNewTrainer" className="btn btn-success"><AddIcon/></button></Link></div>
+    <div style={{width:"22%"}}  >
+    <button style={{height:"25",marginTop:"8px"}}
+        className="btn btn-danger "
         onClick={() => {
           this.deleteCustomerByIds();
         }}
       >
-        <DeleteIcon/>
-      </button></div>
-    
+    <DeleteIcon/>
+      </button>
+    </div>
+        
 </div>
+
+
         <div style={{overflowX:"scroll",overflowY:"scroll"}}>
         
           
