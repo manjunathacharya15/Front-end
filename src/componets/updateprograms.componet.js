@@ -33,7 +33,8 @@ export default class updateuser extends Component {
 
     this.state = {
     classname: '',
-      file: null,
+      file1: null,
+      file2:null,
       description:'',
      duration:'',
      chooseinstructor: '',
@@ -71,11 +72,11 @@ export default class updateuser extends Component {
         category:response.data.category,
         access:response.data.access,
         price:response.data.price,
-        exercisename:response.data.exercisename,
-        
-        categoryname:response.data.categoryname,
-        
-        caloriesburnt:response.data.caloriesburnt,
+        exercisename:response.data.exercise.exercisename,
+        video:response.data.exercise.video,
+        categoryname:response.data.exercise.category.categoryname,
+       
+        caloriesburnt:response.data.exercise.category.caloriesburnt,
         pmaterial:response.data.pmaterial,
         status:response.data.status,
        
@@ -98,7 +99,7 @@ export default class updateuser extends Component {
   }
   onChangeimage(e) {
     this.setState({
-      file: e.target.files[0]
+      file1: e.target.files[0]
     })
   }
 
@@ -154,7 +155,7 @@ export default class updateuser extends Component {
   }
   onChangecimage(e) {
     this.setState({
-      cimage: e.target.value
+      file2: e.target.files[0]
     })
   }
   onChangecaloriesburnt(e) {
@@ -202,7 +203,9 @@ export default class updateuser extends Component {
       
     const formData=new FormData();
     formData.append('classname',this.state.classname);
-    formData.append('images',this.state.file);
+    formData.append('images',this.state.file1);
+    formData.append('images',this.state.file2);
+
     formData.append('description',this.state.description);
     formData.append('duration',this.state.duration);
     formData.append('chooseinstructor',this.state.chooseinstructor);
@@ -352,10 +355,9 @@ export default class updateuser extends Component {
         <div className="form-group" style={{width:"450px"}} >
           <label>Category Image </label>
           <input 
-          name="cimage"
-              type="text" 
+          name="images"
+              type="file" 
               className="form-control"
-              value={this.state.cimage}
               onChange={this.onChangecimage}
               />
         </div>

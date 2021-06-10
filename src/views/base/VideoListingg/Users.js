@@ -41,7 +41,7 @@ export default class CustomersList extends Component {
             duration:e.duration,
             caloriesburnt:e.caloriesburnt,
             name:e.instructor.name,
-            img:e.instructor.img,
+            img:e.instructor.iimg,
             instructorprofile:e.instructorprofile,
             sdateandtime :e.sdateandtime,
             snameandcount:e.snameandcount,

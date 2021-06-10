@@ -47,6 +47,7 @@ export default class CustomersList extends Component {
             video:e.exercise.video,
            cimage:e.exercise.category.cimage,
 
+
             instructorprofile:e.instructorprofile,
             access:e.access,
             price:e.price,

@@ -20,6 +20,7 @@ export default class CreateExercise extends Component {
     this.onChangevideo=this.onChangevideo.bind(this);
     this.onChangecategoryname=this.onChangecategoryname.bind(this);
     this.onChangecimage=this.onChangecimage.bind(this);
+    this.onChangeinstructorprofile=this.onChangeinstructorprofile.bind(this);
     this.onChangecaloriesburnt=this.onChangecaloriesburnt.bind(this);
     this.onChangepmaterial=this.onChangepmaterial.bind(this);
     this.onChangestatus=this.onChangestatus.bind(this);
@@ -33,7 +34,8 @@ export default class CreateExercise extends Component {
 
     this.state = {
         classname: '',
-        file: null,
+       file1:null,
+       file2:null,
         description:'',
        duration:'',
        chooseinstructor: '',
@@ -43,7 +45,7 @@ export default class CreateExercise extends Component {
        exercisename:'',
        video:'',
        categoryname:'',
-       cimage:'',
+       instructorprofile:'',
         caloriesburnt: '',
         pmaterial:'',
        status:'',
@@ -58,6 +60,11 @@ export default class CreateExercise extends Component {
     }
   }
 
+  onChangeinstructorprofile(e) {
+    this.setState({
+      instructorprofile: e.target.value
+    })
+  }
   onChangeclassname(e) {
     this.setState({
       classname: e.target.value
@@ -70,7 +77,7 @@ export default class CreateExercise extends Component {
   }
   onChangeimage(e) {
     this.setState({
-      file: e.target.files[0]
+      file1: e.target.files[0]
     })
   }
 
@@ -126,7 +133,7 @@ export default class CreateExercise extends Component {
   }
   onChangecimage(e) {
     this.setState({
-      cimage: e.target.value
+        file2: e.target.files[0]
     })
   }
   onChangecaloriesburnt(e) {
@@ -174,7 +181,11 @@ export default class CreateExercise extends Component {
       
     const formData=new FormData();
     formData.append('classname',this.state.classname);
-    formData.append('images',this.state.file);
+    formData.append('images',this.state.file1);
+    formData.append('images',this.state.file2);
+  
+    
+
     formData.append('description',this.state.description);
     formData.append('duration',this.state.duration);
     formData.append('chooseinstructor',this.state.chooseinstructor);
@@ -184,7 +195,8 @@ export default class CreateExercise extends Component {
     formData.append('exercisename',this.state.exercisename);
     formData.append('video',this.state.video);
     formData.append('categoryname',this.state.categoryname);
-    formData.append('cimage',this.state.cimage);
+    formData.append('instructorprofile',this.state.instructorprofile);
+   
     formData.append('caloriesburnt',this.state.caloriesburnt);
     formData.append('pmaterial',this.state.pmaterial);
     formData.append('status',this.state.status);
@@ -265,6 +277,16 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeduration}
               />
         </div>
+        <div className="form-group" style={{width:"450px"}} >
+          <label>Instructor Profile </label>
+          <input 
+          name="description"
+              type="text" 
+              className="form-control"
+             value={this.state.instructorprofile}
+              onChange={this.onChangeinstructorprofile}
+              />
+        </div>
         <div className="form-group" style={{width:"450px"}} > 
           <label>Choose Instructor: </label>
           <input  type="text"
@@ -334,10 +356,9 @@ export default class CreateExercise extends Component {
         <div className="form-group" style={{width:"450px"}} >
           <label>Category Image </label>
           <input 
-          name="cimage"
-              type="text" 
+          name="images"
+              type="file" 
               className="form-control"
-              value={this.state.cimage}
               onChange={this.onChangecimage}
               />
         </div>
