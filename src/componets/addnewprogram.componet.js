@@ -205,7 +205,7 @@ export default class CreateExercise extends Component {
 
     }
 
-    axios.post('https://mitnessnew.herokuapp.com/programs/add' , formData,config)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/programs/add' , formData,config)
     .then(function(response){
         if(response.data==='Program added!'){
             window.location='/Videolisting'

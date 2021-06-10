@@ -40,12 +40,12 @@ const TheHeaderDropdown = () => {
         </CDropdownItem>
         <CDropdownItem>
           <CIcon name="cil-user" className="mfe-2" />
-          AdminProfile
+         <Link  to="/admin" >AdminProfile</Link> 
           <CBadge color="info" className="mfs-auto"></CBadge>
         </CDropdownItem>
         <CDropdownItem>
           <CIcon name="cil-settings" className="mfe-2" />
- <Link to="/change" className="nav-link">ChangePassword</Link> 
+ <Link to="/change" >ChangePassword</Link> 
           <CBadge color="success" className="mfs-auto"></CBadge>
         </CDropdownItem>
         <CDropdownItem>

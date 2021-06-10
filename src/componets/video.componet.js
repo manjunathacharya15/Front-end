@@ -84,7 +84,7 @@ export default class CreateExercise extends Component {
 
     console.log(customer);
 
-    axios.post('https://mitnessnew.herokuapp.com/videos/add', customer)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/videos/add', customer)
       .then(res => console.log(res.data));
   }
 

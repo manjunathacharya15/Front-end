@@ -46,7 +46,7 @@ export default class CustomersList extends Component {
   
 
   componentDidMount() {
-    axios.post('https://mitnessnew.herokuapp.com/payments/')
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/payments/')
       .then(response => {
         this.setState({ customers: response.data })
       })
@@ -65,7 +65,7 @@ export default class CustomersList extends Component {
     const customer = {
       paymentid: this.state.paymentid
     }
-    axios.post('https://mitnessnew.herokuapp.com/payments/search', customer)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/payments/search', customer)
       .then(res => {
         this.setState({ customers: res.data })
       })

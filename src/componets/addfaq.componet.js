@@ -40,7 +40,7 @@ export default class Addfaq extends Component{
         
             console.log(trainer);
         
-            axios.post('https://mitnessnew.herokuapp.com/faqs/add', trainer)
+            axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/faqs/add', trainer)
             .then(function(response){
         
               if(response.data ==='FAQ Added'){

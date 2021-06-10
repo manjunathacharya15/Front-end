@@ -62,7 +62,7 @@ this.onback=this.onback.bind(this);
     }
   }
   componentDidMount(){
-      axios.get('https://mitnessnew.herokuapp.com/customers/' + this.props.match.params.id)
+      axios.get('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/customers/' + this.props.match.params.id)
       .then(response => {
     this.setState({
       firstname:response.data.firstname,

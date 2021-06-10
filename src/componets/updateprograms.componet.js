@@ -60,7 +60,7 @@ export default class updateuser extends Component {
     }
   }
   componentDidMount(){
-      axios.get('https://mitnessnew.herokuapp.com/programs/' + this.props.match.params.id)
+      axios.get('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/programs/' + this.props.match.params.id)
       .then(response => {
     this.setState({
         classname:response.data.classname,
@@ -232,7 +232,7 @@ export default class updateuser extends Component {
 
     }
 
-    axios.post('https://mitnessnew.herokuapp.com/programs/update/' + this.props.match.params.id, formData,config)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/programs/update/' + this.props.match.params.id, formData,config)
     .then(function(response){
         if(response.data==='Program updated!'){
             window.location='/Videolisting'

@@ -68,7 +68,7 @@ export default class updateuser extends Component {
     }
   }
   componentDidMount(){
-      axios.get('https://mitnessnew.herokuapp.com/instructors/' + this.props.match.params.id)
+      axios.get('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/instructors/' + this.props.match.params.id)
       .then(response => {
     this.setState({
       firstname:response.data.firstname,
@@ -230,7 +230,7 @@ export default class updateuser extends Component {
 
     }
 
-    axios.post('https://mitnessnew.herokuapp.com/instructors/update/' + this.props.match.params.id, customer)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/instructors/update/' + this.props.match.params.id, customer)
       .then(function(response){
        if(response.data==='Instructor updated!'){
            window.location='/userrs'

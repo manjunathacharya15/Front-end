@@ -66,7 +66,7 @@ export default class CreateExercise extends Component {
     }
 
 
-    axios.post('https://mitnessnew.herokuapp.com/admin/changepassword', customer)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/admin/changepassword', customer)
       .then(res => alert("password changed succesfully"));
   }
 

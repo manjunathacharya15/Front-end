@@ -94,6 +94,7 @@ const Updatecategoryy=React.lazy(() => import('./componets/updatecategory.compon
 const Liveupdate=React.lazy(() => import('./componets/liveclassesupdate.componet'));
 const Addfaq=React.lazy(() => import('./componets/addfaq.componet'));
 const Addcontact=React.lazy(() => import('./componets/addcontact.componet'));
+const Adminprofile=React.lazy(() => import('./componets/adminprofile.componet'));
 
 
 
@@ -201,6 +202,7 @@ const routes = [
   { path: '/liveupdate/:id', exact: true,  name: 'Live Class Update', component:Liveupdate},
   { path: '/addfaq', exact: true,  name: 'Add Faq', component:Addfaq},
   { path: '/addcontact', exact: true,  name: 'Add Faq', component:Addcontact},
+  { path: '/admin', exact: true,  name: 'Admin Profile', component:Adminprofile},
 
 
 

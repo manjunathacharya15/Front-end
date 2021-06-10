@@ -30,7 +30,7 @@ export default class CustomersList extends Component {
 }
 
   componentDidMount() {
-    axios.post('https://mitnessnew.herokuapp.com/videos/')
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/videos/')
       .then(response => {
         this.setState({ customers: response.data })
       })
@@ -49,7 +49,7 @@ export default class CustomersList extends Component {
     const customer = {
       exercisename: this.state.exercisename
     }
-    axios.post('https://mitnessnew.herokuapp.com/videos/search', customer)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/videos/search', customer)
       .then(res => {
         this.setState({ customers: res.data })
       })
@@ -60,7 +60,7 @@ export default class CustomersList extends Component {
   }
 
   deleteCustomer(id) {
-    axios.delete('https://mitnessnew.herokuapp.com/videos/'+id)
+    axios.delete('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/videos/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

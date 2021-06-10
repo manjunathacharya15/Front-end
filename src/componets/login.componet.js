@@ -160,7 +160,7 @@ export default class CreateExercise extends Component {
 
     console.log(customer);
 
-    axios.post('https://mitnessnew.herokuapp.com/customers/signup', customer)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/customers/signup', customer)
     .then(function(response){
 
       if(response.data.returnCode ==='Success'){

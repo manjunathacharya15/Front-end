@@ -185,7 +185,7 @@ export default class CreateExercise extends Component {
 
     console.log(trainer);
 
-    axios.post('https://mitnessnew.herokuapp.com/instructors/signup', trainer)
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/instructors/signup', trainer)
     .then(function(response){
 
       if(response.data.message ==='Successful Online Account Creation Informing That The Admin Will Review Your Profile And Will Get Back To You Within 48 Hours.'){

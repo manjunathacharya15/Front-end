@@ -27,7 +27,7 @@ export default class CustomersList extends Component {
 
   componentDidMount() {
    
-      axios.post('https://mitnessnew.herokuapp.com/faqs/')
+      axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/faqs/')
     .then(response => {
       
       this.setState({ customers: response.data})
@@ -61,7 +61,7 @@ export default class CustomersList extends Component {
       }
     });
     // console.log(arrayids)
-    axios.post('https://mitnessnew.herokuapp.com/faqs/delete',{arrayids:arrayids})
+    axios.post('http://mitnessbackend-env.eba-wbimkk6k.ap-south-1.elasticbeanstalk.com/delete',{arrayids:arrayids})
    .then(response=>{
      if(response.data.message==="Deleted Successfully")
      {
