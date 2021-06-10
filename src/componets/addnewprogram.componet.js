@@ -7,6 +7,8 @@ export default class CreateExercise extends Component {
     super(props);
 
     this.onChangeclassname = this.onChangeclassname.bind(this);
+    this.onChangesdateandtime = this.onChangesdateandtime.bind(this);
+
     this.onChangeimage = this.onChangeimage.bind(this);
     this.onChangedescription=this.onChangedescription.bind(this);
     this.onChangeduration=this.onChangeduration.bind(this);
@@ -45,6 +47,7 @@ export default class CreateExercise extends Component {
         caloriesburnt: '',
         pmaterial:'',
        status:'',
+       sdateandtime:'',
        
       
 
@@ -58,6 +61,11 @@ export default class CreateExercise extends Component {
   onChangeclassname(e) {
     this.setState({
       classname: e.target.value
+    })
+  }
+  onChangesdateandtime(e) {
+    this.setState({
+      sdateandtime: e.target.value
     })
   }
   onChangeimage(e) {
@@ -180,6 +188,7 @@ export default class CreateExercise extends Component {
     formData.append('caloriesburnt',this.state.caloriesburnt);
     formData.append('pmaterial',this.state.pmaterial);
     formData.append('status',this.state.status);
+    formData.append('sdateandtime',this.state.sdateandtime);
 
     
     
@@ -198,7 +207,7 @@ export default class CreateExercise extends Component {
 
     axios.post('https://mitnessnew.herokuapp.com/programs/add' , formData,config)
     .then(function(response){
-        if(response.data==='Program Added'){
+        if(response.data==='Program added!'){
             window.location='/Videolisting'
         }
        }) 
@@ -234,6 +243,16 @@ export default class CreateExercise extends Component {
               className="form-control"
              value={this.state.description}
               onChange={this.onChangedescription}
+              />
+        </div>
+        <div className="form-group" style={{width:"450px"}} >
+          <label>Sdateandtime </label>
+          <input 
+          name="description"
+              type="text" 
+              className="form-control"
+             value={this.state.sdateandtime}
+              onChange={this.onChangesdateandtime}
               />
         </div>
         <div className="form-group" style={{width:"450px"}}>
